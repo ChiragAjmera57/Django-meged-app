@@ -32,6 +32,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -49,6 +65,30 @@
     },
     {
         "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -79,6 +119,15 @@
         "importPath": "django.utils.timezone",
         "description": "django.utils.timezone",
         "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "autoslug.fields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "autoslug.fields",
+        "description": "autoslug.fields",
+        "detail": "autoslug.fields",
         "documentation": {}
     },
     {
@@ -127,6 +176,22 @@
         "description": "django",
         "isExtraImport": true,
         "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "AutoSlugField",
+        "importPath": "autoslug",
+        "description": "autoslug",
+        "isExtraImport": true,
+        "detail": "autoslug",
+        "documentation": {}
+    },
+    {
+        "label": "AutoSlugField",
+        "importPath": "autoslug",
+        "description": "autoslug",
+        "isExtraImport": true,
+        "detail": "autoslug",
         "documentation": {}
     },
     {
@@ -382,6 +447,42 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0002_post_post_slug",
+        "description": "blog.migrations.0002_post_post_slug",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='post_slug',\n            field=autoslug.fields.AutoSlugField(default=None, editable=False, null=True, populate_from='title', unique=True),\n        ),",
+        "detail": "blog.migrations.0002_post_post_slug",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0003_alter_post_created_date",
+        "description": "blog.migrations.0003_alter_post_created_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_post_post_slug'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='created_date',\n            field=models.DateTimeField(default=django.utils.timezone.now, editable=False),\n        ),",
+        "detail": "blog.migrations.0003_alter_post_created_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0004_alter_post_post_slug",
+        "description": "blog.migrations.0004_alter_post_post_slug",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0003_alter_post_created_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='post_slug',\n            field=autoslug.fields.AutoSlugField(default=None, editable=True, null=True, populate_from='title', unique=True),\n        ),",
+        "detail": "blog.migrations.0004_alter_post_post_slug",
+        "documentation": {}
+    },
+    {
+        "label": "PostAdmin",
+        "kind": 6,
+        "importPath": "blog.admin",
+        "description": "blog.admin",
+        "peekOfCode": "class PostAdmin(admin.ModelAdmin):\n    fieldsets = [\n        (None, {\"fields\": ['title', 'author', 'published_date', 'post_slug']}),\n    ]\n    list_display = ('title', 'author', 'published_date', 'post_slug')\n    search_fields = ['title', 'text',\"post_slug\"]\nadmin.site.register(Post, PostAdmin)",
+        "detail": "blog.admin",
+        "documentation": {}
+    },
+    {
         "label": "BlogConfig",
         "kind": 6,
         "importPath": "blog.apps",
@@ -404,7 +505,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now)\n    published_date = models.DateTimeField(blank=True, null=True)\n    def publish(self):\n        self.published_date = timezone.now()\n        self.save()\n    def __str__(self):",
+        "peekOfCode": "class Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    published_date = models.DateTimeField(blank=True, null=True)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, editable=True)  # Change editable to True\n    def publish(self):\n        self.published_date = timezone.now()\n        self.save()",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -413,7 +514,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/<int:pk>/', views.post_detail, name='post_detail'),\n    path('post/new/', views.post_new, name='post_new'),\n    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),\n    path('post/new/', views.post_new, name='post_new'),\n    path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),\n]",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -422,7 +523,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    return render(request, 'blog/post_list.html', {'posts': posts})\ndef post_detail(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():",
+        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    return render(request, 'blog/post_list.html', {'posts': posts})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -431,7 +532,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_detail(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()",
+        "peekOfCode": "def post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -440,7 +541,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()\n            post.save()\n            return redirect('post_detail', pk=post.pk)\n    else:",
+        "peekOfCode": "def post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()\n            post.save()\n            return redirect('post_detail', post_slug=post.post_slug)\n    else:",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -449,7 +550,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_edit(request, pk):\n    post = get_object_or_404(Post, pk=pk)\n    if request.method == \"POST\":\n        form = PostForm(request.POST, instance=post)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()\n            post.save()\n            return redirect('post_detail', pk=post.pk)",
+        "peekOfCode": "def post_edit(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    if request.method == \"POST\":\n        form = PostForm(request.POST, instance=post)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()\n            post.save()\n            return redirect('post_detail', post_slug=post.post_slug)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -463,11 +564,20 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "polls.migrations.0002_question_que_slug",
+        "description": "polls.migrations.0002_question_que_slug",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('polls', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='question',\n            name='que_slug',\n            field=autoslug.fields.AutoSlugField(default=None, editable=True, null=True, populate_from='question_text', unique=True),\n        ),",
+        "detail": "polls.migrations.0002_question_que_slug",
+        "documentation": {}
+    },
+    {
         "label": "ChoiceInline",
         "kind": 6,
         "importPath": "polls.admin",
         "description": "polls.admin",
-        "peekOfCode": "class ChoiceInline(admin.TabularInline):\n    model = Choice\n    extra = 3\nclass QuestionAdmin(admin.ModelAdmin):\n    fieldsets = [\n        (None, {\"fields\": [\"question_text\"]}),\n        (\"Date information\", {\"fields\": [\"pub_date\"], \"classes\": [\"collapse\"]}),\n    ]\n    inlines = [ChoiceInline]\n    list_display = [\"question_text\", \"pub_date\", \"was_published_recently\"]",
+        "peekOfCode": "class ChoiceInline(admin.TabularInline):\n    model = Choice\n    extra = 3\nclass QuestionAdmin(admin.ModelAdmin):\n    fieldsets = [\n        (None, {\"fields\": [\"question_text\"]}),\n        (\"Date information\", {\"fields\": [\"pub_date\"], \"classes\": [\"collapse\"]}),\n    ]\n    inlines = [ChoiceInline]\n    list_display = [\"question_text\", \"pub_date\", \"was_published_recently\",\"que_slug\"]",
         "detail": "polls.admin",
         "documentation": {}
     },
@@ -476,7 +586,7 @@
         "kind": 6,
         "importPath": "polls.admin",
         "description": "polls.admin",
-        "peekOfCode": "class QuestionAdmin(admin.ModelAdmin):\n    fieldsets = [\n        (None, {\"fields\": [\"question_text\"]}),\n        (\"Date information\", {\"fields\": [\"pub_date\"], \"classes\": [\"collapse\"]}),\n    ]\n    inlines = [ChoiceInline]\n    list_display = [\"question_text\", \"pub_date\", \"was_published_recently\"]\n    list_filter = [\"pub_date\"]\n    search_fields = [\"question_text\"]\nadmin.site.register(Question, QuestionAdmin)",
+        "peekOfCode": "class QuestionAdmin(admin.ModelAdmin):\n    fieldsets = [\n        (None, {\"fields\": [\"question_text\"]}),\n        (\"Date information\", {\"fields\": [\"pub_date\"], \"classes\": [\"collapse\"]}),\n    ]\n    inlines = [ChoiceInline]\n    list_display = [\"question_text\", \"pub_date\", \"was_published_recently\",\"que_slug\"]\n    list_filter = [\"pub_date\"]\n    search_fields = [\"question_text\"]\nadmin.site.register(Question, QuestionAdmin)",
         "detail": "polls.admin",
         "documentation": {}
     },
@@ -494,7 +604,7 @@
         "kind": 6,
         "importPath": "polls.models",
         "description": "polls.models",
-        "peekOfCode": "class Question(models.Model):\n    question_text = models.CharField(max_length=200)\n    pub_date = models.DateTimeField(\"date published\")\n    def __str__(self):\n        return self.question_text\n    def was_published_recently(self):\n        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)\nclass Choice(models.Model):\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)\n    choice_text = models.CharField(max_length=200)",
+        "peekOfCode": "class Question(models.Model):\n    question_text = models.CharField(max_length=200)\n    pub_date = models.DateTimeField(\"date published\")\n    que_slug = AutoSlugField(populate_from='question_text', unique=True, null=True, default=None, editable=True) \n    def __str__(self):\n        return self.question_text\n    def was_published_recently(self):\n        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)\nclass Choice(models.Model):\n    question = models.ForeignKey(Question, on_delete=models.CASCADE)",
         "detail": "polls.models",
         "documentation": {}
     },
@@ -512,7 +622,7 @@
         "kind": 5,
         "importPath": "polls.urls",
         "description": "polls.urls",
-        "peekOfCode": "app_name = \"polls\"\nurlpatterns = [\n    path(\"\", views.IndexView.as_view(), name=\"index\"),\n    path(\"<int:pk>/\", views.DetailView.as_view(), name=\"detail\"),\n    path(\"<int:pk>/results/\", views.ResultsView.as_view(), name=\"results\"),\n    path(\"<int:question_id>/vote/\", views.vote, name=\"vote\"),\n]",
+        "peekOfCode": "app_name = \"polls\"\nurlpatterns = [\n    path(\"\", views.IndexView.as_view(), name=\"index\"),\n    path(\"<que_slug>/\", views.DetailView.as_view(), name=\"detail\"),\n    path(\"<que_slug>/results/\", views.ResultsView.as_view(), name=\"results\"),\n    path(\"<que_slug>/vote/\", views.vote, name=\"vote\"),\n]",
         "detail": "polls.urls",
         "documentation": {}
     },
@@ -521,7 +631,7 @@
         "kind": 5,
         "importPath": "polls.urls",
         "description": "polls.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.IndexView.as_view(), name=\"index\"),\n    path(\"<int:pk>/\", views.DetailView.as_view(), name=\"detail\"),\n    path(\"<int:pk>/results/\", views.ResultsView.as_view(), name=\"results\"),\n    path(\"<int:question_id>/vote/\", views.vote, name=\"vote\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.IndexView.as_view(), name=\"index\"),\n    path(\"<que_slug>/\", views.DetailView.as_view(), name=\"detail\"),\n    path(\"<que_slug>/results/\", views.ResultsView.as_view(), name=\"results\"),\n    path(\"<que_slug>/vote/\", views.vote, name=\"vote\"),\n]",
         "detail": "polls.urls",
         "documentation": {}
     },
@@ -530,7 +640,7 @@
         "kind": 6,
         "importPath": "polls.views",
         "description": "polls.views",
-        "peekOfCode": "class IndexView(generic.ListView):\n    template_name = \"polls/index.html\"\n    context_object_name = \"latest_question_list\"\n    def get_queryset(self):\n        \"\"\"Return the last five published questions.\"\"\"\n        return Question.objects.order_by(\"-pub_date\")[:5]\nclass DetailView(generic.DetailView):\n    model = Question\n    template_name = \"polls/detail.html\"\nclass ResultsView(generic.DetailView):",
+        "peekOfCode": "class IndexView(generic.ListView):\n    template_name = \"polls/index.html\"\n    context_object_name = \"latest_question_list\"\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    def get_queryset(self):\n        \"\"\"Return the last five published questions.\"\"\"\n        return Question.objects.order_by(\"-pub_date\")[:5]\nclass DetailView(generic.DetailView):\n    model = Question",
         "detail": "polls.views",
         "documentation": {}
     },
@@ -539,7 +649,7 @@
         "kind": 6,
         "importPath": "polls.views",
         "description": "polls.views",
-        "peekOfCode": "class DetailView(generic.DetailView):\n    model = Question\n    template_name = \"polls/detail.html\"\nclass ResultsView(generic.DetailView):\n    model = Question\n    template_name = \"polls/results.html\"\ndef vote(request, question_id):\n    question = get_object_or_404(Question, pk=question_id)\n    try:\n        selected_choice = question.choice_set.get(pk=request.POST[\"choice\"])",
+        "peekOfCode": "class DetailView(generic.DetailView):\n    model = Question\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    template_name = \"polls/detail.html\"\nclass ResultsView(generic.DetailView):\n    model = Question\n    template_name = \"polls/results.html\"\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'",
         "detail": "polls.views",
         "documentation": {}
     },
@@ -548,7 +658,7 @@
         "kind": 6,
         "importPath": "polls.views",
         "description": "polls.views",
-        "peekOfCode": "class ResultsView(generic.DetailView):\n    model = Question\n    template_name = \"polls/results.html\"\ndef vote(request, question_id):\n    question = get_object_or_404(Question, pk=question_id)\n    try:\n        selected_choice = question.choice_set.get(pk=request.POST[\"choice\"])\n    except (KeyError, Choice.DoesNotExist):\n        # Redisplay the question voting form.\n        return render(",
+        "peekOfCode": "class ResultsView(generic.DetailView):\n    model = Question\n    template_name = \"polls/results.html\"\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\ndef vote(request, que_slug):\n    question = get_object_or_404(Question, que_slug=que_slug)\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    try:",
         "detail": "polls.views",
         "documentation": {}
     },
@@ -557,7 +667,7 @@
         "kind": 2,
         "importPath": "polls.views",
         "description": "polls.views",
-        "peekOfCode": "def vote(request, question_id):\n    question = get_object_or_404(Question, pk=question_id)\n    try:\n        selected_choice = question.choice_set.get(pk=request.POST[\"choice\"])\n    except (KeyError, Choice.DoesNotExist):\n        # Redisplay the question voting form.\n        return render(\n            request,\n            \"polls/detail.html\",\n            {",
+        "peekOfCode": "def vote(request, que_slug):\n    question = get_object_or_404(Question, que_slug=que_slug)\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    try:\n        selected_choice = question.choice_set.get(pk=request.POST[\"choice\"])\n    except (KeyError, Choice.DoesNotExist):\n        # Redisplay the question voting form.\n        return render(\n            request,",
         "detail": "polls.views",
         "documentation": {}
     },

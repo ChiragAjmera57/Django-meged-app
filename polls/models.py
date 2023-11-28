@@ -1,10 +1,12 @@
 from django.db import models
 from django.utils import timezone
+from autoslug import AutoSlugField
 import datetime
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
+    que_slug = AutoSlugField(populate_from='question_text', unique=True, null=True, default=None, editable=True) 
     def __str__(self):
         return self.question_text
     def was_published_recently(self):
