@@ -76,3 +76,26 @@ h4 {
     color: #FFFFFF;
     background-color: #C25100;
 }
+.catContainer {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.catContainer p {
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+.catContainer p:hover {
+    cursor: pointer;
+    background-color: #b7b6b6;
+    /* Add any other styles you want on hover */
+}
+.tab{
+    display: flex;
+    justify-content: space-around;
+}

@@ -13,7 +13,11 @@
                 <a href="{% url 'post_new' %}" class="top-menu">
                    +
                 </a>
-                <h1><a href="/">Django Girls Blog</a></h1>
+                <div class="tab">
+                    <h1><a href="/">Django Girls Blog</a></h1>
+                <h1><a href="{% url 'Cat_list' %}">Category</a></h1>
+                </div>
+
             </div>
         </header>
         <main class="content container">

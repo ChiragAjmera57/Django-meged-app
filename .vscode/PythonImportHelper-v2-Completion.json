@@ -64,6 +64,86 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -474,12 +554,57 @@
         "documentation": {}
     },
     {
-        "label": "PostAdmin",
+        "label": "Migration",
         "kind": 6,
-        "importPath": "blog.admin",
-        "description": "blog.admin",
-        "peekOfCode": "class PostAdmin(admin.ModelAdmin):\n    fieldsets = [\n        (None, {\"fields\": ['title', 'author', 'published_date', 'post_slug']}),\n    ]\n    list_display = ('title', 'author', 'published_date', 'post_slug')\n    search_fields = ['title', 'text',\"post_slug\"]\nadmin.site.register(Post, PostAdmin)",
-        "detail": "blog.admin",
+        "importPath": "blog.migrations.0005_post_post_cat",
+        "description": "blog.migrations.0005_post_post_cat",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0004_alter_post_post_slug'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='post_cat',\n            field=models.CharField(max_length=50, null=True),\n        ),",
+        "detail": "blog.migrations.0005_post_post_cat",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0006_category",
+        "description": "blog.migrations.0006_category",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0005_post_post_cat'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=60)),",
+        "detail": "blog.migrations.0006_category",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0007_alter_post_post_slug",
+        "description": "blog.migrations.0007_alter_post_post_slug",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0006_category'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='post_slug',\n            field=autoslug.fields.AutoSlugField(default=None, editable=False, null=True, populate_from='title', unique=True),\n        ),",
+        "detail": "blog.migrations.0007_alter_post_post_slug",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0008_remove_post_post_cat",
+        "description": "blog.migrations.0008_remove_post_post_cat",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0007_alter_post_post_slug'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='post',\n            name='post_cat',\n        ),\n    ]",
+        "detail": "blog.migrations.0008_remove_post_post_cat",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0009_remove_category_post_post_post_cat",
+        "description": "blog.migrations.0009_remove_category_post_post_post_cat",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0008_remove_post_post_cat'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='category',\n            name='post',\n        ),\n        migrations.AddField(",
+        "detail": "blog.migrations.0009_remove_category_post_post_post_cat",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0010_auto_20231129_2158",
+        "description": "blog.migrations.0010_auto_20231129_2158",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0009_remove_category_post_post_post_cat'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Tag',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=50, null=True, unique=True)),",
+        "detail": "blog.migrations.0010_auto_20231129_2158",
         "documentation": {}
     },
     {
@@ -496,8 +621,26 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ('title', 'text',)",
+        "peekOfCode": "class PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ('title', 'text','post_cat')",
         "detail": "blog.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class Category(models.Model):\n    # post = models.ForeignKey(Post,on_delete=models.CASCADE)\n    title = models.CharField(max_length=60)\n    def __str__(self):\n        return self.title\nclass Tag(models.Model):\n    name = models.CharField(max_length=50, unique=True,null=True)\n    def __str__(self):\n        return self.name\nclass Post(models.Model):",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "Tag",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class Tag(models.Model):\n    name = models.CharField(max_length=50, unique=True,null=True)\n    def __str__(self):\n        return self.name\nclass Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    published_date = models.DateTimeField(blank=True, null=True)",
+        "detail": "blog.models",
         "documentation": {}
     },
     {
@@ -505,7 +648,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    published_date = models.DateTimeField(blank=True, null=True)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, editable=True)  # Change editable to True\n    def publish(self):\n        self.published_date = timezone.now()\n        self.save()",
+        "peekOfCode": "class Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    title = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    published_date = models.DateTimeField(blank=True, null=True)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, )  \n    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)\n    tags = models.ManyToManyField(Tag)\n    def publish(self):",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -514,7 +657,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),\n    path('post/new/', views.post_new, name='post_new'),\n    path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new/', views.post_new, name='post_new'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),\n    path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),\n    path('cat/<category_slug>',views.Cat_Details,name='Cat_post')\n]",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -523,7 +666,16 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    return render(request, 'blog/post_list.html', {'posts': posts})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():",
+        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\ndef Cat_list(request):\n    # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/Cat_list.html', {'categories':categories})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
+        "label": "Cat_list",
+        "kind": 2,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "def Cat_list(request):\n    # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/Cat_list.html', {'categories':categories})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef Cat_Details(request, category_slug):\n    categories = get_object_or_404(Category, title=category_slug)\n    posts = Post.objects.filter(post_cat=categories)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -532,7 +684,16 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user\n            post.published_date = timezone.now()",
+        "peekOfCode": "def post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    return render(request, 'blog/post_detail.html', {'post': post})\ndef Cat_Details(request, category_slug):\n    categories = get_object_or_404(Category, title=category_slug)\n    posts = Post.objects.filter(post_cat=categories)\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
+        "label": "Cat_Details",
+        "kind": 2,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "def Cat_Details(request, category_slug):\n    categories = get_object_or_404(Category, title=category_slug)\n    posts = Post.objects.filter(post_cat=categories)\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\ndef post_new(request):\n    if request.method == \"POST\":\n        form = PostForm(request.POST)\n        if form.is_valid():\n            post = form.save(commit=False)\n            post.author = request.user",
         "detail": "blog.views",
         "documentation": {}
     },

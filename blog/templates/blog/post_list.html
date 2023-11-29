@@ -1,13 +1,20 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    {% if posts.count < 1 %}
+    <h1>No Post.</h1>
+    {% else %}
     {% for post in posts %}
         <article class="post">
             <time class="date">
                 {{ post.published_date }}
             </time>
-            <h2><a href="{% url 'post_detail' post_slug=post.post_slug %}">{{ post.title }}</a></h2>
+            <h2><a href="{% url 'post_detail' post_slug=post.post_slug %}">{{ post.title }}</a>
+           </h2>
+           <p style="color: blue;"> {{post.post_cat.title}}</p>
             <p>{{ post.text|linebreaksbr|truncatewords:15 }}</p>
         </article>
     {% endfor %}
+    {% endif %}
+    
 {% endblock %}

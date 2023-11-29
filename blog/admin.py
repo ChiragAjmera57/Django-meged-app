@@ -1,12 +1,16 @@
 from django.contrib import admin
-from .models import Post
+from .models import Category, Post, Tag
 
-class PostAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {"fields": ['title', 'author', 'published_date', 'post_slug']}),
-       
-    ]
-    list_display = ('title', 'author', 'published_date', 'post_slug')
-    search_fields = ['title', 'text',"post_slug"]
+# class CategoryInline(admin.TabularInline):  # or use admin.StackedInline for a stacked display
+#     model = Category
+#     extra = 1  # Number of empty forms to show
 
-admin.site.register(Post, PostAdmin)
+# class PostAdmin(admin.ModelAdmin):
+#     inlines = [CategoryInline]
+#     list_display = ('title', 'author', 'published_date')  # Add other fields you want to display in the list
+
+# admin.site.register(Post, PostAdmin)
+# admin.site.register(Category)
+admin.site.register(Post)
+admin.site.register(Category)
+admin.site.register(Tag)
