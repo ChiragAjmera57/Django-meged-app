@@ -99,11 +99,8 @@ h4 {
     display: flex;
     justify-content: space-around;
 }
-.list-artile{
-    transition: background-color 0.3s;
-}
-.list-artile:hover{
-    background-color: rgb(213, 210, 210);
-    cursor: pointer;
-    animation: ease-in 3s;
+
+.list-artile h2:hover{
+    color: red;
+    background-color: #fff;
 }

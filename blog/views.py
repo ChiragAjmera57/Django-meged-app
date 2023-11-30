@@ -2,7 +2,7 @@ from django.shortcuts import redirect
 from .forms import PostForm
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Category, Post
+from .models import Category, Post, Tag
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
@@ -29,6 +29,7 @@ def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            print(form)
             user = form.save()
             login(request, user)
             return redirect('post_list')
@@ -51,6 +52,12 @@ def Cat_list(request):
     return render(request, 'blog/Cat_list.html', {'categories':categories})
 
 @login_required(login_url='login')
+def Tag_list(request):
+    # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    tags = Tag.objects.all()
+    return render(request, 'blog/Tag_list.html', {'tags':tags})
+
+@login_required(login_url='login')
 def post_detail(request, post_slug):
     post = get_object_or_404(Post, post_slug=post_slug)
     return render(request, 'blog/post_detail.html', {'post': post})
@@ -60,8 +67,16 @@ def Cat_Details(request, category_slug):
     categories = get_object_or_404(Category, title=category_slug)
     posts = Post.objects.filter(post_cat=categories)
 
-   
     return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})
+
+
+@login_required(login_url='login')
+def Tag_Details(request, tag_slug):
+    tags = get_object_or_404(Tag, name=tag_slug)
+    posts = Post.objects.filter(tags=tags)
+    print(tags,posts)
+
+    return render(request, 'blog/post_list.html', {'posts': posts})
 
 @login_required(login_url='login')
 def post_new(request):

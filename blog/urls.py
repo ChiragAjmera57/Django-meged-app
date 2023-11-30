@@ -9,7 +9,9 @@ urlpatterns = [
     path('logout',views.LogoutInterface.as_view()),
     path('register/', views.register_view, name='register'),
     path('post/cat', views.Cat_list, name='Cat_list'),
+    path('post/tag', views.Tag_list, name='Tag_list'),
     path('post/<post_slug>/', views.post_detail, name='post_detail'),
     path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),
-    path('cat/<category_slug>',views.Cat_Details,name='Cat_post')
+    path('cat/<category_slug>',views.Cat_Details,name='Cat_post'),
+    path('tag/<tag_slug>',views.Tag_Details,name='Tag_post')
 ]
