@@ -7,35 +7,36 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
-
+from django.contrib.auth.decorators import login_required
 from .models import Choice, Question
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class IndexView(generic.ListView):
+
+class IndexView(generic.ListView,LoginRequiredMixin):
     template_name = "polls/index.html"
     context_object_name = "latest_question_list"
     slug_field = 'que_slug'
     slug_url_kwarg = 'que_slug'
+    success_url = '/polls'
 
     def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by("-pub_date")[:5]
+        return Question.objects.order_by("-pub_date")
 
-
-class DetailView(generic.DetailView):
+class DetailView(generic.DetailView,LoginRequiredMixin):
     model = Question
     slug_field = 'que_slug'
     slug_url_kwarg = 'que_slug'
     template_name = "polls/detail.html"
 
 
-class ResultsView(generic.DetailView):
+class ResultsView(generic.DetailView,LoginRequiredMixin):
     model = Question
     template_name = "polls/results.html"
     slug_field = 'que_slug'
     slug_url_kwarg = 'que_slug'
 
 
-
+@login_required(login_url='/login')
 def vote(request, que_slug):
     question = get_object_or_404(Question, que_slug=que_slug)
     slug_field = 'que_slug'

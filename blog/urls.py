@@ -1,9 +1,13 @@
 from django.urls import path
+from blog.views import LogoutInterface
 from . import views
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
     path('post/new/', views.post_new, name='post_new'),
+    path('login/', views.login_view, name='login'),
+    path('logout',views.LogoutInterface.as_view()),
+    path('register/', views.register_view, name='register'),
     path('post/cat', views.Cat_list, name='Cat_list'),
     path('post/<post_slug>/', views.post_detail, name='post_detail'),
     path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),
