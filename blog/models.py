@@ -4,15 +4,7 @@ from autoslug import AutoSlugField
 from django.utils import timezone
 
 
-class User(models.Model):
-    Username = models.CharField(max_length=60)
-    Password = models.CharField(max_length=60)
-    FullName = models.CharField(max_length=60,editable=True,null=True)
-    MobileNo = models.PositiveIntegerField(null=True,editable=True,unique=True)
-    Email = models.CharField(max_length=80,editable=True,null=True,unique=True)
-    Address = models.TextField(editable=True,null=True,unique=True)
-    def __str__(self):
-        return self.Username
+
     
 class Category(models.Model):
     # post = models.ForeignKey(Post,on_delete=models.CASCADE)

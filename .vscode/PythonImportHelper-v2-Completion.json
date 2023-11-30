@@ -331,6 +331,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseUserManager",
+        "importPath": "django.contrib.auth.base_user",
+        "description": "django.contrib.auth.base_user",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.base_user",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -485,6 +493,54 @@
         "documentation": {}
     },
     {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UserChangeForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUser",
+        "importPath": "account.models",
+        "description": "account.models",
+        "isExtraImport": true,
+        "detail": "account.models",
+        "documentation": {}
+    },
+    {
         "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -581,19 +637,11 @@
         "documentation": {}
     },
     {
-        "label": "AuthenticationForm",
-        "importPath": "django.contrib.auth.forms",
-        "description": "django.contrib.auth.forms",
+        "label": "CustomUserCreationForm",
+        "importPath": "blog.customUserCreate",
+        "description": "blog.customUserCreate",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.forms",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreationForm",
-        "importPath": "django.contrib.auth.forms",
-        "description": "django.contrib.auth.forms",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.forms",
+        "detail": "blog.customUserCreate",
         "documentation": {}
     },
     {
@@ -789,6 +837,15 @@
         "documentation": {}
     },
     {
+        "label": "UserManager",
+        "kind": 6,
+        "importPath": "account.manager",
+        "description": "account.manager",
+        "peekOfCode": "class UserManager(BaseUserManager):\n    def create_user(self, phone_number, password=None, **extra_fields):\n        if not phone_number:\n            raise ValueError('Phone number is required')\n        extra_fields.setdefault('is_staff', False)\n        extra_fields.setdefault('is_superuser', False)\n        user = self.model(phone_number=phone_number, **extra_fields)\n        user.set_password(password)\n        user.save(using=self._db)\n        return user",
+        "detail": "account.manager",
+        "documentation": {}
+    },
+    {
         "label": "CustomUser",
         "kind": 6,
         "importPath": "account.models",
@@ -906,6 +963,24 @@
         "documentation": {}
     },
     {
+        "label": "CustomUserCreationForm",
+        "kind": 6,
+        "importPath": "blog.customUserCreate",
+        "description": "blog.customUserCreate",
+        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', 'phone', 'first_name', 'last_name', 'gender', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email','first_name', 'last_name', 'gender', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')",
+        "detail": "blog.customUserCreate",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserChangeForm",
+        "kind": 6,
+        "importPath": "blog.customUserCreate",
+        "description": "blog.customUserCreate",
+        "peekOfCode": "class CustomUserChangeForm(UserChangeForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email','first_name', 'last_name', 'gender', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')",
+        "detail": "blog.customUserCreate",
+        "documentation": {}
+    },
+    {
         "label": "PostForm",
         "kind": 6,
         "importPath": "blog.forms",
@@ -921,15 +996,6 @@
         "description": "blog.middleware",
         "peekOfCode": "class RestrictAccessMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    def __call__(self, request):\n        response = self.get_response(request)\n        # Check if the user is logged out and trying to access a restricted route\n        if not request.user.is_authenticated and request.path in ['/restricted-route/', '/','post_new']:\n            return redirect(reverse('login'))  # Redirect to the login page\n        return response",
         "detail": "blog.middleware",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "kind": 6,
-        "importPath": "blog.models",
-        "description": "blog.models",
-        "peekOfCode": "class User(models.Model):\n    Username = models.CharField(max_length=60)\n    Password = models.CharField(max_length=60)\n    FullName = models.CharField(max_length=60,editable=True,null=True)\n    MobileNo = models.PositiveIntegerField(null=True,editable=True,unique=True)\n    Email = models.CharField(max_length=80,editable=True,null=True,unique=True)\n    Address = models.TextField(editable=True,null=True,unique=True)\n    def __str__(self):\n        return self.Username\nclass Category(models.Model):",
-        "detail": "blog.models",
         "documentation": {}
     },
     {
@@ -991,7 +1057,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def register_view(request):\n    if request.method == 'POST':\n        form = UserCreationForm(request.POST)\n        if form.is_valid():\n            print(form)\n            user = form.save()\n            login(request, user)\n            return redirect('post_list')\n    else:\n        form = UserCreationForm()",
+        "peekOfCode": "def register_view(request):\n    if request.method == 'POST':\n        form = CustomUserCreationForm(request.POST)\n        if form.is_valid():\n            print(form)\n            user = form.save()\n            login(request, user)\n            return redirect('post_list')\n    else:\n        form = CustomUserCreationForm()",
         "detail": "blog.views",
         "documentation": {}
     },

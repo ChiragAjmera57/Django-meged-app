@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from blog.customUserCreate import CustomUserCreationForm
 from .forms import PostForm
 from django.shortcuts import render
 from django.utils import timezone
@@ -27,14 +28,14 @@ def login_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             print(form)
             user = form.save()
             login(request, user)
             return redirect('post_list')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
 
     return render(request, 'blog/register.html', {'form': form})   
 
