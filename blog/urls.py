@@ -10,6 +10,7 @@ urlpatterns = [
     path('edit_profile/', views.edit_profile, name='edit_profile'),
     path('post/cat', views.Cat_list, name='Cat_list'),
     path('post/tag', views.Tag_list, name='Tag_list'),
+    path('post/reply/<int:comment_id>',views.reply_to_comment,name='reply_to_comment'),
     path('post/<post_slug>/', views.post_detail, name='post_detail'),
     path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),
     path('cat/<category_slug>',views.Cat_Details,name='Cat_post'),

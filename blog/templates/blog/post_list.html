@@ -16,10 +16,12 @@
                 <div class="tags">
                     {% for tag in post.tags.all %}
                     <a href="{%url 'Tag_post' tag_slug=tag.name%}" class="btn btn-secondary">{{ tag.name }}</a>
-                {% endfor %}
+                     {% endfor %}
                 </div>
+                {{post.blog_img}}
                 <p class="card-text" style="color: blue;">Category: {{ post.post_cat.title }}</p>
                 <p class="card-text">{{ post.text|linebreaksbr|truncatewords:15 }}</p>
+                <img src="{{post.blog_img}}" alt="">
             </div>
         </article>
     {% endfor %}

@@ -4,10 +4,10 @@
     <article class="post">
         <aside class="actions">
             <a class="btn btn-secondary" href="{% url 'post_edit' post_slug=post.post_slug %}">
-                edit
+                Edit
             </a>
         </aside>
-        <p style="color: blue;">{{post.post_cat}}</p>
+        <p style="color: blue;">{{ post.post_cat }}</p>
         {% if post.published_date %}
             <time class="date">
                 {{ post.published_date }}
@@ -16,9 +16,49 @@
         <h2>{{ post.title }}</h2>
         <div class="tags">
             {% for tag in post.tags.all %}
-            <a href="{%url 'Tag_post' tag_slug=tag.name%}" class="btn btn-secondary">{{ tag.name }}</a>
-        {% endfor %}
+                <a href="{% url 'Tag_post' tag_slug=tag.name %}" class="btn btn-secondary">{{ tag.name }}</a>
+            {% endfor %}
         </div>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    
+    <form id="comment-form" method="post" action="{% url 'post_detail' post_slug=post.post_slug %}">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
+
+    <hr>
+
+    {% for comment in comments %}
+        <div class="comment">
+            <p><span class="text-muted"> {{ comment.user.username }}</span> {{ comment.text }}</p>
+            <p class="text-muted">{{ comment.created_at|timesince }}</p>
+            
+            {% for reply in comment.reply_set.all %}
+                <div class="reply" style="margin-left: 55px;">
+                    <p><span class="text-muted">{{ reply.user.username }}</span>{{ reply.text }}</p>
+                </div>
+            {% endfor %}
+
+            <a  class="btn btn-secondary btn-sm reply-btn" onclick="replyFrom(this)" >Reply</a>
+            <form id="reply-form" style="display: none;" method="post" action="{% url 'reply_to_comment' comment_id=comment.id %}">
+                {% csrf_token %}
+                {{ reply_form.as_p }}
+                <button type="submit">Add Reply</button>
+            </form>
+        </div>
+
+        <hr>
+
+    {% endfor %}
+    <script>
+       document.querySelectorAll('.reply-btn',()=>{}).style.display = 'none'
+       btn = document.querySelectorAll('#comment-form')
+       btn.style.display = 'none'
+       function replyFrom(e){
+        console.log('sss',e.nextElementSibling.style.display)
+        e.nextElementSibling.style.display = e.nextElementSibling.style.display=='none' ? 'block' : 'none'
+       }
+    </script>
 {% endblock %}

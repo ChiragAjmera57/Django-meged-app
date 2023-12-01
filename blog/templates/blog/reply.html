@@ -1,0 +1,14 @@
+<!-- your_reply_template.html -->
+{% for reply in comment.reply_set.all %}
+    <div class="reply">
+        <p>{{ reply.text }}</p>
+        <p>Reply Posted by: {{ reply.user.username }} at {{ reply.created_at }}</p>
+    </div>
+{% endfor %}
+
+<!-- Add reply form -->
+<form method="post" action="{% url 'reply_to_comment' comment_id=comment.id %}">
+    {% csrf_token %}
+    {{ reply_form.as_p }}
+    <button type="submit">Add Reply</button>
+</form>
