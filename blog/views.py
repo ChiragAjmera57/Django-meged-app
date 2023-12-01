@@ -1,12 +1,12 @@
 from django.shortcuts import redirect
-from blog.customUserCreate import CustomUserCreationForm
+from blog.customUserCreate import CustomUserChangeForm, CustomUserCreationForm
 from .forms import PostForm
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Category, Post, Tag
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 
@@ -113,3 +113,14 @@ def post_edit(request, post_slug):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+@login_required(login_url='login')
+def edit_profile(request):
+    if request.method == 'POST':
+        form = CustomUserChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('account/profile_update.html') 
+    else:
+        form = CustomUserChangeForm(instance=request.user)
+
+    return render(request, 'account/edit_profile.html', {'form': form})
