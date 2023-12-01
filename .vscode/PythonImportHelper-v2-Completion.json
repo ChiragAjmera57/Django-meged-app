@@ -25,6 +25,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -48,6 +56,54 @@
         "importPath": "django.contrib.auth.validators",
         "description": "django.contrib.auth.validators",
         "detail": "django.contrib.auth.validators",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -413,22 +469,6 @@
         "documentation": {}
     },
     {
-        "label": "LogoutInterface",
-        "importPath": "blog.views",
-        "description": "blog.views",
-        "isExtraImport": true,
-        "detail": "blog.views",
-        "documentation": {}
-    },
-    {
-        "label": "edit_profile",
-        "importPath": "blog.views",
-        "description": "blog.views",
-        "isExtraImport": true,
-        "detail": "blog.views",
-        "documentation": {}
-    },
-    {
         "label": "CustomUserChangeForm",
         "importPath": "blog.customUserCreate",
         "description": "blog.customUserCreate",
@@ -482,6 +522,15 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -567,6 +616,14 @@
         "documentation": {}
     },
     {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -590,6 +647,33 @@
         "description": "blog.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomUser',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "blog.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0002_alter_customuser_country",
+        "description": "blog.migrations.0002_alter_customuser_country",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='country',\n            field=models.CharField(blank=True, choices=[('CN', 'China'), ('IN', 'India'), ('US', 'United States'), ('ID', 'Indonesia'), ('PK', 'Pakistan'), ('BR', 'Brazil'), ('NG', 'Nigeria'), ('BD', 'Bangladesh'), ('RU', 'Russia'), ('MX', 'Mexico'), ('JP', 'Japan'), ('ET', 'Ethiopia'), ('PH', 'Philippines'), ('EG', 'Egypt'), ('VN', 'Vietnam'), ('CD', 'Democratic Republic of the Congo'), ('TR', 'Turkey'), ('IR', 'Iran'), ('DE', 'Germany'), ('TH', 'Thailand'), ('GB', 'United Kingdom'), ('FR', 'France'), ('IT', 'Italy'), ('TZ', 'Tanzania'), ('ZA', 'South Africa'), ('KR', 'South Korea'), ('CO', 'Colombia'), ('KE', 'Kenya'), ('AR', 'Argentina'), ('UA', 'Ukraine'), ('SD', 'Sudan'), ('PL', 'Poland'), ('DZ', 'Algeria'), ('CA', 'Canada'), ('UG', 'Uganda'), ('MA', 'Morocco'), ('PE', 'Peru'), ('IQ', 'Iraq'), ('SA', 'Saudi Arabia'), ('UZ', 'Uzbekistan'), ('MY', 'Malaysia'), ('VE', 'Venezuela'), ('AF', 'Afghanistan'), ('GH', 'Ghana'), ('NP', 'Nepal'), ('YE', 'Yemen'), ('KP', 'North Korea'), ('MG', 'Madagascar'), ('CM', 'Cameroon'), ('CI', 'Ivory Coast'), ('AU', 'Australia'), ('NE', 'Niger'), ('TW', 'Taiwan'), ('LK', 'Sri Lanka'), ('BF', 'Burkina Faso'), ('ML', 'Mali'), ('RO', 'Romania'), ('MW', 'Malawi'), ('CL', 'Chile'), ('KZ', 'Kazakhstan'), ('ZM', 'Zambia'), ('GT', 'Guatemala'), ('EC', 'Ecuador'), ('SY', 'Syria'), ('NL', 'Netherlands'), ('SN', 'Senegal'), ('KP', 'Cambodia'), ('TD', 'Chad'), ('SO', 'Somalia'), ('ZW', 'Zimbabwe'), ('RW', 'Rwanda'), ('GN', 'Guinea'), ('BJ', 'Benin'), ('TN', 'Tunisia'), ('BE', 'Belgium'), ('CU', 'Cuba'), ('BO', 'Bolivia'), ('HT', 'Haiti'), ('GR', 'Greece'), ('DO', 'Dominican Republic'), ('CZ', 'Czech Republic'), ('PT', 'Portugal'), ('SV', 'El Salvador'), ('HN', 'Honduras')], max_length=50, null=True),\n        ),",
+        "detail": "blog.migrations.0002_alter_customuser_country",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0003_alter_customuser_country",
+        "description": "blog.migrations.0003_alter_customuser_country",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_alter_customuser_country'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='country',\n            field=models.CharField(blank=True, choices=[('AF', 'Afghanistan'), ('DZ', 'Algeria'), ('AR', 'Argentina'), ('AU', 'Australia'), ('BD', 'Bangladesh'), ('BE', 'Belgium'), ('BJ', 'Benin'), ('BO', 'Bolivia'), ('BR', 'Brazil'), ('BF', 'Burkina Faso'), ('KP', 'Cambodia'), ('CM', 'Cameroon'), ('CA', 'Canada'), ('TD', 'Chad'), ('CL', 'Chile'), ('CN', 'China'), ('CO', 'Colombia'), ('CU', 'Cuba'), ('CZ', 'Czech Republic'), ('CD', 'Democratic Republic of the Congo'), ('DO', 'Dominican Republic'), ('EC', 'Ecuador'), ('EG', 'Egypt'), ('SV', 'El Salvador'), ('ET', 'Ethiopia'), ('FR', 'France'), ('DE', 'Germany'), ('GH', 'Ghana'), ('GR', 'Greece'), ('GT', 'Guatemala'), ('GN', 'Guinea'), ('HT', 'Haiti'), ('HN', 'Honduras'), ('IN', 'India'), ('ID', 'Indonesia'), ('IR', 'Iran'), ('IQ', 'Iraq'), ('IT', 'Italy'), ('CI', 'Ivory Coast'), ('JP', 'Japan'), ('KZ', 'Kazakhstan'), ('KE', 'Kenya'), ('MG', 'Madagascar'), ('MW', 'Malawi'), ('MY', 'Malaysia'), ('ML', 'Mali'), ('MX', 'Mexico'), ('MA', 'Morocco'), ('NP', 'Nepal'), ('NL', 'Netherlands'), ('NE', 'Niger'), ('NG', 'Nigeria'), ('KP', 'North Korea'), ('PK', 'Pakistan'), ('PE', 'Peru'), ('PH', 'Philippines'), ('PL', 'Poland'), ('PT', 'Portugal'), ('RO', 'Romania'), ('RU', 'Russia'), ('RW', 'Rwanda'), ('SA', 'Saudi Arabia'), ('SN', 'Senegal'), ('SO', 'Somalia'), ('ZA', 'South Africa'), ('KR', 'South Korea'), ('LK', 'Sri Lanka'), ('SD', 'Sudan'), ('SY', 'Syria'), ('TW', 'Taiwan'), ('TZ', 'Tanzania'), ('TH', 'Thailand'), ('TN', 'Tunisia'), ('TR', 'Turkey'), ('UG', 'Uganda'), ('UA', 'Ukraine'), ('GB', 'United Kingdom'), ('US', 'United States'), ('UZ', 'Uzbekistan'), ('VE', 'Venezuela'), ('VN', 'Vietnam'), ('YE', 'Yemen'), ('ZM', 'Zambia'), ('ZW', 'Zimbabwe')], max_length=50, null=True),\n        ),",
+        "detail": "blog.migrations.0003_alter_customuser_country",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0004_alter_customuser_img",
+        "description": "blog.migrations.0004_alter_customuser_img",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0003_alter_customuser_country'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='img',\n            field=models.ImageField(blank=True, null=True, upload_to='profile_images/'),\n        ),",
+        "detail": "blog.migrations.0004_alter_customuser_img",
         "documentation": {}
     },
     {
@@ -678,7 +762,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class CustomUser(AbstractUser):\n    GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\n    gender = models.CharField(max_length=60,null=True,choices=GENDER_CHOICES,blank=True)\n    phone = models.PositiveBigIntegerField(null=True,blank=True)\n    dob = models.DateField(null=True,blank=True)\n    img = models.ImageField(null=True,blank=True)\n    designation = models.CharField(max_length=50,null=True,blank=True)",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\n    COUNTRY_CHOICES = [\n    ('CN', 'China'),\n    ('IN', 'India'),\n    ('US', 'United States'),\n    ('ID', 'Indonesia'),",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -687,7 +771,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new/', views.post_new, name='post_new'),\n    path('login/', views.login_view, name='login'),\n    path('logout',views.LogoutInterface.as_view()),\n    path('register/', views.register_view, name='register'),\n    path('edit_profile/', edit_profile, name='edit_profile'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/tag', views.Tag_list, name='Tag_list'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new/', views.post_new, name='post_new'),\n    path('login/', views.login_view, name='login'),\n    path('logout',views.LogoutInterface.as_view()),\n    path('register/', views.register_view, name='register'),\n    path('edit_profile/', views.edit_profile, name='edit_profile'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/tag', views.Tag_list, name='Tag_list'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -795,7 +879,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def edit_profile(request):\n    if request.method == 'POST':\n        form = CustomUserChangeForm(request.POST, instance=request.user)\n        if form.is_valid():\n            form.save()\n            return redirect('account/profile_update.html') \n    else:\n        form = CustomUserChangeForm(instance=request.user)\n    return render(request, 'account/edit_profile.html', {'form': form})",
+        "peekOfCode": "def edit_profile(request):\n    if request.method == 'POST':\n        form = CustomUserChangeForm(request.POST,request.FILES, instance=request.user)\n        print(form) \n        if form.is_valid():\n            form.save()\n            return redirect('post_list') \n    else:\n        form = CustomUserChangeForm(instance=request.user)\n    print(form)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1074,7 +1158,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \nLOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'",
+        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \nLOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1083,7 +1167,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \nLOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \nLOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1092,7 +1176,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = 'post_list' \nLOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'",
+        "peekOfCode": "LOGIN_REDIRECT_URL = 'post_list' \nLOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1101,7 +1185,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'",
+        "peekOfCode": "LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1110,7 +1194,25 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'blog.CustomUser'",
+        "peekOfCode": "AUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1119,7 +1221,7 @@
         "kind": 5,
         "importPath": "project01.urls",
         "description": "project01.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"polls/\", include(\"polls.urls\")),\n    path('', include('blog.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"polls/\", include(\"polls.urls\")),\n    path('', include('blog.urls')),\n]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "project01.urls",
         "documentation": {}
     },

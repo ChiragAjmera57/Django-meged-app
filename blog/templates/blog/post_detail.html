@@ -14,6 +14,11 @@
             </time>
         {% endif %}
         <h2>{{ post.title }}</h2>
+        <div class="tags">
+            {% for tag in post.tags.all %}
+            <a href="{%url 'Tag_post' tag_slug=tag.name%}" class="btn btn-secondary">{{ tag.name }}</a>
+        {% endfor %}
+        </div>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
 {% endblock %}

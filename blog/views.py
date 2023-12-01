@@ -9,6 +9,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
+import re
 
 class LogoutInterface(LogoutView):
     template_name = 'blog/logout.html'
@@ -116,11 +117,15 @@ def post_edit(request, post_slug):
 @login_required(login_url='login')
 def edit_profile(request):
     if request.method == 'POST':
-        form = CustomUserChangeForm(request.POST, instance=request.user)
+        form = CustomUserChangeForm(request.POST,request.FILES, instance=request.user)
+        print(form) 
         if form.is_valid():
             form.save()
-            return redirect('account/profile_update.html') 
+            return redirect('post_list') 
     else:
         form = CustomUserChangeForm(instance=request.user)
+       
+        
+    print(form)
 
-    return render(request, 'account/edit_profile.html', {'form': form})
+    return render(request, 'blog/edit_profile.html', {'form': form})
