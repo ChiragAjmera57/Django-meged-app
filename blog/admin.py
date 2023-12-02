@@ -56,13 +56,13 @@ class CustomUserAdmin(UserAdmin):
     )
 
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password', 'first_name', 'last_name', 'last_login')}),
+        (None, {'fields': ('username', 'email', 'password', 'first_name', 'last_name', 'last_login','is_staff')}),
         ("Other", {'fields': ('gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img'), "classes": ("collapse",)}),
     )
 
 class CustomPostAdmin(admin.ModelAdmin):
     model = Post
-    list_display = ('title','post_cat')
+    list_display = ('title','post_cat','img_preview')
     list_filter = ["tags"]
     search_fields = ('title',)
 

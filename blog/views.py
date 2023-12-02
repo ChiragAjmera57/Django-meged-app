@@ -58,7 +58,7 @@ def Tag_list(request):
 
 def post_detail(request, post_slug):
     post = get_object_or_404(Post, post_slug=post_slug)
-    comments = Comment.objects.filter(post=post).order_by('-created_at')
+    comments = Comment.objects.filter(post=post)
     comment_form = CommentForm()
     reply_form = ReplyForm()  # Create an instance of ReplyForm
 
@@ -113,7 +113,7 @@ def Tag_Details(request, tag_slug):
 @login_required(login_url='login')
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             print(form)
             post = form.save(commit=False)
@@ -131,9 +131,8 @@ def post_new(request):
 def post_edit(request, post_slug):
     post = get_object_or_404(Post, post_slug=post_slug)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST,request.FILES, instance=post)
         if form.is_valid():
-            print(form)
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()

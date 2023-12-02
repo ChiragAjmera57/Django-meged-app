@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from autoslug import AutoSlugField
 from django.utils import timezone
+from django.utils.html import mark_safe
 
 
 
@@ -25,11 +26,15 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     published_date = models.DateTimeField(blank=True, null=True)
-    blog_img = models.ImageField(null=True,blank=True,upload_to='blog_images/',)
+    image = models.ImageField(null=True,blank=True)
+    feature_img = models.ImageField(null=True,blank=True)
     post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, )  
     post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
     tags = models.ManyToManyField(Tag)
-
+    def img_preview(self): #new
+        return mark_safe('<img src = "{url}" width = "25"/>'.format(
+             url = self.image.url
+         ))
     def publish(self):
         self.published_date = timezone.now()
         self.save()
