@@ -5,7 +5,8 @@ from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
 from django.http import HttpResponse
 import csv
-
+from django.urls import reverse
+from django.utils.html import format_html
 
 
 class CustomUserAdmin(UserAdmin):
@@ -65,7 +66,10 @@ class CustomPostAdmin(admin.ModelAdmin):
     list_display = ('title','post_cat','img_preview')
     list_filter = ["tags"]
     search_fields = ('title',)
-
+    def view_on_site(self, obj):
+        url = reverse("post_detail", kwargs={"post_slug": obj.post_slug})
+        return url
+   
     
 class CustomReplyAdmin(admin.ModelAdmin):
     model = Reply

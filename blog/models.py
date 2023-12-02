@@ -31,7 +31,7 @@ class Post(models.Model):
     post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, )  
     post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
     tags = models.ManyToManyField(Tag)
-    def img_preview(self): #new
+    def img_preview(self): 
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
              url = self.image.url
          ))
@@ -135,7 +135,6 @@ class CustomUser(AbstractUser):
     ]
     COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
 
-    # Add more countries as needed
     gender = models.CharField(max_length=60,null=True,choices=GENDER_CHOICES,blank=True)
     phone = models.PositiveBigIntegerField(null=True,blank=True)
     dob = models.DateField(null=True,blank=True)
@@ -148,6 +147,10 @@ class CustomUser(AbstractUser):
     country = models.CharField(max_length=50,null=True,blank=True,choices=COUNTRY_CHOICES)
     def __str__(self):
         return self.username
+    def img_preview(self): 
+        return mark_safe('<img src = "{url}" width = "25"/>'.format(
+             url = self.img.url
+         ))
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)

@@ -10,10 +10,11 @@ from django.contrib.auth import login
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 import re
+from django.contrib.auth import logout
 
-class LogoutInterface(LogoutView):
-    template_name = 'blog/logout.html'
-    
+def logout_view(request):
+    logout(request)
+    return redirect('login')  
     
 def login_view(request):
     if request.method == 'POST':
