@@ -3,18 +3,17 @@ from blog.customUserCreate import CustomUserChangeForm, CustomUserCreationForm
 from .forms import CommentForm, PostForm, ReplyForm
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Category, Comment, Post, Tag
+from .models import Category, Comment, CustomUser, Post, Tag
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
-from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 import re
 from django.contrib.auth import logout
 
 def logout_view(request):
     logout(request)
-    return redirect('login')  
+    return redirect('post_list')  
     
 def login_view(request):
     if request.method == 'POST':
@@ -32,10 +31,11 @@ def register_view(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            print(form)
             user = form.save()
+            user.backend = 'blog.backends.EmailOrUsernameModelBackend'
+            user.save()
             login(request, user)
-            return redirect('post_list')
+            return redirect('login')
     else:
         form = CustomUserCreationForm()
 
@@ -82,7 +82,7 @@ def post_detail(request, post_slug):
             return redirect('post_detail', post_slug=post_slug)
 
     return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'reply_form': reply_form})
-def reply_to_comment(request, comment_id):
+def reply_to_comment(request, comment_id,post_slug):
     comment = get_object_or_404(Comment, id=comment_id)
     reply_form = ReplyForm()
 
@@ -93,7 +93,7 @@ def reply_to_comment(request, comment_id):
             new_reply.user = request.user
             new_reply.comment = comment
             new_reply.save()
-            return redirect('post_list')
+            return redirect('post_detail',post_slug=post_slug)
 
     return render(request, 'blog/reply.html', {'comment': comment, 'reply_form': reply_form})
 
@@ -116,7 +116,6 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST,request.FILES)
         if form.is_valid():
-            print(form)
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
@@ -160,3 +159,6 @@ def edit_profile(request):
 
     return render(request, 'blog/edit_profile.html', {'form': form})
 
+def user_detail(request, username):
+    user = get_object_or_404(CustomUser, username=username)
+    return render(request, 'blog/userdetails.html', {'user': user})

@@ -43,7 +43,7 @@
             {% endfor %}
 
             <a  class="btn btn-secondary btn-sm reply-btn" onclick="replyFrom(this)" >Reply</a>
-            <form id="reply-form" style="display: none;" method="post" action="{% url 'reply_to_comment' comment_id=comment.id %}">
+            <form id="reply-form" style="display: none;" method="post" action="{% url 'reply_to_comment' post_slug=post.post_slug comment_id=comment.id %}">
                 {% csrf_token %}
                 {{ reply_form.as_p }}
                 <button type="submit">Add Reply</button>

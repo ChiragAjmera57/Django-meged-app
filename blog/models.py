@@ -9,7 +9,6 @@ from django.utils.html import mark_safe
 
     
 class Category(models.Model):
-    # post = models.ForeignKey(Post,on_delete=models.CASCADE)
     title = models.CharField(max_length=60)
     def __str__(self):
         return self.title
@@ -134,7 +133,6 @@ class CustomUser(AbstractUser):
     ('HN', 'Honduras'),
     ]
     COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
-
     gender = models.CharField(max_length=60,null=True,choices=GENDER_CHOICES,blank=True)
     phone = models.PositiveBigIntegerField(null=True,blank=True)
     dob = models.DateField(null=True,blank=True)
@@ -149,6 +147,10 @@ class CustomUser(AbstractUser):
         return self.username
     def img_preview(self): 
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
+             url = self.img.url
+         ))
+    def img_preview2(self): 
+        return mark_safe('<img src = "{url}" width = "50"/>'.format(
              url = self.img.url
          ))
 

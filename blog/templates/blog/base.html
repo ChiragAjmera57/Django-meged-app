@@ -18,10 +18,21 @@
 
                 <h1 class="h3 mb-0"><a class="text-light text-decoration-none" href="{% url 'Cat_list' %}">Category</a></h1>
                 <h1 class="h3 mb-0"><a class="text-light text-decoration-none" href="{% url 'Tag_list' %}">Tags</a></h1>
-                <h1 class="h3 mb-0"><a class="text-light text-decoration-none" href="{% url 'edit_profile' %}">Profile</a></h1>
+                {% if user.is_authenticated %}
+                <h1 class="h3 mb-0"><a class="text-light text-decoration-none" href="{% url 'user_detail' username=user.username %}">Profile</a></h1>
+                
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'register' %}">Register</a>
+                 {% endif %}
             </div>
+            
             <a class="btn btn-primary " href="/polls">Poll App</a>
+           
+            {% if user.is_authenticated %}
             <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+             {% endif %}
         </div>
     </header>
     <main class="content container">

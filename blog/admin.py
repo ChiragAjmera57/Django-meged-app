@@ -14,15 +14,12 @@ class CustomUserAdmin(UserAdmin):
     actions = ['export_as_csv']
 
     def export_as_csv(self, request, queryset):
-        # Define the response as a CSV file
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename="users.csv"'
 
-        # Create a CSV writer and write the header
         writer = csv.writer(response)
         writer.writerow(['Username', 'Email', 'First Name', 'Last Name', 'Gender', 'Phone', 'Date of Birth', 'Designation', 'Address', 'Pincode', 'City', 'State', 'Country'])
 
-        # Write the user data to the CSV file
         for user in queryset:
             writer.writerow([
                 user.username,
@@ -74,6 +71,8 @@ class CustomPostAdmin(admin.ModelAdmin):
 class CustomReplyAdmin(admin.ModelAdmin):
     model = Reply
     search_fields = ('text',)
+    list_display = ['user','text','created_at','comment']
+    list_filter = ["created_at"]
     def has_delete_permission(self, request, obj=None):
         return False
 
@@ -81,12 +80,15 @@ class CustomReplyAdmin(admin.ModelAdmin):
 class customCatAdmin(admin.ModelAdmin):
     model = Category
     list_filter = ['title']
+    search_fields = ('title',)
     def has_delete_permission(self, request, obj=None):
         return False
     
 class CustomCommentAdmin(admin.ModelAdmin):
     model = Comment
+    list_display = ['user','post','text','created_at']
     search_fields = ('text',)
+    list_filter = ["created_at"]
     def has_delete_permission(self, request, obj=None):
         return False
     
