@@ -1,8 +1,6 @@
 from django import forms
-
-from .models import Comment, Post, Reply
+from .models import *
 from django import forms
-from blog.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 
 
@@ -20,3 +18,16 @@ class ReplyForm(forms.ModelForm):
     class Meta:
         model = Reply
         fields = ['text']
+        
+        
+class CustomUserCreationForm(UserCreationForm):
+
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'email', 'password1', 'password2', 'phone', 'first_name', 'last_name', 'gender', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')
+        
+class CustomUserChangeForm(UserChangeForm):
+
+    class Meta(UserCreationForm.Meta):
+        model = CustomUser
+        fields = UserCreationForm.Meta.fields + ("email", "phone", "first_name", "last_name", "gender", "dob", "designation", "address", "pincode", "city", "state", "country", "img")

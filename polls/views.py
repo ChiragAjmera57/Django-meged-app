@@ -1,15 +1,13 @@
-from django.http import HttpResponse
-from .models import Question
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, render
-from django.http import Http404
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.http import  HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
+from .models import Question
 from .models import Choice, Question
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class IndexView(generic.ListView,LoginRequiredMixin):
@@ -56,7 +54,5 @@ def vote(request, que_slug):
     else:
         selected_choice.votes += 1
         selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
+       
         return HttpResponseRedirect(reverse("polls:results", args=(question.que_slug,)))

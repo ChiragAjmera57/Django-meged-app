@@ -6,47 +6,7 @@ from django.utils import timezone
 from django.utils.html import mark_safe
 
 
-
-    
-class Category(models.Model):
-    title = models.CharField(max_length=60)
-    def __str__(self):
-        return self.title
-
-
-class Tag(models.Model):
-    name = models.CharField(max_length=50, unique=True,null=True)
-    def __str__(self):
-        return self.name
-    
-class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now, editable=False)
-    published_date = models.DateTimeField(blank=True, null=True)
-    image = models.ImageField(null=True,blank=True)
-    feature_img = models.ImageField(null=True,blank=True)
-    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, )  
-    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
-    tags = models.ManyToManyField(Tag)
-    def img_preview(self): 
-        return mark_safe('<img src = "{url}" width = "25"/>'.format(
-             url = self.image.url
-         ))
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
-
-    def __str__(self):
-        return self.title
-    
-class CustomUser(AbstractUser):
-    GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-    )
-    COUNTRY_CHOICES = [
+COUNTRY_CHOICES = [
     ('CN', 'China'),
     ('IN', 'India'),
     ('US', 'United States'),
@@ -132,17 +92,27 @@ class CustomUser(AbstractUser):
     ('SV', 'El Salvador'),
     ('HN', 'Honduras'),
     ]
+
+
+
+class CustomUser(AbstractUser):
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+    )
+   
     COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
-    gender = models.CharField(max_length=60,null=True,choices=GENDER_CHOICES,blank=True)
-    phone = models.PositiveBigIntegerField(null=True,blank=True)
-    dob = models.DateField(null=True,blank=True)
-    img = models.ImageField(null=True,blank=True,upload_to='profile_images/',)
+    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)
+    city = models.CharField(max_length=80,default='Bhilwara',blank=True)
+    state = models.CharField(max_length=90,default='Rajasthan',blank=True)
+    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)
     designation = models.CharField(max_length=50,null=True,blank=True)
-    address = models.TextField(max_length=50,null=True,blank=True)
-    pincode = models.PositiveIntegerField(null=True,blank=True)
-    city = models.CharField(max_length=80,null=True,blank=True)
-    state = models.CharField(max_length=90,null=True,blank=True)
-    country = models.CharField(max_length=50,null=True,blank=True,choices=COUNTRY_CHOICES)
+    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)
+    phone = models.PositiveBigIntegerField(blank=True,default=0000000)
+    pincode = models.PositiveIntegerField(blank=True,null=True)
+    address = models.TextField(max_length=50,blank=True,null=True)
+    dob = models.DateField(blank=True,null=True)
+    
     def __str__(self):
         return self.username
     def img_preview(self): 
@@ -150,9 +120,45 @@ class CustomUser(AbstractUser):
              url = self.img.url
          ))
     def img_preview2(self): 
-        return mark_safe('<img src = "{url}" width = "50"/>'.format(
+        return mark_safe('<img src = "{url}" width = "100"/>'.format(
              url = self.img.url
          ))
+
+class Category(models.Model):
+    title = models.CharField(max_length=60)
+    description = models.TextField(max_length=120,default="Hii this is the discription")
+    def __str__(self):
+        return self.title
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True,null=True)
+    description = models.TextField(max_length=120,default="Hii this is the discription")
+    def __str__(self):
+        return self.name
+    
+class Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
+    tags = models.ManyToManyField(Tag)
+    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, )  
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now, editable=False)
+    published_date = models.DateTimeField(blank=True, null=True)
+    image = models.ImageField(null=True,blank=True)
+    feature_img = models.ImageField(null=True,blank=True)
+    def img_preview(self): 
+        return mark_safe('<img src = "{url}" width = "25"/>'.format(
+             url = self.image.url
+         ))
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
+    
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)

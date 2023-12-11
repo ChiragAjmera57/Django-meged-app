@@ -1,12 +1,10 @@
+from django.urls import reverse
 from django.contrib import admin
-from .models import Category, Comment, Post, Reply, Tag
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
 from django.http import HttpResponse
 import csv
-from django.urls import reverse
-from django.utils.html import format_html
+from django.contrib.auth.admin import UserAdmin
+from .models import *
+from .models import CustomUser
 
 
 class CustomUserAdmin(UserAdmin):
@@ -62,6 +60,7 @@ class CustomPostAdmin(admin.ModelAdmin):
     model = Post
     list_display = ('title','post_cat','img_preview')
     list_filter = ["tags"]
+    filter_horizontal = ('tags',)
     search_fields = ('title',)
     def view_on_site(self, obj):
         url = reverse("post_detail", kwargs={"post_slug": obj.post_slug})
@@ -79,7 +78,7 @@ class CustomReplyAdmin(admin.ModelAdmin):
 
 class customCatAdmin(admin.ModelAdmin):
     model = Category
-    list_filter = ['title']
+    list_filter = ['title','description']
     search_fields = ('title',)
     def has_delete_permission(self, request, obj=None):
         return False
@@ -95,7 +94,7 @@ class CustomCommentAdmin(admin.ModelAdmin):
 class CustomtagAdmin(admin.ModelAdmin):
     model = Tag
     search_fields = ('name',)
-    list_filter = ['name']
+    list_filter = ['name','description']
     def has_delete_permission(self, request, obj=None):
         return False
 

@@ -21,7 +21,7 @@
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="container">
         <h2 class="text-center">Register</h2>
-        <form method="post" action="{% url 'register' %}">
+        <form method="post" action="{% url 'blog:register' %}">
             {% csrf_token %}
             <div class="mb-3">
                 {{ form.username.label_tag }}

@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
-from django.contrib.auth import views as auth_views
 
+app_name = "blog"
 urlpatterns = [
     path('', views.post_list, name='post_list'),
     path('post/new-post/', views.post_new, name='post_new'),
