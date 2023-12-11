@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'blog',
     'polls',
    
@@ -104,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTHENTICATION_BACKENDS = [
     'blog.authentication_backends.EmailOrUsernameModelBackend',
-    'django.contrib.auth.backends.ModelBackend',  
+    # 'django.contrib.auth.backends.ModelBackend',  
 ]
 
 

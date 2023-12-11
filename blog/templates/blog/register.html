@@ -18,28 +18,13 @@
         }
     </style>
 </head>
-<body class="d-flex justify-content-center align-items-center vh-100">
-    <div class="container">
+<body >
+    <div >
         <h2 class="text-center">Register</h2>
-        <form method="post" action="{% url 'blog:register' %}">
+        <form method="post">
             {% csrf_token %}
-            <div class="mb-3">
-                {{ form.username.label_tag }}
-                {{ form.username }}
-            </div>
-            <div class="mb-3">
-                {{ form.email.label_tag }}
-                {{ form.email }}
-            </div>
-            <div class="mb-3">
-                {{ form.password1.label_tag }}
-                {{ form.password1 }}
-            </div>
-            <div class="mb-3">
-                {{ form.password2.label_tag }}
-                {{ form.password2 }}
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            {{ form.as_p }}
+    <button type="submit">Register</button>
         </form>
     </div>
 </body>

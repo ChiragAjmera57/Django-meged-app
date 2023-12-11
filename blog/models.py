@@ -93,15 +93,15 @@ COUNTRY_CHOICES = [
     ('HN', 'Honduras'),
     ]
 
-
-
-class CustomUser(AbstractUser):
-    GENDER_CHOICES = (
+GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
     )
    
-    COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
+COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
+
+class CustomUser(AbstractUser):
+   
     gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)
     city = models.CharField(max_length=80,default='Bhilwara',blank=True)
     state = models.CharField(max_length=90,default='Rajasthan',blank=True)
@@ -117,7 +117,7 @@ class CustomUser(AbstractUser):
         return self.username
     def img_preview(self): 
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
-             url = self.img.url
+             url = self.img.url 
          ))
     def img_preview2(self): 
         return mark_safe('<img src = "{url}" width = "100"/>'.format(
@@ -165,13 +165,14 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,null=True)
     text = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
+    # parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self) :
         return self.text
 
 class Reply(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-    text = models.TextField()
+    text = models.TextField()   
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self) :
         return self.text

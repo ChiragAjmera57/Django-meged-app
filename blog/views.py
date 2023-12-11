@@ -25,19 +25,19 @@ def login_view(request):
 
     return render(request, 'blog/login.html', {'form': form})
 
+
 def register_view(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.backend = 'blog.backends.EmailOrUsernameModelBackend'
-            user.save()
             login(request, user)
             return redirect('blog:login')
     else:
         form = CustomUserCreationForm()
 
-    return render(request, 'blog/register.html', {'form': form})   
+    return render(request, 'blog/register.html', {'form': form}) 
+
 
 
 def post_list(request):
@@ -70,7 +70,7 @@ def post_detail(request, post_slug):
             new_comment.save()
             return redirect('blog:post_detail', post_slug=post_slug)
 
-        reply_form = ReplyForm(request.POST)  # Handle the reply form submission
+        reply_form = ReplyForm(request.POST)  
 
         if reply_form.is_valid():
             new_reply = reply_form.save(commit=False)
@@ -80,6 +80,8 @@ def post_detail(request, post_slug):
             return redirect('blog:post_detail', post_slug=post_slug)
 
     return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'reply_form': reply_form})
+
+    
 def reply_to_comment(request, comment_id,post_slug):
     comment = get_object_or_404(Comment, id=comment_id)
     reply_form = ReplyForm()
@@ -156,4 +158,5 @@ def edit_profile(request):
 
 def user_detail(request, username):
     user = get_object_or_404(CustomUser, username=username)
+    print(user.img_preview2,"user img")
     return render(request, 'blog/userdetails.html', {'user': user})

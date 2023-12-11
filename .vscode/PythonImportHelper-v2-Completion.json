@@ -822,7 +822,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class ReplyForm(forms.ModelForm):\n    class Meta:\n        model = Reply\n        fields = ['text']\nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', 'phone', 'first_name', 'last_name', 'gender', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):",
+        "peekOfCode": "class ReplyForm(forms.ModelForm):\n    class Meta:\n        model = Reply\n        fields = ['text']\nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -831,7 +831,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', 'phone', 'first_name', 'last_name', 'gender', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields = UserCreationForm.Meta.fields + (\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")",
+        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields = UserCreationForm.Meta.fields + (\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -849,7 +849,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class CustomUser(AbstractUser):\n    GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\n    COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)\n    pincode = models.PositiveIntegerField(blank=True,null=True)\n    address = models.TextField(max_length=50,blank=True,null=True)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -885,7 +885,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post = models.ForeignKey(Post, on_delete=models.CASCADE,null=True)\n    text = models.TextField(null=True)\n    created_at = models.DateTimeField(auto_now_add=True,null=True)\n    def __str__(self) :\n        return self.text\nclass Reply(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)",
+        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post = models.ForeignKey(Post, on_delete=models.CASCADE,null=True)\n    text = models.TextField(null=True)\n    created_at = models.DateTimeField(auto_now_add=True,null=True)\n    # parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)\n    def __str__(self) :\n        return self.text\nclass Reply(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -894,7 +894,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Reply(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)\n    text = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self) :\n        return self.text",
+        "peekOfCode": "class Reply(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)\n    text = models.TextField()   \n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self) :\n        return self.text",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -904,6 +904,24 @@
         "importPath": "blog.models",
         "description": "blog.models",
         "peekOfCode": "COUNTRY_CHOICES = [\n    ('CN', 'China'),\n    ('IN', 'India'),\n    ('US', 'United States'),\n    ('ID', 'Indonesia'),\n    ('PK', 'Pakistan'),\n    ('BR', 'Brazil'),\n    ('NG', 'Nigeria'),\n    ('BD', 'Bangladesh'),\n    ('RU', 'Russia'),",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "GENDER_CHOICES",
+        "kind": 5,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\nCOUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "COUNTRY_CHOICES",
+        "kind": 5,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)\n    pincode = models.PositiveIntegerField(blank=True,null=True)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -948,7 +966,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def register_view(request):\n    if request.method == 'POST':\n        form = CustomUserCreationForm(request.POST)\n        if form.is_valid():\n            user = form.save()\n            user.backend = 'blog.backends.EmailOrUsernameModelBackend'\n            user.save()\n            login(request, user)\n            return redirect('blog:login')\n    else:",
+        "peekOfCode": "def register_view(request):\n    if request.method == 'POST':\n        form = CustomUserCreationForm(request.POST)\n        if form.is_valid():\n            user = form.save()\n            login(request, user)\n            return redirect('blog:login')\n    else:\n        form = CustomUserCreationForm()\n    return render(request, 'blog/register.html', {'form': form}) ",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1047,7 +1065,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def user_detail(request, username):\n    user = get_object_or_404(CustomUser, username=username)\n    return render(request, 'blog/userdetails.html', {'user': user})",
+        "peekOfCode": "def user_detail(request, username):\n    user = get_object_or_404(CustomUser, username=username)\n    print(user.img_preview2,\"user img\")\n    return render(request, 'blog/userdetails.html', {'user': user})",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1218,7 +1236,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'django.contrib.sites',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'blog',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1227,7 +1245,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'django.contrib.sites',\n    'blog',\n    'polls',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'blog',\n    'polls',\n]",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1290,7 +1308,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'blog.authentication_backends.EmailOrUsernameModelBackend',\n    'django.contrib.auth.backends.ModelBackend',  \n]\n# Internationalization\n# https://docs.djangoproject.com/en/3.2/topics/i18n/\nLANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'blog.authentication_backends.EmailOrUsernameModelBackend',\n    # 'django.contrib.auth.backends.ModelBackend',  \n]\n# Internationalization\n# https://docs.djangoproject.com/en/3.2/topics/i18n/\nLANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True",
         "detail": "project01.settings",
         "documentation": {}
     },
