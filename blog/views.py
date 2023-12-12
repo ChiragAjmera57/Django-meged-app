@@ -57,45 +57,36 @@ def Tag_list(request):
 
 def post_detail(request, post_slug):
     post = get_object_or_404(Post, post_slug=post_slug)
-    comments = Comment.objects.filter(post=post)
-    comment_form = CommentForm()
-    reply_form = ReplyForm()  # Create an instance of ReplyForm
-
+    comments = post.comments.filter(active=True)
+    new_comment = None
     if request.method == 'POST':
-        comment_form = CommentForm(request.POST)
+        comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
-            new_comment.user = request.user
             new_comment.post = post
+
             new_comment.save()
-            return redirect('blog:post_detail', post_slug=post_slug)
-
-        reply_form = ReplyForm(request.POST)  
-
-        if reply_form.is_valid():
-            new_reply = reply_form.save(commit=False)
-            new_reply.user = request.user
-            new_reply.comment = Comment.objects.get(pk=request.POST.get('comment_id'))
-            new_reply.save()
-            return redirect('blog:post_detail', post_slug=post_slug)
-
-    return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form, 'reply_form': reply_form})
+            return  redirect('blog:post_detail', post_slug=post_slug)
+    else:
+        comment_form = CommentForm()
+    return render(request, 'blog/post_detail.html',{'post':post,'comments': comments,'comment_form':comment_form})
 
     
-def reply_to_comment(request, comment_id,post_slug):
-    comment = get_object_or_404(Comment, id=comment_id)
-    reply_form = ReplyForm()
 
-    if request.method == 'POST':
-        reply_form = ReplyForm(request.POST)
-        if reply_form.is_valid():
-            new_reply = reply_form.save(commit=False)
-            new_reply.user = request.user
-            new_reply.comment = comment
-            new_reply.save()
-            return redirect('blog:post_detail',post_slug=post_slug)
+def reply_page(request):
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            post_id = request.POST.get('post_id') 
+            parent_id = request.POST.get('parent')  
+            post_url = request.POST.get('post_url')  
+            reply = form.save(commit=False)
+            reply.post = Post(id=post_id)
+            reply.parent = Comment(id=parent_id)
+            reply.save()
+            return redirect(post_url+'#'+str(reply.id))
+    return redirect("/")
 
-    return render(request, 'blog/reply.html', {'comment': comment, 'reply_form': reply_form})
 
 def Cat_Details(request, category_slug):
     categories = get_object_or_404(Category, title=category_slug)
@@ -158,5 +149,4 @@ def edit_profile(request):
 
 def user_detail(request, username):
     user = get_object_or_404(CustomUser, username=username)
-    print(user.img_preview2,"user img")
     return render(request, 'blog/userdetails.html', {'user': user})

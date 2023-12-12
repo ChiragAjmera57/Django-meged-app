@@ -11,20 +11,15 @@ class PostForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     class Meta:
-        model = Comment
-        fields = ['text']
-
-class ReplyForm(forms.ModelForm):
-    class Meta:
-        model = Reply
-        fields = ['text']
-        
+        model = Comment    
+        fields = ('name', 'body')      
         
 class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
         fields = ('username', 'email', 'password1', 'password2', )
+        
         
 class CustomUserChangeForm(UserChangeForm):
 

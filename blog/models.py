@@ -4,6 +4,7 @@ from django.db import models
 from autoslug import AutoSlugField
 from django.utils import timezone
 from django.utils.html import mark_safe
+from django.urls import reverse
 
 
 COUNTRY_CHOICES = [
@@ -105,7 +106,7 @@ class CustomUser(AbstractUser):
     gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)
     city = models.CharField(max_length=80,default='Bhilwara',blank=True)
     state = models.CharField(max_length=90,default='Rajasthan',blank=True)
-    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)
+    country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)
     designation = models.CharField(max_length=50,null=True,blank=True)
     img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)
     phone = models.PositiveBigIntegerField(blank=True,default=0000000)
@@ -155,24 +156,28 @@ class Post(models.Model):
     def publish(self):
         self.published_date = timezone.now()
         self.save()
-
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', kwargs={'post_slug': self.post_slug})
     def __str__(self):
         return self.title
+    def get_comments(self):
+        return self.comments.filter(parent=None).filter(active=True)
     
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,null=True)
+    post=models.ForeignKey(Post,on_delete=models.CASCADE, related_name="comments")
     text = models.TextField(null=True)
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
-    # parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
+    name=models.CharField(max_length=50)
+    body = models.TextField(default="Hii this is content")
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
+    parent=models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE)
+    class Meta:
+        ordering = ('created',)
     def __str__(self) :
-        return self.text
+        return self.name
+    def get_comments(self):
+        return Comment.objects.filter(parent=self).filter(active=True)
 
-class Reply(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-    text = models.TextField()   
-    created_at = models.DateTimeField(auto_now_add=True)
-    def __str__(self) :
-        return self.text

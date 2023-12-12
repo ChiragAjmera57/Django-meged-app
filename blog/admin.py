@@ -63,19 +63,10 @@ class CustomPostAdmin(admin.ModelAdmin):
     filter_horizontal = ('tags',)
     search_fields = ('title',)
     def view_on_site(self, obj):
-        url = reverse("post_detail", kwargs={"post_slug": obj.post_slug})
+        url = reverse("blog:post_detail", kwargs={"post_slug": obj.post_slug})
         return url
    
     
-class CustomReplyAdmin(admin.ModelAdmin):
-    model = Reply
-    search_fields = ('text',)
-    list_display = ['user','text','created_at','comment']
-    list_filter = ["created_at"]
-    def has_delete_permission(self, request, obj=None):
-        return False
-
-
 class customCatAdmin(admin.ModelAdmin):
     model = Category
     list_filter = ['title','description']
@@ -85,11 +76,10 @@ class customCatAdmin(admin.ModelAdmin):
     
 class CustomCommentAdmin(admin.ModelAdmin):
     model = Comment
-    list_display = ['user','post','text','created_at']
+    list_display = ['name','post','text','body']
     search_fields = ('text',)
-    list_filter = ["created_at"]
-    def has_delete_permission(self, request, obj=None):
-        return False
+    list_filter = ["created"]
+   
     
 class CustomtagAdmin(admin.ModelAdmin):
     model = Tag
@@ -100,7 +90,6 @@ class CustomtagAdmin(admin.ModelAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Post,CustomPostAdmin)
-admin.site.register(Reply,CustomReplyAdmin)
 admin.site.register(Category,customCatAdmin)
 admin.site.register(Comment,CustomCommentAdmin)
 admin.site.register(Tag,CustomtagAdmin)

@@ -75,102 +75,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -226,6 +130,14 @@
         "importPath": "django.utils.timezone",
         "description": "django.utils.timezone",
         "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -674,60 +586,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0002_auto_20231201_2140",
-        "description": "blog.migrations.0002_auto_20231201_2140",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='post',\n            name='blog_img',\n        ),\n        migrations.RemoveField(",
-        "detail": "blog.migrations.0002_auto_20231201_2140",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0003_auto_20231201_2142",
-        "description": "blog.migrations.0003_auto_20231201_2142",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_auto_20231201_2140'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='post_slug',\n            field=autoslug.fields.AutoSlugField(default=None, editable=False, null=True, populate_from='title', unique=True),\n        ),",
-        "detail": "blog.migrations.0003_auto_20231201_2142",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0004_post_feature_img",
-        "description": "blog.migrations.0004_post_feature_img",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0003_auto_20231201_2142'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='feature_img',\n            field=models.ImageField(blank=True, null=True, upload_to=''),\n        ),",
-        "detail": "blog.migrations.0004_post_feature_img",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0005_alter_customuser_email",
-        "description": "blog.migrations.0005_alter_customuser_email",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0004_post_feature_img'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='email',\n            field=models.CharField(max_length=50, unique=True),\n        ),",
-        "detail": "blog.migrations.0005_alter_customuser_email",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0006_alter_customuser_email",
-        "description": "blog.migrations.0006_alter_customuser_email",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0005_alter_customuser_email'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='email',\n            field=models.EmailField(blank=True, max_length=254, verbose_name='email address'),\n        ),",
-        "detail": "blog.migrations.0006_alter_customuser_email",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0007_auto_20231211_1007",
-        "description": "blog.migrations.0007_auto_20231211_1007",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0006_alter_customuser_email'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='category',\n            name='description',\n            field=models.TextField(default='Hii this is the discription', max_length=120),\n        ),",
-        "detail": "blog.migrations.0007_auto_20231211_1007",
-        "documentation": {}
-    },
-    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "blog.admin",
@@ -741,16 +599,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title',)\n    def view_on_site(self, obj):\n        url = reverse(\"post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass CustomReplyAdmin(admin.ModelAdmin):",
-        "detail": "blog.admin",
-        "documentation": {}
-    },
-    {
-        "label": "CustomReplyAdmin",
-        "kind": 6,
-        "importPath": "blog.admin",
-        "description": "blog.admin",
-        "peekOfCode": "class CustomReplyAdmin(admin.ModelAdmin):\n    model = Reply\n    search_fields = ('text',)\n    list_display = ['user','text','created_at','comment']\n    list_filter = [\"created_at\"]\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass customCatAdmin(admin.ModelAdmin):\n    model = Category\n    list_filter = ['title','description']",
+        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title',)\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass customCatAdmin(admin.ModelAdmin):",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -759,7 +608,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class customCatAdmin(admin.ModelAdmin):\n    model = Category\n    list_filter = ['title','description']\n    search_fields = ('title',)\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass CustomCommentAdmin(admin.ModelAdmin):\n    model = Comment\n    list_display = ['user','post','text','created_at']\n    search_fields = ('text',)",
+        "peekOfCode": "class customCatAdmin(admin.ModelAdmin):\n    model = Category\n    list_filter = ['title','description']\n    search_fields = ('title',)\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass CustomCommentAdmin(admin.ModelAdmin):\n    model = Comment\n    list_display = ['name','post','text','body']\n    search_fields = ('text',)",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -768,7 +617,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomCommentAdmin(admin.ModelAdmin):\n    model = Comment\n    list_display = ['user','post','text','created_at']\n    search_fields = ('text',)\n    list_filter = [\"created_at\"]\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)",
+        "peekOfCode": "class CustomCommentAdmin(admin.ModelAdmin):\n    model = Comment\n    list_display = ['name','post','text','body']\n    search_fields = ('text',)\n    list_filter = [\"created\"]\nclass CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -777,7 +626,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Reply,CustomReplyAdmin)\nadmin.site.register(Category,customCatAdmin)",
+        "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Category,customCatAdmin)\nadmin.site.register(Comment,CustomCommentAdmin)",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -804,7 +653,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ('title', 'text','post_cat','tags','image','feature_img')\nclass CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment\n        fields = ['text']\nclass ReplyForm(forms.ModelForm):\n    class Meta:",
+        "peekOfCode": "class PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ('title', 'text','post_cat','tags','image','feature_img')\nclass CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment    \n        fields = ('name', 'body')      \nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -813,16 +662,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment\n        fields = ['text']\nclass ReplyForm(forms.ModelForm):\n    class Meta:\n        model = Reply\n        fields = ['text']\nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:",
-        "detail": "blog.forms",
-        "documentation": {}
-    },
-    {
-        "label": "ReplyForm",
-        "kind": 6,
-        "importPath": "blog.forms",
-        "description": "blog.forms",
-        "peekOfCode": "class ReplyForm(forms.ModelForm):\n    class Meta:\n        model = Reply\n        fields = ['text']\nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):",
+        "peekOfCode": "class CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment    \n        fields = ('name', 'body')      \nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -849,7 +689,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)\n    pincode = models.PositiveIntegerField(blank=True,null=True)\n    address = models.TextField(max_length=50,blank=True,null=True)",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)\n    pincode = models.PositiveIntegerField(blank=True,null=True)\n    address = models.TextField(max_length=50,blank=True,null=True)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -885,16 +725,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post = models.ForeignKey(Post, on_delete=models.CASCADE,null=True)\n    text = models.TextField(null=True)\n    created_at = models.DateTimeField(auto_now_add=True,null=True)\n    # parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)\n    def __str__(self) :\n        return self.text\nclass Reply(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)",
-        "detail": "blog.models",
-        "documentation": {}
-    },
-    {
-        "label": "Reply",
-        "kind": 6,
-        "importPath": "blog.models",
-        "description": "blog.models",
-        "peekOfCode": "class Reply(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)\n    text = models.TextField()   \n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self) :\n        return self.text",
+        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post=models.ForeignKey(Post,on_delete=models.CASCADE, related_name=\"comments\")\n    text = models.TextField(null=True)\n    name=models.CharField(max_length=50)\n    body = models.TextField(default=\"Hii this is content\")\n    created = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    active = models.BooleanField(default=True)\n    parent=models.ForeignKey(\"self\", null=True, blank=True, on_delete=models.CASCADE)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -912,7 +743,7 @@
         "kind": 5,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\nCOUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)",
+        "peekOfCode": "GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\nCOUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -921,7 +752,7 @@
         "kind": 5,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='India',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)\n    pincode = models.PositiveIntegerField(blank=True,null=True)",
+        "peekOfCode": "COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,default='Bhilwara',blank=True)\n    state = models.CharField(max_length=90,default='Rajasthan',blank=True)\n    country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)\n    pincode = models.PositiveIntegerField(blank=True,null=True)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -939,7 +770,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new-post/', views.post_new, name='post_new'),\n    path('login/', views.login_view, name='login'),\n    path('logout/', views.logout_view, name='logout'),\n    path('register/', views.register_view, name='register'),\n    path('edit_profile/', views.edit_profile, name='edit_profile'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/tag', views.Tag_list, name='Tag_list'),\n    path('user/<str:username>/', views.user_detail, name='user_detail'),",
+        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new-post/', views.post_new, name='post_new'),\n    path('login/', views.login_view, name='login'),\n    path('logout/', views.logout_view, name='logout'),\n    path('register/', views.register_view, name='register'),\n    path('edit_profile/', views.edit_profile, name='edit_profile'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/tag', views.Tag_list, name='Tag_list'),\n    path('comment/reply/', views.reply_page, name=\"reply\"),",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -993,7 +824,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def Tag_list(request):\n    # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    tags = Tag.objects.all()\n    return render(request, 'blog/Tag_list.html', {'tags':tags})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = Comment.objects.filter(post=post)\n    comment_form = CommentForm()\n    reply_form = ReplyForm()  # Create an instance of ReplyForm\n    if request.method == 'POST':",
+        "peekOfCode": "def Tag_list(request):\n    # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')\n    tags = Tag.objects.all()\n    return render(request, 'blog/Tag_list.html', {'tags':tags})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = post.comments.filter(active=True)\n    new_comment = None\n    if request.method == 'POST':\n        comment_form = CommentForm(data=request.POST)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1002,16 +833,16 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = Comment.objects.filter(post=post)\n    comment_form = CommentForm()\n    reply_form = ReplyForm()  # Create an instance of ReplyForm\n    if request.method == 'POST':\n        comment_form = CommentForm(request.POST)\n        if comment_form.is_valid():\n            new_comment = comment_form.save(commit=False)\n            new_comment.user = request.user",
+        "peekOfCode": "def post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = post.comments.filter(active=True)\n    new_comment = None\n    if request.method == 'POST':\n        comment_form = CommentForm(data=request.POST)\n        if comment_form.is_valid():\n            new_comment = comment_form.save(commit=False)\n            new_comment.post = post\n            new_comment.save()",
         "detail": "blog.views",
         "documentation": {}
     },
     {
-        "label": "reply_to_comment",
+        "label": "reply_page",
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def reply_to_comment(request, comment_id,post_slug):\n    comment = get_object_or_404(Comment, id=comment_id)\n    reply_form = ReplyForm()\n    if request.method == 'POST':\n        reply_form = ReplyForm(request.POST)\n        if reply_form.is_valid():\n            new_reply = reply_form.save(commit=False)\n            new_reply.user = request.user\n            new_reply.comment = comment\n            new_reply.save()",
+        "peekOfCode": "def reply_page(request):\n    if request.method == \"POST\":\n        form = CommentForm(request.POST)\n        if form.is_valid():\n            post_id = request.POST.get('post_id') \n            parent_id = request.POST.get('parent')  \n            post_url = request.POST.get('post_url')  \n            reply = form.save(commit=False)\n            reply.post = Post(id=post_id)\n            reply.parent = Comment(id=parent_id)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1065,7 +896,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def user_detail(request, username):\n    user = get_object_or_404(CustomUser, username=username)\n    print(user.img_preview2,\"user img\")\n    return render(request, 'blog/userdetails.html', {'user': user})",
+        "peekOfCode": "def user_detail(request, username):\n    user = get_object_or_404(CustomUser, username=username)\n    return render(request, 'blog/userdetails.html', {'user': user})",
         "detail": "blog.views",
         "documentation": {}
     },

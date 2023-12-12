@@ -23,42 +23,31 @@
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
     
-    <form id="comment-form" method="post" action="{% url 'blog:post_detail' post_slug=post.post_slug %}">
+    <h3>Add Comment</h3>
+    <form method="post" action="">
         {% csrf_token %}
         {{ comment_form.as_p }}
-        <button type="submit" class="btn btn-primary">Add Comment</button>
+        <button type="submit" class="btn btn-primary">Comment</button>
     </form>
 
-    <hr>
 
-    {% for comment in comments %}
-        <div class="comment">
-            <p><span class="text-muted"> {{ comment.user.username }}</span> {{ comment.text }}</p>
-            <p class="text-muted">{{ comment.created_at|timesince }}</p>
-            
-            {% for reply in comment.reply_set.all %}
-                <div class="reply" style="margin-left: 55px;">
-                    <p><span class="text-muted">{{ reply.user.username }}</span>{{ reply.text }}</p>
-                </div>
-            {% endfor %}
+    {% with comments.count as total_comments %}
 
-            <a  class="btn btn-secondary btn-sm reply-btn" onclick="replyFrom(this)" >Reply</a>
-            <form id="reply-form" style="display: none;" method="post" action="{% url 'blog:reply_to_comment' post_slug=post.post_slug comment_id=comment.id %}">
-                {% csrf_token %}
-                {{ reply_form.as_p }}
-                <button type="submit">Add Reply</button>
-            </form>
-        </div>
+{% endwith %}
 
-        <hr>
+{% if not post.comments.all %}
+No comments yet
 
-    {% endfor %}
+{% else %}
+{% for comment in post.get_comments %}
+{% include 'blog/comment.html' with comment=comment %}
+{% endfor %}
+{% endif %}
     <script>
        document.querySelectorAll('.reply-btn',()=>{}).style.display = 'none'
        btn = document.querySelectorAll('#comment-form')
        btn.style.display = 'none'
        function replyFrom(e){
-        console.log('sss',e.nextElementSibling.style.display)
         e.nextElementSibling.style.display = e.nextElementSibling.style.display=='none' ? 'block' : 'none'
        }
     </script>
