@@ -20,6 +20,7 @@ class IndexView(generic.ListView,LoginRequiredMixin):
     def get_queryset(self):
         return Question.objects.order_by("-pub_date")
 
+
 class DetailView(generic.DetailView,LoginRequiredMixin):
     model = Question
     slug_field = 'que_slug'
@@ -32,7 +33,6 @@ class ResultsView(generic.DetailView,LoginRequiredMixin):
     template_name = "polls/results.html"
     slug_field = 'que_slug'
     slug_url_kwarg = 'que_slug'
-
 
 @login_required(login_url='/login')
 def vote(request, que_slug):

@@ -4,7 +4,7 @@
         {% if comment.parent %}
             to <strong>{{comment.parent.name}}</strong>
         {% endif %}
-        <small class="text-muted">On {{ comment.created.date|timesince }}</small>
+        <small class="text-muted">On {{ comment.created|timesince }}</small>
     </div>
     <div class="border p-2 rounded">
         <p>{{comment.body}}</p>
@@ -32,7 +32,7 @@
     function handleReply(response_id) {
         const reply_form_container = document.querySelector(`#reply-form-container-${response_id}`);
         if (reply_form_container && !reply_form_container.getAttribute("data-is-reply")) {
-            reply_form_container.style.display = 'block';
+            reply_form_container.style.display = reply_form_container.style.display=='none'?'block':'none'
         }
     }
 </script>

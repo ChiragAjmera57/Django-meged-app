@@ -1,8 +1,9 @@
 from django.urls import reverse
 from django.contrib import admin
 from django.http import HttpResponse
-import csv
 from django.contrib.auth.admin import UserAdmin
+import csv
+
 from .models import *
 from .models import CustomUser
 
@@ -16,7 +17,22 @@ class CustomUserAdmin(UserAdmin):
         response['Content-Disposition'] = 'attachment; filename="users.csv"'
 
         writer = csv.writer(response)
-        writer.writerow(['Username', 'Email', 'First Name', 'Last Name', 'Gender', 'Phone', 'Date of Birth', 'Designation', 'Address', 'Pincode', 'City', 'State', 'Country'])
+        writer.writerow([
+             'Username', 
+             'Email', 
+             'First Name', 
+             'Last Name', 
+             'Gender', 
+             'Phone', 
+             'Date of Birth', 
+             'Designation', 
+             'Address', 
+             'Pincode', 
+             'City', 
+             'State', 
+             'Country'
+             ]
+            )
 
         for user in queryset:
             writer.writerow([
@@ -39,7 +55,23 @@ class CustomUserAdmin(UserAdmin):
 
     export_as_csv.short_description = "Export selected users as CSV"
         
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img')
+    list_display = (
+        'username', 
+        'email', 
+        'first_name', 
+        'last_name', 
+        'is_staff', 
+        'gender', 
+        'phone', 
+        'dob', 
+        'designation', 
+        'address', 
+        'pincode', 
+        'city', 
+        'state', 
+        'country', 
+        'img'
+        )
 
     add_fieldsets = (
         (
@@ -56,10 +88,11 @@ class CustomUserAdmin(UserAdmin):
         ("Other", {'fields': ('gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img'), "classes": ("collapse",)}),
     )
 
+
 class CustomPostAdmin(admin.ModelAdmin):
     model = Post
     list_display = ('title','post_cat','img_preview')
-    list_filter = ["tags"]
+    list_filter = ["tags", "published_date","post_cat"]
     filter_horizontal = ('tags',)
     search_fields = ('title',)
     def view_on_site(self, obj):
@@ -73,6 +106,7 @@ class customCatAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     def has_delete_permission(self, request, obj=None):
         return False
+    
     
 class CustomCommentAdmin(admin.ModelAdmin):
     model = Comment

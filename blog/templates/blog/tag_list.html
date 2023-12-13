@@ -6,7 +6,7 @@
 
 <div class="catContainer">
     {% for tag in tags %}
-    <a href="{% url 'blog:Tag_post' tag_slug=tag.name %}">
+    <a class="text-decoration-none text-black" href="{% url 'blog:Tag_post' tag_slug=tag.name %}">
         <p>
             {{tag.name}}
         </p>

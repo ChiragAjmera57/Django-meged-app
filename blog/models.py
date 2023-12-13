@@ -101,14 +101,14 @@ GENDER_CHOICES = (
    
 COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
 
+# Custom user modal using AbstractUser and added some new fields
 class CustomUser(AbstractUser):
-   
-    gender = models.CharField(max_length=60,default='M',choices=GENDER_CHOICES,blank=True)
-    city = models.CharField(max_length=80,default='Bhilwara',blank=True)
-    state = models.CharField(max_length=90,default='Rajasthan',blank=True)
+    gender = models.CharField(max_length=60,choices=GENDER_CHOICES,blank=True)
+    city = models.CharField(max_length=80,blank=True)
+    state = models.CharField(max_length=90,blank=True)
     country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)
     designation = models.CharField(max_length=50,null=True,blank=True)
-    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',)
+    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',default='default_img.jpg')
     phone = models.PositiveBigIntegerField(blank=True,default=0000000)
     pincode = models.PositiveIntegerField(blank=True,null=True)
     address = models.TextField(max_length=50,blank=True,null=True)
@@ -116,14 +116,17 @@ class CustomUser(AbstractUser):
     
     def __str__(self):
         return self.username
+    
     def img_preview(self): 
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
              url = self.img.url 
          ))
+        
     def img_preview2(self): 
         return mark_safe('<img src = "{url}" width = "100"/>'.format(
              url = self.img.url
          ))
+
 
 class Category(models.Model):
     title = models.CharField(max_length=60)
@@ -137,12 +140,13 @@ class Tag(models.Model):
     description = models.TextField(max_length=120,default="Hii this is the discription")
     def __str__(self):
         return self.name
+   
     
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
     tags = models.ManyToManyField(Tag)
-    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None, )  
+    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None,always_update=True )  
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now, editable=False)
@@ -153,31 +157,37 @@ class Post(models.Model):
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
              url = self.image.url
          ))
+        
     def publish(self):
         self.published_date = timezone.now()
         self.save()
+        
     def get_absolute_url(self):
         return reverse('blog:post_detail', kwargs={'post_slug': self.post_slug})
+    
     def __str__(self):
         return self.title
+    
     def get_comments(self):
         return self.comments.filter(parent=None).filter(active=True)
     
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
-    post=models.ForeignKey(Post,on_delete=models.CASCADE, related_name="comments")
+    post = models.ForeignKey(Post,on_delete=models.CASCADE, related_name="comments")
     text = models.TextField(null=True)
-    name=models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     body = models.TextField(default="Hii this is content")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
-    parent=models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE)
+    parent = models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE)
     class Meta:
-        ordering = ('created',)
+        ordering = ('-created',)
+        
     def __str__(self) :
         return self.name
+    
     def get_comments(self):
         return Comment.objects.filter(parent=self).filter(active=True)
 

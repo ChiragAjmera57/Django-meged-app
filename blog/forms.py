@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     class Meta:
-        model = Comment    
+        model = Comment   
         fields = ('name', 'body')      
         
 class CustomUserCreationForm(UserCreationForm):
@@ -25,4 +25,4 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = UserCreationForm.Meta.fields + ("email", "phone", "first_name", "last_name", "gender", "dob", "designation", "address", "pincode", "city", "state", "country", "img")
+        fields =("email", "phone", "first_name", "last_name", "gender", "dob", "designation", "address", "pincode", "city", "state", "country", "img")
