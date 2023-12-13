@@ -26,3 +26,6 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta(UserCreationForm.Meta):
         model = CustomUser
         fields =("email", "phone", "first_name", "last_name", "gender", "dob", "designation", "address", "pincode", "city", "state", "country", "img")
+        widgets = {
+            'dob': forms.DateInput(attrs={'type': 'date'}),
+        }

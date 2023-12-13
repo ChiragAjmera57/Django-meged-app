@@ -147,6 +147,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -286,6 +302,14 @@
     },
     {
         "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -703,6 +727,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0007_alter_comment_body",
+        "description": "blog.migrations.0007_alter_comment_body",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0006_alter_post_post_slug'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='comment',\n            name='body',\n            field=models.TextField(blank=True),\n        ),",
+        "detail": "blog.migrations.0007_alter_comment_body",
+        "documentation": {}
+    },
+    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "blog.admin",
@@ -788,7 +821,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")",
+        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")\n        widgets = {\n            'dob': forms.DateInput(attrs={'type': 'date'}),",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -797,7 +830,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")",
+        "peekOfCode": "class CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")\n        widgets = {\n            'dob': forms.DateInput(attrs={'type': 'date'}),\n        }",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -842,7 +875,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post = models.ForeignKey(Post,on_delete=models.CASCADE, related_name=\"comments\")\n    text = models.TextField(null=True)\n    name = models.CharField(max_length=50)\n    body = models.TextField(default=\"Hii this is content\")\n    created = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    active = models.BooleanField(default=True)\n    parent = models.ForeignKey(\"self\", null=True, blank=True, on_delete=models.CASCADE)",
+        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post = models.ForeignKey(Post,on_delete=models.CASCADE, related_name=\"comments\")\n    text = models.TextField(null=True)\n    name = models.CharField(max_length=50)\n    body = models.TextField(blank=True)\n    created = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    active = models.BooleanField(default=True)\n    parent = models.ForeignKey(\"self\", null=True, blank=True, on_delete=models.CASCADE)",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -878,7 +911,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "app_name = \"blog\"\nurlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new-post/', views.post_new, name='post_new'),\n    path('login/', views.login_view, name='login'),\n    path('logout/', views.logout_view, name='logout'),\n    path('register/', views.register_view, name='register'),\n    path('edit_profile/', views.edit_profile, name='edit_profile'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/tag', views.Tag_list, name='Tag_list'),",
+        "peekOfCode": "app_name = \"blog\"\nurlpatterns = [\n    path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),\n    path('post/new-post/', views.post_new, name='post_new'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),\n    path('user/<str:username>/', views.user_detail, name='user_detail'),\n    path('tag/<tag_slug>',views.tag_details,name='Tag_post'),\n    path('cat/<category_slug>',views.cat_details,name='Cat_post'),\n    path('post/cat', views.cat_list, name='Cat_list'),\n    path('post/tag', views.tag_list, name='Tag_list'),",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -887,7 +920,7 @@
         "kind": 5,
         "importPath": "blog.urls",
         "description": "blog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('post/new-post/', views.post_new, name='post_new'),\n    path('login/', views.login_view, name='login'),\n    path('logout/', views.logout_view, name='logout'),\n    path('register/', views.register_view, name='register'),\n    path('edit_profile/', views.edit_profile, name='edit_profile'),\n    path('post/cat', views.Cat_list, name='Cat_list'),\n    path('post/tag', views.Tag_list, name='Tag_list'),\n    path('comment/reply/', views.reply_page, name=\"reply\"),",
+        "peekOfCode": "urlpatterns = [\n    path('post/<post_slug>/edit/', views.post_edit, name='post_edit'),\n    path('post/new-post/', views.post_new, name='post_new'),\n    path('post/<post_slug>/', views.post_detail, name='post_detail'),\n    path('user/<str:username>/', views.user_detail, name='user_detail'),\n    path('tag/<tag_slug>',views.tag_details,name='Tag_post'),\n    path('cat/<category_slug>',views.cat_details,name='Cat_post'),\n    path('post/cat', views.cat_list, name='Cat_list'),\n    path('post/tag', views.tag_list, name='Tag_list'),\n    path('comment/reply/', views.reply_page, name=\"reply\"),",
         "detail": "blog.urls",
         "documentation": {}
     },
@@ -923,25 +956,25 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\n# View for Category list\ndef Cat_list(request):\n    categories = Category.objects.all()\n    return render(request, 'blog/Cat_list.html', {'categories':categories})\ndef Tag_list(request):\n    tags = Tag.objects.all()",
+        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\n# View for Category list\ndef cat_list(request):\n    categories = Category.objects.all()\n    return render(request, 'blog/cat_list.html', {'categories':categories})\ndef tag_list(request):\n    tags = Tag.objects.all()",
         "detail": "blog.views",
         "documentation": {}
     },
     {
-        "label": "Cat_list",
+        "label": "cat_list",
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def Cat_list(request):\n    categories = Category.objects.all()\n    return render(request, 'blog/Cat_list.html', {'categories':categories})\ndef Tag_list(request):\n    tags = Tag.objects.all()\n    return render(request, 'blog/Tag_list.html', {'tags':tags})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = post.comments.filter(active=True)\n    new_comment = None",
+        "peekOfCode": "def cat_list(request):\n    categories = Category.objects.all()\n    return render(request, 'blog/cat_list.html', {'categories':categories})\ndef tag_list(request):\n    tags = Tag.objects.all()\n    return render(request, 'blog/tag_list.html', {'tags':tags})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = post.comments.filter(active=True)\n    new_comment = None",
         "detail": "blog.views",
         "documentation": {}
     },
     {
-        "label": "Tag_list",
+        "label": "tag_list",
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def Tag_list(request):\n    tags = Tag.objects.all()\n    return render(request, 'blog/Tag_list.html', {'tags':tags})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = post.comments.filter(active=True)\n    new_comment = None\n    if request.method == 'POST':\n        comment_form = CommentForm(data=request.POST)\n        if comment_form.is_valid():",
+        "peekOfCode": "def tag_list(request):\n    tags = Tag.objects.all()\n    return render(request, 'blog/tag_list.html', {'tags':tags})\ndef post_detail(request, post_slug):\n    post = get_object_or_404(Post, post_slug=post_slug)\n    comments = post.comments.filter(active=True)\n    new_comment = None\n    if request.method == 'POST':\n        comment_form = CommentForm(data=request.POST)\n        if comment_form.is_valid():",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -964,20 +997,20 @@
         "documentation": {}
     },
     {
-        "label": "Cat_Details",
+        "label": "cat_details",
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def Cat_Details(request, category_slug):\n    categories = get_object_or_404(Category, title=category_slug)\n    posts = Post.objects.filter(post_cat=categories)\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories,\"query\":category_slug})\ndef Tag_Details(request, tag_slug):\n    tags = get_object_or_404(Tag, name=tag_slug)\n    posts = Post.objects.filter(tags=tags)\n    return render(request, 'blog/post_list.html', {'posts': posts,\"query\":tag_slug})\n@login_required(login_url='blog:login')\ndef post_new(request):",
+        "peekOfCode": "def cat_details(request, category_slug):\n    categories = get_object_or_404(Category, title=category_slug)\n    posts = Post.objects.filter(post_cat=categories)\n    category_slug = \"Category for: \"+category_slug\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories,\"query\":category_slug})\ndef tag_details(request, tag_slug):\n    tags = get_object_or_404(Tag, name=tag_slug)\n    posts = Post.objects.filter(tags=tags)\n    tag_slug = \"Tag for: \"+tag_slug\n    return render(request, 'blog/post_list.html', {'posts': posts,\"query\":tag_slug})",
         "detail": "blog.views",
         "documentation": {}
     },
     {
-        "label": "Tag_Details",
+        "label": "tag_details",
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def Tag_Details(request, tag_slug):\n    tags = get_object_or_404(Tag, name=tag_slug)\n    posts = Post.objects.filter(tags=tags)\n    return render(request, 'blog/post_list.html', {'posts': posts,\"query\":tag_slug})\n@login_required(login_url='blog:login')\ndef post_new(request):\n    heading = \"New Post\"\n    if request.method == \"POST\":\n        form = PostForm(request.POST,request.FILES)\n        if form.is_valid():",
+        "peekOfCode": "def tag_details(request, tag_slug):\n    tags = get_object_or_404(Tag, name=tag_slug)\n    posts = Post.objects.filter(tags=tags)\n    tag_slug = \"Tag for: \"+tag_slug\n    return render(request, 'blog/post_list.html', {'posts': posts,\"query\":tag_slug})\n@login_required(login_url='blog:login')\ndef post_new(request):\n    heading = \"New Post\"\n    if request.method == \"POST\":\n        form = PostForm(request.POST,request.FILES)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1004,7 +1037,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def edit_profile(request):\n    if request.method == 'POST':\n        form = CustomUserChangeForm(request.POST,request.FILES, instance=request.user)\n        print(form,\"form .....\")\n        print(form.is_valid(),\"from is valid....\")\n        if form.is_valid():\n            form.save()\n            return redirect('blog:post_list') \n    else:\n        form = CustomUserChangeForm(instance=request.user)",
+        "peekOfCode": "def edit_profile(request):\n    user = request.user\n    if request.method == 'POST':\n        form = CustomUserChangeForm(request.POST,request.FILES, instance=request.user)\n        if form.is_valid():\n            form.save()\n            return redirect('blog:user_detail'  ,username=user.username) \n    else:\n        form = CustomUserChangeForm(instance=request.user)\n    return render(request, 'blog/edit_profile.html', {'form': form})",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1094,7 +1127,7 @@
         "kind": 5,
         "importPath": "polls.urls",
         "description": "polls.urls",
-        "peekOfCode": "app_name = \"polls\"\nurlpatterns = [\n    path(\"\", views.IndexView.as_view(login_url='/login'), name=\"index\"),\n    path(\"<que_slug>/\", login_required(views.DetailView.as_view(login_url='/login')), name=\"detail\"),\n    path(\"<que_slug>/results/\", login_required(views.ResultsView.as_view(login_url='/login')), name=\"results\"),\n    path(\"<que_slug>/vote/\", views.vote, name=\"vote\"),\n]",
+        "peekOfCode": "app_name = \"polls\"\nurlpatterns = [\n    path(\"<que_slug>/results/\", views.ResultsView.as_view(), name=\"results\"),\n    path(\"<que_slug>/vote/\", views.vote, name=\"vote\"),\n    path(\"<que_slug>/\", views.DetailView.as_view(), name=\"detail\"),\n    path(\"\", views.IndexView.as_view(login_url='/login'), name=\"index\"),\n]",
         "detail": "polls.urls",
         "documentation": {}
     },
@@ -1103,7 +1136,7 @@
         "kind": 5,
         "importPath": "polls.urls",
         "description": "polls.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.IndexView.as_view(login_url='/login'), name=\"index\"),\n    path(\"<que_slug>/\", login_required(views.DetailView.as_view(login_url='/login')), name=\"detail\"),\n    path(\"<que_slug>/results/\", login_required(views.ResultsView.as_view(login_url='/login')), name=\"results\"),\n    path(\"<que_slug>/vote/\", views.vote, name=\"vote\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"<que_slug>/results/\", views.ResultsView.as_view(), name=\"results\"),\n    path(\"<que_slug>/vote/\", views.vote, name=\"vote\"),\n    path(\"<que_slug>/\", views.DetailView.as_view(), name=\"detail\"),\n    path(\"\", views.IndexView.as_view(login_url='/login'), name=\"index\"),\n]",
         "detail": "polls.urls",
         "documentation": {}
     },
@@ -1121,7 +1154,7 @@
         "kind": 6,
         "importPath": "polls.views",
         "description": "polls.views",
-        "peekOfCode": "class DetailView(generic.DetailView,LoginRequiredMixin):\n    model = Question\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    template_name = \"polls/detail.html\"\nclass ResultsView(generic.DetailView,LoginRequiredMixin):\n    model = Question\n    template_name = \"polls/results.html\"\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'",
+        "peekOfCode": "class DetailView(generic.DetailView,LoginRequiredMixin):\n    model = Question\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    template_name = \"polls/detail.html\"\n    def get_login_url(self):\n        return super().get_login_url() + f'?next={self.request.path}'\nclass ResultsView(generic.DetailView,LoginRequiredMixin):\n    model = Question\n    template_name = \"polls/results.html\"",
         "detail": "polls.views",
         "documentation": {}
     },
@@ -1130,7 +1163,7 @@
         "kind": 6,
         "importPath": "polls.views",
         "description": "polls.views",
-        "peekOfCode": "class ResultsView(generic.DetailView,LoginRequiredMixin):\n    model = Question\n    template_name = \"polls/results.html\"\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n@login_required(login_url='/login')\ndef vote(request, que_slug):\n    question = get_object_or_404(Question, que_slug=que_slug)\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'",
+        "peekOfCode": "class ResultsView(generic.DetailView,LoginRequiredMixin):\n    model = Question\n    template_name = \"polls/results.html\"\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\ndef vote(request, que_slug):\n    question = get_object_or_404(Question, que_slug=que_slug)\n    slug_field = 'que_slug'\n    slug_url_kwarg = 'que_slug'\n    try:",
         "detail": "polls.views",
         "documentation": {}
     },
@@ -1229,7 +1262,16 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'project01.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = 'project01.wsgi.application'\nTEMPLATE_CONTEXT_PROCESSORS = (\n    \"django.core.context_processors.auth\",\n    \"django.core.context_processors.debug\",\n    \"django.core.context_processors.i18n\",\n    \"django.core.context_processors.media\",\n    \"django.core.context_processors.request\",\n)\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATE_CONTEXT_PROCESSORS",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "TEMPLATE_CONTEXT_PROCESSORS = (\n    \"django.core.context_processors.auth\",\n    \"django.core.context_processors.debug\",\n    \"django.core.context_processors.i18n\",\n    \"django.core.context_processors.media\",\n    \"django.core.context_processors.request\",\n)\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {",
         "detail": "project01.settings",
         "documentation": {}
     },

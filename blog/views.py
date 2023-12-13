@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.shortcuts import render
@@ -22,6 +23,7 @@ def login_view(request):
             return redirect('blog:post_list')
     else:
         form = AuthenticationForm()
+    
 
     return render(request, 'blog/login.html', {'form': form})
 
@@ -46,13 +48,13 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})
 
 # View for Category list
-def Cat_list(request):
+def cat_list(request):
     categories = Category.objects.all()
-    return render(request, 'blog/Cat_list.html', {'categories':categories})
+    return render(request, 'blog/cat_list.html', {'categories':categories})
 
-def Tag_list(request):
+def tag_list(request):
     tags = Tag.objects.all()
-    return render(request, 'blog/Tag_list.html', {'tags':tags})
+    return render(request, 'blog/tag_list.html', {'tags':tags})
 
 def post_detail(request, post_slug):
     post = get_object_or_404(Post, post_slug=post_slug)
@@ -84,16 +86,16 @@ def reply_page(request):
             return redirect(post_url+'#'+str(reply.id))
     return redirect("/")
 
-def Cat_Details(request, category_slug):
+def cat_details(request, category_slug):
     categories = get_object_or_404(Category, title=category_slug)
     posts = Post.objects.filter(post_cat=categories)
-
+    category_slug = "Category for: "+category_slug
     return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories,"query":category_slug})
 
-def Tag_Details(request, tag_slug):
+def tag_details(request, tag_slug):
     tags = get_object_or_404(Tag, name=tag_slug)
     posts = Post.objects.filter(tags=tags)
-
+    tag_slug = "Tag for: "+tag_slug
     return render(request, 'blog/post_list.html', {'posts': posts,"query":tag_slug})
 
 @login_required(login_url='blog:login')
@@ -131,14 +133,12 @@ def post_edit(request, post_slug):
 
 @login_required(login_url='blog:login')
 def edit_profile(request):
+    user = request.user
     if request.method == 'POST':
         form = CustomUserChangeForm(request.POST,request.FILES, instance=request.user)
-        
-        print(form,"form .....")
-        print(form.is_valid(),"from is valid....")
         if form.is_valid():
             form.save()
-            return redirect('blog:post_list') 
+            return redirect('blog:user_detail'  ,username=user.username) 
     else:
         form = CustomUserChangeForm(instance=request.user)
     return render(request, 'blog/edit_profile.html', {'form': form})

@@ -177,7 +177,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE, related_name="comments")
     text = models.TextField(null=True)
     name = models.CharField(max_length=50)
-    body = models.TextField(default="Hii this is content")
+    body = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)

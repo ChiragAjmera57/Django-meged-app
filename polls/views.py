@@ -26,7 +26,8 @@ class DetailView(generic.DetailView,LoginRequiredMixin):
     slug_field = 'que_slug'
     slug_url_kwarg = 'que_slug'
     template_name = "polls/detail.html"
-
+    def get_login_url(self):
+        return super().get_login_url() + f'?next={self.request.path}'
 
 class ResultsView(generic.DetailView,LoginRequiredMixin):
     model = Question
@@ -34,7 +35,6 @@ class ResultsView(generic.DetailView,LoginRequiredMixin):
     slug_field = 'que_slug'
     slug_url_kwarg = 'que_slug'
 
-@login_required(login_url='/login')
 def vote(request, que_slug):
     question = get_object_or_404(Question, que_slug=que_slug)
     slug_field = 'que_slug'
