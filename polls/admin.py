@@ -7,11 +7,9 @@ class Customechoice(admin.ModelAdmin):
     model = Choice
     list_filter = ['choice_text']
 
-
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
-    
     
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [

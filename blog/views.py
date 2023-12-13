@@ -23,8 +23,6 @@ def login_view(request):
             return redirect('blog:post_list')
     else:
         form = AuthenticationForm()
-    
-
     return render(request, 'blog/login.html', {'form': form})
 
 # View for register/SignIn new user

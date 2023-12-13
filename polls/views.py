@@ -29,6 +29,7 @@ class DetailView(generic.DetailView,LoginRequiredMixin):
     def get_login_url(self):
         return super().get_login_url() + f'?next={self.request.path}'
 
+
 class ResultsView(generic.DetailView,LoginRequiredMixin):
     model = Question
     template_name = "polls/results.html"
