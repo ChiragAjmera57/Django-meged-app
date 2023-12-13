@@ -29,7 +29,7 @@
         <a href="{% url 'blog:Tag_post' tag_slug=tag.name %}" class=" tag">{{ tag.name }}</a>
         {% endfor %}
     </div>
-    <p class="w-100" style="word-wrap: break-word;">{{ post.text }}</p>
+    <p class="w-100 text lh-3 fs-5" style="word-wrap: break-word;">{{ post.text }}</p>
 </article>
 
 {% if post.author.img %}
