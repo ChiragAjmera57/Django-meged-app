@@ -43,7 +43,7 @@
 <h3>Add Comment</h3>
 <form method="post" action="">
     {% csrf_token %}
-    <div id="commentForm" style="display: none;">
+    <div id="commentForm" class="d-none">
         {{ comment_form.as_p }}
     </div>
     <button type="submit" class="btn btn-primary" onclick="showCommentBox()">Comment</button>
@@ -65,7 +65,13 @@ No comments yet
 <script>
     const showCommentBox = () => {
         const form = document.querySelector('#commentForm');
-        form.style.display = form.style.display == "none" ? "block" : "none";
+        if (form.classList.contains('d-none')) {
+    form.classList.remove('d-none');
+    form.classList.add('d-block');
+} else {
+    form.classList.remove('d-block');
+    form.classList.add('d-none');
+}
     }
 </script>
 {% endblock %}
