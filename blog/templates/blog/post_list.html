@@ -12,7 +12,7 @@
     {% else %}
     {%if query%}
 
-    <h2 style="margin-left: 15px;"> {{query}}</h2>
+    <h2 class="mx-4"> {{query}}</h2>
     {%endif%}
     <div class="mt-3">
         {% for post in posts %}
@@ -32,7 +32,7 @@
                             alt="{{ post.author.username }}'s Image">
                         {% endif %}
                         <h2 class="card-title mb-0">
-                            <small style="font-size: 15px;" class="custom-font ">{{ post.author.username }}</small>
+                            <small  class="custom-font fs-6 ">{{ post.author.username }}</small>
                         </h2>
                     </div>
                     <time class="date text-muted" class="mt-5">

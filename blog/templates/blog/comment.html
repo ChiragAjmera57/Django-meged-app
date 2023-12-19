@@ -10,7 +10,7 @@
         <p>{{comment.body}}</p>
         {% if not comment.parent %}
         <button class="btn btn-primary btn-sm" onclick="handleReply({{comment.id}})">Reply</button>
-        <div id="reply-form-container-{{comment.id}}" style="display:none">
+        <div id="reply-form-container-{{comment.id}}" class="d-none">
             <form method="post" action="{% url 'blog:reply' %}" class="mt-3">
                 {% csrf_token %}
                 <input type="hidden" name="post_id" value="{{post.id}}">
@@ -32,7 +32,13 @@
     function handleReply(response_id) {
         const reply_form_container = document.querySelector(`#reply-form-container-${response_id}`);
         if (reply_form_container && !reply_form_container.getAttribute("data-is-reply")) {
-            reply_form_container.style.display = reply_form_container.style.display == 'none' ? 'block' : 'none'
-        }
+            if (reply_form_container.classList.contains('d-none')) {
+                reply_form_container.classList.remove('d-none');
+                reply_form_container.classList.add('d-block');
+                } else {
+                    reply_form_container.classList.remove('d-block');
+                    reply_form_container.classList.add('d-none');
+                }
+                        }
     }
 </script>
