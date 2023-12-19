@@ -100,7 +100,7 @@ class CustomPostAdmin(admin.ModelAdmin):
         return url
    
     
-class customCatAdmin(admin.ModelAdmin):
+class CustomCatAdmin(admin.ModelAdmin):
     model = Category
     list_filter = ['title','description']
     search_fields = ('title',)
@@ -124,6 +124,6 @@ class CustomtagAdmin(admin.ModelAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Post,CustomPostAdmin)
-admin.site.register(Category,customCatAdmin)
+admin.site.register(Category,CustomCatAdmin)
 admin.site.register(Comment,CustomCommentAdmin)
 admin.site.register(Tag,CustomtagAdmin)

@@ -749,16 +749,16 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\", \"published_date\",\"post_cat\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title',)\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass customCatAdmin(admin.ModelAdmin):",
+        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\", \"published_date\",\"post_cat\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title',)\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass CustomCatAdmin(admin.ModelAdmin):",
         "detail": "blog.admin",
         "documentation": {}
     },
     {
-        "label": "customCatAdmin",
+        "label": "CustomCatAdmin",
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class customCatAdmin(admin.ModelAdmin):\n    model = Category\n    list_filter = ['title','description']\n    search_fields = ('title',)\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass CustomCommentAdmin(admin.ModelAdmin):\n    model = Comment\n    list_display = ['name','post','text','body']\n    search_fields = ('text',)",
+        "peekOfCode": "class CustomCatAdmin(admin.ModelAdmin):\n    model = Category\n    list_filter = ['title','description']\n    search_fields = ('title',)\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass CustomCommentAdmin(admin.ModelAdmin):\n    model = Comment\n    list_display = ['name','post','text','body']\n    search_fields = ('text',)",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -776,7 +776,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Category,customCatAdmin)\nadmin.site.register(Comment,CustomCommentAdmin)",
+        "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Category,CustomCatAdmin)\nadmin.site.register(Comment,CustomCommentAdmin)",
         "detail": "blog.admin",
         "documentation": {}
     },
