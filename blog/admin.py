@@ -94,7 +94,7 @@ class CustomPostAdmin(admin.ModelAdmin):
     list_display = ('title','post_cat','img_preview')
     list_filter = ["tags", "published_date","post_cat"]
     filter_horizontal = ('tags',)
-    search_fields = ('title',)
+    search_fields = ('title','author__username')
     def view_on_site(self, obj):
         url = reverse("blog:post_detail", kwargs={"post_slug": obj.post_slug})
         return url

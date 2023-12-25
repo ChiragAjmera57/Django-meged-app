@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("polls/", include("polls.urls")),
     path('', include('blog.urls')),
+    path('api',include('blog.apiUrls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

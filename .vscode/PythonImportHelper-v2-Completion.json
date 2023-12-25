@@ -229,6 +229,22 @@
         "documentation": {}
     },
     {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -342,6 +358,174 @@
         "documentation": {}
     },
     {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "filters",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "rest_framework.authtoken",
+        "description": "rest_framework.authtoken",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "isExtraImport": true,
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "DjangoFilterBackend",
+        "importPath": "django_filters.rest_framework",
+        "description": "django_filters.rest_framework",
+        "isExtraImport": true,
+        "detail": "django_filters.rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "PageNumberPagination",
+        "importPath": "rest_framework.pagination",
+        "description": "rest_framework.pagination",
+        "isExtraImport": true,
+        "detail": "rest_framework.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "isExtraImport": true,
+        "detail": "blog.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "isExtraImport": true,
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "isExtraImport": true,
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -374,6 +558,22 @@
         "documentation": {}
     },
     {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "logout",
         "importPath": "django.contrib.auth",
         "description": "django.contrib.auth",
@@ -387,6 +587,14 @@
         "description": "django.contrib.auth",
         "isExtraImport": true,
         "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
         "documentation": {}
     },
     {
@@ -483,6 +691,22 @@
         "description": "django.utils.html",
         "isExtraImport": true,
         "detail": "django.utils.html",
+        "documentation": {}
+    },
+    {
+        "label": "ObjectDoesNotExist",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ObjectDoesNotExist",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
         "documentation": {}
     },
     {
@@ -749,7 +973,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\", \"published_date\",\"post_cat\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title',)\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass CustomCatAdmin(admin.ModelAdmin):",
+        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\", \"published_date\",\"post_cat\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title','author__username')\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass CustomCatAdmin(admin.ModelAdmin):",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -778,6 +1002,87 @@
         "description": "blog.admin",
         "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Category,CustomCatAdmin)\nadmin.site.register(Comment,CustomCommentAdmin)",
         "detail": "blog.admin",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "blog.apiUrls",
+        "description": "blog.apiUrls",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register('users', UserViewSet)\nrouter.register('posts', PostViewSet)\nrouter.register('category', CategoryViewSet)\nrouter.register('tags', TagViewSet)\nrouter.register('comment', CommentViewSet)\nrouter.register('login', LoginViewSet ,basename=\"logined\")\nrouter.register('signup', UserSignViewSet ,basename=\"signup\")\nurlpatterns = [\n    path('api-token-auth/', views.obtain_auth_token),",
+        "detail": "blog.apiUrls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "blog.apiUrls",
+        "description": "blog.apiUrls",
+        "peekOfCode": "urlpatterns = [\n    path('api-token-auth/', views.obtain_auth_token),\n    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),\n    path('', include(router.urls)),\n]",
+        "detail": "blog.apiUrls",
+        "documentation": {}
+    },
+    {
+        "label": "LoginViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class LoginViewSet(viewsets.ModelViewSet):\n    queryset = []  \n    http_method_names = ['post']\n    serializer_class = LoginSerializer\nclass UserViewSet(viewsets.ModelViewSet):\n    queryset = CustomUser.objects.all()\n    http_method_names = ['get']\n    serializer_class = UserSerializer\nclass UserSignViewSet(viewsets.ModelViewSet):\n    queryset = []",
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "UserViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class UserViewSet(viewsets.ModelViewSet):\n    queryset = CustomUser.objects.all()\n    http_method_names = ['get']\n    serializer_class = UserSerializer\nclass UserSignViewSet(viewsets.ModelViewSet):\n    queryset = []\n    http_method_names = ['post']\n    serializer_class = UserSerializer\nclass PostViewSet(viewsets.ModelViewSet):\n    queryset = Post.objects.all()",
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "UserSignViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class UserSignViewSet(viewsets.ModelViewSet):\n    queryset = []\n    http_method_names = ['post']\n    serializer_class = UserSerializer\nclass PostViewSet(viewsets.ModelViewSet):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]\n    search_fields = ['title', 'text','author__username']   \n    ordering_fields = ['created_date'] ",
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "PostViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class PostViewSet(viewsets.ModelViewSet):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]\n    search_fields = ['title', 'text','author__username']   \n    ordering_fields = ['created_date'] \n    lookup_field = 'post_slug'  \n    pagination_class = PageNumberPagination\n    filterset_fields = [\"tags\",\"post_cat\",\"author\"]\n    http_method_names = ['post','get','patch']",
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class CategoryViewSet(viewsets.ModelViewSet):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n    filter_backends = [DjangoFilterBackend]\n    filterset_fields = [\"title\"]\n    http_method_names = ['post','get','patch']\nclass CommentViewSet(viewsets.ModelViewSet):\n    queryset = Comment.objects.all()\n    serializer_class = CommentSerializer\n    filter_backends = [filters.SearchFilter,DjangoFilterBackend]",
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "CommentViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class CommentViewSet(viewsets.ModelViewSet):\n    queryset = Comment.objects.all()\n    serializer_class = CommentSerializer\n    filter_backends = [filters.SearchFilter,DjangoFilterBackend]\n    search_fields = ['text', 'name','body']   \n    http_method_names = ['post','get','patch']\nclass TagViewSet(viewsets.ModelViewSet):   \n    queryset = Tag.objects.all()\n    serializer_class = TagSerializer\n    filter_backends = [DjangoFilterBackend,filters.SearchFilter]",
+        "detail": "blog.apiViews",
+        "documentation": {}
+    },
+    {
+        "label": "TagViewSet",
+        "kind": 6,
+        "importPath": "blog.apiViews",
+        "description": "blog.apiViews",
+        "peekOfCode": "class TagViewSet(viewsets.ModelViewSet):   \n    queryset = Tag.objects.all()\n    serializer_class = TagSerializer\n    filter_backends = [DjangoFilterBackend,filters.SearchFilter]\n    search_fields = ['name']   \n    filterset_fields = [\"name\"]\n    http_method_names = ['post','get','patch']",
+        "detail": "blog.apiViews",
         "documentation": {}
     },
     {
@@ -904,6 +1209,60 @@
         "description": "blog.models",
         "peekOfCode": "COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\n# Custom user modal using AbstractUser and added some new fields\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,blank=True)\n    state = models.CharField(max_length=90,blank=True)\n    country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',default='default_img.jpg')\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)",
         "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "LoginSerializer",
+        "kind": 6,
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "peekOfCode": "class LoginSerializer(serializers.Serializer):\n    username = serializers.CharField()\n    password = serializers.CharField(write_only=True)\n    def validate(self, data):\n        username = data.get('username')\n        password = data.get('password')\n        try:\n            user = CustomUser.objects.get(Q(username=username) | Q(email=username))\n        except ObjectDoesNotExist:\n            raise serializers.ValidationError('Username or email does not exist.')",
+        "detail": "blog.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "TagSerializer",
+        "kind": 6,
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "peekOfCode": "class TagSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tag\n        fields = \"__all__\"\nclass CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = \"__all__\"\nclass UserSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "blog.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "CategorySerializer",
+        "kind": 6,
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "peekOfCode": "class CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = \"__all__\"\nclass UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = CustomUser\n        fields = ['id', 'username', 'city', 'state', 'country', 'email', 'phone', 'first_name', 'last_name', 'gender', 'dob','password']\n    def create(self, validated_data):\n        password = validated_data.pop('password')",
+        "detail": "blog.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "kind": 6,
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = CustomUser\n        fields = ['id', 'username', 'city', 'state', 'country', 'email', 'phone', 'first_name', 'last_name', 'gender', 'dob','password']\n    def create(self, validated_data):\n        password = validated_data.pop('password')\n        user = super().create(validated_data)\n        user.set_password(password)\n        user.save()\n        token, _ = Token.objects.get_or_create(user=user)",
+        "detail": "blog.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PostSerializer",
+        "kind": 6,
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "peekOfCode": "class PostSerializer(serializers.ModelSerializer):\n    tag = TagSerializer(many=True ,source='tags',read_only=True)\n    category = CategorySerializer(source='post_cat',read_only=True)\n    auther = UserSerializer(source='author', read_only=True, context={'request': None})\n    class Meta:\n        model = Post\n        fields = \"__all__\"\nclass CommentSerializer(serializers.ModelSerializer):\n    post = serializers.SerializerMethodField()\n    user = UserSerializer(read_only=True, context={'request': None})  ",
+        "detail": "blog.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "CommentSerializer",
+        "kind": 6,
+        "importPath": "blog.serializers",
+        "description": "blog.serializers",
+        "peekOfCode": "class CommentSerializer(serializers.ModelSerializer):\n    post = serializers.SerializerMethodField()\n    user = UserSerializer(read_only=True, context={'request': None})  \n    parent = serializers.SerializerMethodField()\n    class Meta:\n        model = Comment\n        fields = \"__all__\"\n    def get_post(self, obj):\n        post = obj.post\n        if post:",
+        "detail": "blog.serializers",
         "documentation": {}
     },
     {
@@ -1217,7 +1576,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'blog',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1226,7 +1585,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'blog',\n    'polls',\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework.authtoken',\n    'blog',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1280,7 +1639,16 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\nREST_FRAMEWORK = {\n     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework.authentication.BasicAuthentication',",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],\n    'DEFAULT_AUTHENTICATION_CLASSES': [\n        'rest_framework.authentication.BasicAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n    ],\n    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n    'PAGE_SIZE': 10,\n}\n# Password validation",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1406,7 +1774,7 @@
         "kind": 5,
         "importPath": "project01.urls",
         "description": "project01.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"polls/\", include(\"polls.urls\")),\n    path('', include('blog.urls')),\n]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"polls/\", include(\"polls.urls\")),\n    path('', include('blog.urls')),\n    path('api',include('blog.apiUrls')),\n]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "project01.urls",
         "documentation": {}
     },
