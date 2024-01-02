@@ -33,6 +33,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -163,6 +171,206 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -218,6 +426,23 @@
         "importPath": "django.utils.timezone",
         "description": "django.utils.timezone",
         "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "ckeditor.fields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ckeditor.fields",
+        "description": "ckeditor.fields",
+        "detail": "ckeditor.fields",
+        "documentation": {}
+    },
+    {
+        "label": "RichTextField",
+        "importPath": "ckeditor.fields",
+        "description": "ckeditor.fields",
+        "isExtraImport": true,
+        "detail": "ckeditor.fields",
         "documentation": {}
     },
     {
@@ -325,7 +550,7 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponseRedirect",
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -355,6 +580,39 @@
         "importPath": "csv",
         "description": "csv",
         "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "format_html",
+        "importPath": "django.utils.html",
+        "description": "django.utils.html",
+        "isExtraImport": true,
+        "detail": "django.utils.html",
+        "documentation": {}
+    },
+    {
+        "label": "mark_safe",
+        "importPath": "django.utils.html",
+        "description": "django.utils.html",
+        "isExtraImport": true,
+        "detail": "django.utils.html",
+        "documentation": {}
+    },
+    {
+        "label": "PostForm",
+        "importPath": "blog.forms",
+        "description": "blog.forms",
+        "isExtraImport": true,
+        "detail": "blog.forms",
+        "documentation": {}
+    },
+    {
+        "label": "rest_framework",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
@@ -646,11 +904,11 @@
         "documentation": {}
     },
     {
-        "label": "AutoSlugField",
-        "importPath": "autoslug",
-        "description": "autoslug",
+        "label": "CKEditorWidget",
+        "importPath": "ckeditor.widgets",
+        "description": "ckeditor.widgets",
         "isExtraImport": true,
-        "detail": "autoslug",
+        "detail": "ckeditor.widgets",
         "documentation": {}
     },
     {
@@ -662,11 +920,19 @@
         "documentation": {}
     },
     {
-        "label": "timezone",
-        "importPath": "django.utils",
-        "description": "django.utils",
+        "label": "AutoSlugField",
+        "importPath": "autoslug",
+        "description": "autoslug",
         "isExtraImport": true,
-        "detail": "django.utils",
+        "detail": "autoslug",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "django.core.files",
+        "description": "django.core.files",
+        "isExtraImport": true,
+        "detail": "django.core.files",
         "documentation": {}
     },
     {
@@ -686,11 +952,124 @@
         "documentation": {}
     },
     {
-        "label": "mark_safe",
-        "importPath": "django.utils.html",
-        "description": "django.utils.html",
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
         "isExtraImport": true,
-        "detail": "django.utils.html",
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "generate_audio",
+        "importPath": "blog.utils",
+        "description": "blog.utils",
+        "isExtraImport": true,
+        "detail": "blog.utils",
+        "documentation": {}
+    },
+    {
+        "label": "send_push_notification",
+        "importPath": "blog.utils",
+        "description": "blog.utils",
+        "isExtraImport": true,
+        "detail": "blog.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "m2m_changed",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Choice",
+        "importPath": "polls.models",
+        "description": "polls.models",
+        "isExtraImport": true,
+        "detail": "polls.models",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "firebase_admin.messaging",
+        "description": "firebase_admin.messaging",
+        "isExtraImport": true,
+        "detail": "firebase_admin.messaging",
+        "documentation": {}
+    },
+    {
+        "label": "Notification",
+        "importPath": "firebase_admin.messaging",
+        "description": "firebase_admin.messaging",
+        "isExtraImport": true,
+        "detail": "firebase_admin.messaging",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "firebase_admin.messaging",
+        "description": "firebase_admin.messaging",
+        "isExtraImport": true,
+        "detail": "firebase_admin.messaging",
+        "documentation": {}
+    },
+    {
+        "label": "Notification",
+        "importPath": "firebase_admin.messaging",
+        "description": "firebase_admin.messaging",
+        "isExtraImport": true,
+        "detail": "firebase_admin.messaging",
+        "documentation": {}
+    },
+    {
+        "label": "FCMDevice",
+        "importPath": "fcm_django.models",
+        "description": "fcm_django.models",
+        "isExtraImport": true,
+        "detail": "fcm_django.models",
+        "documentation": {}
+    },
+    {
+        "label": "FCMDevice",
+        "importPath": "fcm_django.models",
+        "description": "fcm_django.models",
+        "isExtraImport": true,
+        "detail": "fcm_django.models",
         "documentation": {}
     },
     {
@@ -723,6 +1102,23 @@
         "description": "django.test",
         "isExtraImport": true,
         "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "gTTS",
+        "importPath": "gtts",
+        "description": "gtts",
+        "isExtraImport": true,
+        "detail": "gtts",
+        "documentation": {}
+    },
+    {
+        "label": "html2text",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "html2text",
+        "description": "html2text",
+        "detail": "html2text",
         "documentation": {}
     },
     {
@@ -758,22 +1154,6 @@
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -798,11 +1178,27 @@
         "documentation": {}
     },
     {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -819,6 +1215,145 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -847,15 +1382,6 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
@@ -864,11 +1390,11 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "initialize_app",
+        "importPath": "firebase_admin",
+        "description": "firebase_admin",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "firebase_admin",
         "documentation": {}
     },
     {
@@ -885,15 +1411,6 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
         "documentation": {}
     },
     {
@@ -960,6 +1477,132 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0008_alter_post_text",
+        "description": "blog.migrations.0008_alter_post_text",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0007_alter_comment_body'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='text',\n            field=ckeditor.fields.RichTextField(),\n        ),",
+        "detail": "blog.migrations.0008_alter_post_text",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0009_post_audio_file",
+        "description": "blog.migrations.0009_post_audio_file",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0008_alter_post_text'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to='audio/'),\n        ),",
+        "detail": "blog.migrations.0009_post_audio_file",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0010_remove_post_audio_file",
+        "description": "blog.migrations.0010_remove_post_audio_file",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0009_post_audio_file'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='post',\n            name='audio_file',\n        ),\n    ]",
+        "detail": "blog.migrations.0010_remove_post_audio_file",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0011_alter_post_author",
+        "description": "blog.migrations.0011_alter_post_author",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0010_remove_post_audio_file'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='author',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),\n        ),",
+        "detail": "blog.migrations.0011_alter_post_author",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0012_post_audio_file",
+        "description": "blog.migrations.0012_post_audio_file",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0011_alter_post_author'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to='audio/'),\n        ),",
+        "detail": "blog.migrations.0012_post_audio_file",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0013_remove_post_audio_file",
+        "description": "blog.migrations.0013_remove_post_audio_file",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0012_post_audio_file'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='post',\n            name='audio_file',\n        ),\n    ]",
+        "detail": "blog.migrations.0013_remove_post_audio_file",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0014_post_audio_file",
+        "description": "blog.migrations.0014_post_audio_file",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0013_remove_post_audio_file'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to='audio/'),\n        ),",
+        "detail": "blog.migrations.0014_post_audio_file",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0015_alter_post_audio_file",
+        "description": "blog.migrations.0015_alter_post_audio_file",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0014_post_audio_file'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to=''),\n        ),",
+        "detail": "blog.migrations.0015_alter_post_audio_file",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0016_hashtag_hashtagpost",
+        "description": "blog.migrations.0016_hashtag_hashtagpost",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0015_alter_post_audio_file'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='HashTag',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=50, null=True, unique=True)),",
+        "detail": "blog.migrations.0016_hashtag_hashtagpost",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0017_language",
+        "description": "blog.migrations.0017_language",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0016_hashtag_hashtagpost'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Language',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=100)),",
+        "detail": "blog.migrations.0017_language",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0018_alter_language_name",
+        "description": "blog.migrations.0018_alter_language_name",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0017_language'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='language',\n            name='name',\n            field=models.CharField(choices=[('en', 'English'), ('es', 'Spanish'), ('fr', 'French'), ('de', 'German'), ('it', 'Italian'), ('pt', 'Portuguese'), ('ru', 'Russian'), ('ja', 'Japanese'), ('zh-CN', 'Chinese (Simplified)'), ('ar', 'Arabic'), ('hi', 'Hindi'), ('ko', 'Korean'), ('tr', 'Turkish'), ('nl', 'Dutch'), ('sv', 'Swedish'), ('fi', 'Finnish'), ('no', 'Norwegian'), ('da', 'Danish'), ('pl', 'Polish'), ('vi', 'Vietnamese'), ('th', 'Thai'), ('id', 'Indonesian'), ('ms', 'Malay'), ('he', 'Hebrew'), ('el', 'Greek'), ('cs', 'Czech'), ('hu', 'Hungarian'), ('ro', 'Romanian'), ('bg', 'Bulgarian'), ('uk', 'Ukrainian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('hr', 'Croatian'), ('sr', 'Serbian'), ('mk', 'Macedonian'), ('sq', 'Albanian'), ('et', 'Estonian'), ('lv', 'Latvian'), ('lt', 'Lithuanian'), ('hy', 'Armenian'), ('ka', 'Georgian'), ('uz', 'Uzbek'), ('kk', 'Kazakh'), ('ky', 'Kyrgyz'), ('tg', 'Tajik'), ('tk', 'Turkmen'), ('mn', 'Mongolian'), ('ps', 'Pashto'), ('fa', 'Persian'), ('ur', 'Urdu'), ('bn', 'Bengali'), ('pa', 'Punjabi'), ('gu', 'Gujarati'), ('or', 'Odia'), ('mr', 'Marathi'), ('ne', 'Nepali'), ('si', 'Sinhala'), ('ml', 'Malayalam'), ('kn', 'Kannada'), ('ta', 'Tamil'), ('te', 'Telugu'), ('ur', 'Urdu'), ('am', 'Amharic'), ('sw', 'Swahili'), ('yo', 'Yoruba'), ('ha', 'Hausa'), ('ig', 'Igbo'), ('zu', 'Zulu'), ('xh', 'Xhosa'), ('af', 'Afrikaans'), ('is', 'Icelandic'), ('ga', 'Irish'), ('mt', 'Maltese'), ('th', 'Thai'), ('km', 'Khmer'), ('lo', 'Lao'), ('my', 'Burmese'), ('si', 'Sinhala'), ('ka', 'Georgian'), ('mn', 'Mongolian'), ('dz', 'Dzongkha'), ('yi', 'Yiddish'), ('jw', 'Javanese'), ('su', 'Sundanese'), ('ms', 'Malay'), ('fil', 'Filipino'), ('ceb', 'Cebuano'), ('hmn', 'Hmong'), ('haw', 'Hawaiian'), ('sm', 'Samoan'), ('to', 'Tongan'), ('mi', 'Maori'), ('fj', 'Fijian')], max_length=100),\n        ),",
+        "detail": "blog.migrations.0018_alter_language_name",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0019_alter_language_code",
+        "description": "blog.migrations.0019_alter_language_code",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0018_alter_language_name'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='language',\n            name='code',\n            field=models.CharField(blank=True, max_length=10, null=True, unique=True),\n        ),",
+        "detail": "blog.migrations.0019_alter_language_code",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0020_alter_language_code",
+        "description": "blog.migrations.0020_alter_language_code",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0019_alter_language_code'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='language',\n            name='code',\n            field=models.CharField(blank=True, max_length=10, null=True),\n        ),",
+        "detail": "blog.migrations.0020_alter_language_code",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog.migrations.0021_customuser_preferred_language",
+        "description": "blog.migrations.0021_customuser_preferred_language",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0020_alter_language_code'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='customuser',\n            name='preferred_language',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='blog.language'),\n        ),",
+        "detail": "blog.migrations.0021_customuser_preferred_language",
+        "documentation": {}
+    },
+    {
         "label": "CustomUserAdmin",
         "kind": 6,
         "importPath": "blog.admin",
@@ -973,7 +1616,7 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    model = Post\n    list_display = ('title','post_cat','img_preview')\n    list_filter = [\"tags\", \"published_date\",\"post_cat\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title','author__username')\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url\nclass CustomCatAdmin(admin.ModelAdmin):",
+        "peekOfCode": "class CustomPostAdmin(admin.ModelAdmin):\n    form = PostForm\n    model = Post\n    list_display = ('title', 'post_cat', 'img_preview',)\n    list_filter = [\"tags\", \"published_date\", \"post_cat\"]\n    filter_horizontal = ('tags',)\n    search_fields = ('title', 'author__username')\n    def view_on_site(self, obj):\n        url = reverse(\"blog:post_detail\", kwargs={\"post_slug\": obj.post_slug})\n        return url",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -1000,7 +1643,16 @@
         "kind": 6,
         "importPath": "blog.admin",
         "description": "blog.admin",
-        "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Category,CustomCatAdmin)\nadmin.site.register(Comment,CustomCommentAdmin)",
+        "peekOfCode": "class CustomtagAdmin(admin.ModelAdmin):\n    model = Tag\n    search_fields = ('name',)\n    list_filter = ['name','description']\n    def has_delete_permission(self, request, obj=None):\n        return False\nclass CustomHashtagPostAdmin(admin.ModelAdmin):\n    model = HashTagPost\n    filter_horizontal = ('hashtagsm2m',)\nadmin.site.register(CustomUser, CustomUserAdmin)",
+        "detail": "blog.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CustomHashtagPostAdmin",
+        "kind": 6,
+        "importPath": "blog.admin",
+        "description": "blog.admin",
+        "peekOfCode": "class CustomHashtagPostAdmin(admin.ModelAdmin):\n    model = HashTagPost\n    filter_horizontal = ('hashtagsm2m',)\nadmin.site.register(CustomUser, CustomUserAdmin)\nadmin.site.register(Post,CustomPostAdmin)\nadmin.site.register(Category,CustomCatAdmin)\nadmin.site.register(Comment,CustomCommentAdmin)\nadmin.site.register(Tag,CustomtagAdmin)\nadmin.site.register(HashTagPost,CustomHashtagPostAdmin)\nadmin.site.register(HashTag)",
         "detail": "blog.admin",
         "documentation": {}
     },
@@ -1090,7 +1742,16 @@
         "kind": 6,
         "importPath": "blog.apps",
         "description": "blog.apps",
-        "peekOfCode": "class BlogConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'blog'",
+        "peekOfCode": "class BlogConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'blog'\nclass TranslateConfig(AppConfig):\n    name = 'google_translate'",
+        "detail": "blog.apps",
+        "documentation": {}
+    },
+    {
+        "label": "TranslateConfig",
+        "kind": 6,
+        "importPath": "blog.apps",
+        "description": "blog.apps",
+        "peekOfCode": "class TranslateConfig(AppConfig):\n    name = 'google_translate'",
         "detail": "blog.apps",
         "documentation": {}
     },
@@ -1104,11 +1765,20 @@
         "documentation": {}
     },
     {
+        "label": "ReadOnlyAudioPlayerWidget",
+        "kind": 6,
+        "importPath": "blog.forms",
+        "description": "blog.forms",
+        "peekOfCode": "class ReadOnlyAudioPlayerWidget(forms.Widget):\n    def render(self, name, value, attrs=None, renderer=None):\n        if value:\n            return mark_safe('<audio controls src=\"{}\"></audio>'.format(value.url))\n        return \"No audio file\"\nclass PostForm(forms.ModelForm):\n    text = forms.CharField(widget=CKEditorWidget())\n    audio_file = forms.FileField(widget=ReadOnlyAudioPlayerWidget(), required=False)\n    class Meta:\n        model = Post",
+        "detail": "blog.forms",
+        "documentation": {}
+    },
+    {
         "label": "PostForm",
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class PostForm(forms.ModelForm):\n    class Meta:\n        model = Post\n        fields = ('title', 'text','post_cat','tags','image','feature_img')\nclass CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment   \n        fields = ('name', 'body')      \nclass CustomUserCreationForm(UserCreationForm):\n    class Meta:",
+        "peekOfCode": "class PostForm(forms.ModelForm):\n    text = forms.CharField(widget=CKEditorWidget())\n    audio_file = forms.FileField(widget=ReadOnlyAudioPlayerWidget(), required=False)\n    class Meta:\n        model = Post\n        fields = ('title', 'text','post_cat','tags','image','feature_img')\nclass CommentForm(forms.ModelForm):\n    class Meta:\n        model = Comment   \n        fields = ('name', 'body')      ",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -1126,7 +1796,7 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")\n        widgets = {\n            'dob': forms.DateInput(attrs={'type': 'date'}),",
+        "peekOfCode": "class CustomUserCreationForm(UserCreationForm):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password1', 'password2', )\nclass CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\",\"preferred_language\")\n        widgets = {\n            'dob': forms.DateInput(attrs={'type': 'date'}),",
         "detail": "blog.forms",
         "documentation": {}
     },
@@ -1135,8 +1805,17 @@
         "kind": 6,
         "importPath": "blog.forms",
         "description": "blog.forms",
-        "peekOfCode": "class CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\")\n        widgets = {\n            'dob': forms.DateInput(attrs={'type': 'date'}),\n        }",
+        "peekOfCode": "class CustomUserChangeForm(UserChangeForm):\n    class Meta(UserCreationForm.Meta):\n        model = CustomUser\n        fields =(\"email\", \"phone\", \"first_name\", \"last_name\", \"gender\", \"dob\", \"designation\", \"address\", \"pincode\", \"city\", \"state\", \"country\", \"img\",\"preferred_language\")\n        widgets = {\n            'dob': forms.DateInput(attrs={'type': 'date'}),\n        }",
         "detail": "blog.forms",
+        "documentation": {}
+    },
+    {
+        "label": "Language",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class Language(models.Model):\n    name = models.CharField(max_length=100, choices=LANG_CHOICES)\n    code = models.CharField(max_length=10, null=True, blank=True)\n    def __str__(self):\n        return LANGUAGE_CODE_MAPPING.get(self.code,'')\n    def save(self, *args, **kwargs):\n        self.code = self.name  # Assign the name to the code field\n        super().save(*args, **kwargs)\n# Custom user modal using AbstractUser and added some new fields\nclass CustomUser(AbstractUser):",
+        "detail": "blog.models",
         "documentation": {}
     },
     {
@@ -1162,7 +1841,7 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Tag(models.Model):\n    name = models.CharField(max_length=50, unique=True,null=True)\n    description = models.TextField(max_length=120,default=\"Hii this is the discription\")\n    def __str__(self):\n        return self.name\nclass Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)\n    tags = models.ManyToManyField(Tag)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None,always_update=True )  ",
+        "peekOfCode": "class Tag(models.Model):\n    name = models.CharField(max_length=50, unique=True,null=True)\n    description = models.TextField(max_length=120,default=\"Hii this is the discription\")\n    def __str__(self):\n        return self.name\nclass Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)\n    tags = models.ManyToManyField(Tag)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None,always_update=True )  ",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -1171,7 +1850,25 @@
         "kind": 6,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "class Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)\n    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)\n    tags = models.ManyToManyField(Tag)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None,always_update=True )  \n    title = models.CharField(max_length=200)\n    text = models.TextField()\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    published_date = models.DateTimeField(blank=True, null=True)\n    image = models.ImageField(null=True,blank=True)",
+        "peekOfCode": "class Post(models.Model):\n    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)\n    post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)\n    tags = models.ManyToManyField(Tag)\n    post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None,always_update=True )  \n    title = models.CharField(max_length=200)\n    text = RichTextField()\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    published_date = models.DateTimeField(blank=True, null=True)\n    image = models.ImageField(null=True,blank=True)",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "HashTag",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class HashTag(models.Model):\n    title = models.CharField(max_length=50,unique=True,null=True)\n    def __str__(self):\n        return self.title\nclass HashTagPost(models.Model):\n    title = models.CharField(max_length=50, unique=True,null=True)\n    content = models.TextField(null=True)\n    hashtagsm2m = models.ManyToManyField(HashTag,blank=True)\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    def __str__(self):",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "HashTagPost",
+        "kind": 6,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "class HashTagPost(models.Model):\n    title = models.CharField(max_length=50, unique=True,null=True)\n    content = models.TextField(null=True)\n    hashtagsm2m = models.ManyToManyField(HashTag,blank=True)\n    created_date = models.DateTimeField(default=timezone.now, editable=False)\n    def __str__(self):\n        return self.title\n@receiver(m2m_changed, sender=HashTagPost.hashtagsm2m.through)\ndef handle_hashtags_m2m_change(sender, instance, action, reverse, model, pk_set, **kwargs):\n    if action == 'post_add' or action == 'post_remove' or action == 'post_clear':",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -1185,6 +1882,24 @@
         "documentation": {}
     },
     {
+        "label": "handle_hashtags_m2m_change",
+        "kind": 2,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "def handle_hashtags_m2m_change(sender, instance, action, reverse, model, pk_set, **kwargs):\n    if action == 'post_add' or action == 'post_remove' or action == 'post_clear':\n        m2m_changed.disconnect(handle_hashtags_m2m_change, sender=HashTagPost.hashtagsm2m.through)\n        for hashtag_id in pk_set:\n            hashtag = HashTag.objects.get(pk=hashtag_id)\n            instance.hashtagsm2m.add(hashtag)\n        m2m_changed.connect(handle_hashtags_m2m_change, sender=HashTagPost.hashtagsm2m.through)\n@receiver(post_save, sender=HashTagPost)\ndef extract_and_save(sender, instance, **kwargs):\n    post_save.disconnect(extract_and_save, sender=HashTagPost)",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "extract_and_save",
+        "kind": 2,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "def extract_and_save(sender, instance, **kwargs):\n    post_save.disconnect(extract_and_save, sender=HashTagPost)\n    hashtags = [word[1:] for word in instance.content.split() if word.startswith('#')]\n    # instance.hashtagsm2m.clear()\n    for hashtag_title in hashtags:\n        hashtag, created = HashTag.objects.get_or_create(title=hashtag_title)\n        instance.hashtagsm2m.add(hashtag)\n    instance.save()\n    post_save.connect(extract_and_save, sender=HashTagPost)\nclass Comment(models.Model):",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
         "label": "COUNTRY_CHOICES",
         "kind": 5,
         "importPath": "blog.models",
@@ -1194,11 +1909,29 @@
         "documentation": {}
     },
     {
+        "label": "LANGUAGE_CODE_MAPPING",
+        "kind": 5,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "LANGUAGE_CODE_MAPPING = {\n    'en': 'English',\n    'es': 'Spanish',\n    'fr': 'French',\n    'de': 'German',\n    'it': 'Italian',\n    'pt': 'Portuguese',\n    'ru': 'Russian',\n    'ja': 'Japanese',\n    'zh-CN': 'Chinese (Simplified)',",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
         "label": "GENDER_CHOICES",
         "kind": 5,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\nCOUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\n# Custom user modal using AbstractUser and added some new fields\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,blank=True)\n    state = models.CharField(max_length=90,blank=True)",
+        "peekOfCode": "GENDER_CHOICES = (\n        ('M', 'Male'),\n        ('F', 'Female'),\n    )\nLANG_CHOICES = (\n    ('en', 'English'),\n    ('es', 'Spanish'),\n    ('fr', 'French'),\n    ('de', 'German'),\n    ('it', 'Italian'),",
+        "detail": "blog.models",
+        "documentation": {}
+    },
+    {
+        "label": "LANG_CHOICES",
+        "kind": 5,
+        "importPath": "blog.models",
+        "description": "blog.models",
+        "peekOfCode": "LANG_CHOICES = (\n    ('en', 'English'),\n    ('es', 'Spanish'),\n    ('fr', 'French'),\n    ('de', 'German'),\n    ('it', 'Italian'),\n    ('pt', 'Portuguese'),\n    ('ru', 'Russian'),\n    ('ja', 'Japanese'),\n    ('zh-CN', 'Chinese (Simplified)'),",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -1207,7 +1940,7 @@
         "kind": 5,
         "importPath": "blog.models",
         "description": "blog.models",
-        "peekOfCode": "COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\n# Custom user modal using AbstractUser and added some new fields\nclass CustomUser(AbstractUser):\n    gender = models.CharField(max_length=60,choices=GENDER_CHOICES,blank=True)\n    city = models.CharField(max_length=80,blank=True)\n    state = models.CharField(max_length=90,blank=True)\n    country = models.CharField(max_length=50,blank=True,default='IN',choices=COUNTRY_CHOICES)\n    designation = models.CharField(max_length=50,null=True,blank=True)\n    img = models.ImageField(blank=True,null=True,upload_to='profile_images/',default='default_img.jpg')\n    phone = models.PositiveBigIntegerField(blank=True,default=0000000)",
+        "peekOfCode": "COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])\nclass Language(models.Model):\n    name = models.CharField(max_length=100, choices=LANG_CHOICES)\n    code = models.CharField(max_length=10, null=True, blank=True)\n    def __str__(self):\n        return LANGUAGE_CODE_MAPPING.get(self.code,'')\n    def save(self, *args, **kwargs):\n        self.code = self.name  # Assign the name to the code field\n        super().save(*args, **kwargs)\n# Custom user modal using AbstractUser and added some new fields",
         "detail": "blog.models",
         "documentation": {}
     },
@@ -1284,11 +2017,29 @@
         "documentation": {}
     },
     {
+        "label": "generate_audio",
+        "kind": 2,
+        "importPath": "blog.utils",
+        "description": "blog.utils",
+        "peekOfCode": "def generate_audio(blog_content, audio_file_path):\n    plain_text = html2text.html2text(blog_content)\n    tts = gTTS(text=plain_text, lang='en')\n    tts.save(audio_file_path)\ndef send_push_notification(title,body,data=None):\n    data = data or {}\n    message = Message(\n        notification=Notification(title=title, body=body, image=\"url\"),\n        data=data,\n    )",
+        "detail": "blog.utils",
+        "documentation": {}
+    },
+    {
+        "label": "send_push_notification",
+        "kind": 2,
+        "importPath": "blog.utils",
+        "description": "blog.utils",
+        "peekOfCode": "def send_push_notification(title,body,data=None):\n    data = data or {}\n    message = Message(\n        notification=Notification(title=title, body=body, image=\"url\"),\n        data=data,\n    )\n    devices = FCMDevice.objects.all()\n    devices.send_message(message)",
+        "detail": "blog.utils",
+        "documentation": {}
+    },
+    {
         "label": "logout_view",
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return redirect('blog:post_list')  \ndef login_view(request):\n    if request.method == 'POST':\n        form = AuthenticationForm(request, request.POST)\n        if form.is_valid():\n            user = form.get_user()\n            login(request, user)\n            return redirect('blog:post_list')",
+        "peekOfCode": "def logout_view(request):\n    logout(request)\n    return redirect('blog:post_list')  \ndef login_view(request):\n    if request.method == 'POST':\n        form = AuthenticationForm(request, request.POST)\n        if form.is_valid():\n            user = form.get_user()\n            login(request, user)\n            send_push_notification(title=\"login\", body=\"User login\",)",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1297,7 +2048,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def login_view(request):\n    if request.method == 'POST':\n        form = AuthenticationForm(request, request.POST)\n        if form.is_valid():\n            user = form.get_user()\n            login(request, user)\n            return redirect('blog:post_list')\n    else:\n        form = AuthenticationForm()\n    return render(request, 'blog/login.html', {'form': form})",
+        "peekOfCode": "def login_view(request):\n    if request.method == 'POST':\n        form = AuthenticationForm(request, request.POST)\n        if form.is_valid():\n            user = form.get_user()\n            login(request, user)\n            send_push_notification(title=\"login\", body=\"User login\",)\n            return redirect('blog:post_list')\n    else:\n        form = AuthenticationForm()",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1315,7 +2066,7 @@
         "kind": 2,
         "importPath": "blog.views",
         "description": "blog.views",
-        "peekOfCode": "def post_list(request):\n    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\n# View for Category list\ndef cat_list(request):\n    categories = Category.objects.all()\n    return render(request, 'blog/cat_list.html', {'categories':categories})\ndef tag_list(request):\n    tags = Tag.objects.all()",
+        "peekOfCode": "def post_list(request):\n    posts = Post.objects.order_by('-published_date')\n    categories = Category.objects.all()\n    return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})\n# View for Category list\ndef cat_list(request):\n    categories = Category.objects.all()\n    return render(request, 'blog/cat_list.html', {'categories':categories})\ndef tag_list(request):\n    tags = Tag.objects.all()",
         "detail": "blog.views",
         "documentation": {}
     },
@@ -1410,6 +2161,60 @@
         "documentation": {}
     },
     {
+        "label": "firestore_adminCallTransformer",
+        "kind": 6,
+        "importPath": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "description": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "peekOfCode": "class firestore_adminCallTransformer(cst.CSTTransformer):\n    CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')\n    METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {\n        'create_database': ('parent', 'database', 'database_id', ),\n        'create_index': ('parent', 'index', ),\n        'delete_index': ('name', ),\n        'export_documents': ('name', 'collection_ids', 'output_uri_prefix', 'namespace_ids', 'snapshot_time', ),\n        'get_database': ('name', ),\n        'get_field': ('name', ),\n        'get_index': ('name', ),",
+        "detail": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "description": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "peekOfCode": "def partition(\n    predicate: Callable[[Any], bool],\n    iterator: Sequence[Any]\n) -> Tuple[List[Any], List[Any]]:\n    \"\"\"A stable, out-of-place partition.\"\"\"\n    results = ([], [])\n    for i in iterator:\n        results[int(predicate(i))].append(i)\n    # Returns trueList, falseList\n    return results[1], results[0]",
+        "detail": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "documentation": {}
+    },
+    {
+        "label": "fix_files",
+        "kind": 2,
+        "importPath": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "description": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "peekOfCode": "def fix_files(\n    in_dir: pathlib.Path,\n    out_dir: pathlib.Path,\n    *,\n    transformer=firestore_adminCallTransformer(),\n):\n    \"\"\"Duplicate the input dir to the output dir, fixing file method calls.\n    Preconditions:\n    * in_dir is a real directory\n    * out_dir is a real, empty directory",
+        "detail": "myvenv.Scripts.fixup_firestore_admin_v1_keywords",
+        "documentation": {}
+    },
+    {
+        "label": "firestoreCallTransformer",
+        "kind": 6,
+        "importPath": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "description": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "peekOfCode": "class firestoreCallTransformer(cst.CSTTransformer):\n    CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')\n    METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {\n        'batch_get_documents': ('database', 'documents', 'mask', 'transaction', 'new_transaction', 'read_time', ),\n        'batch_write': ('database', 'writes', 'labels', ),\n        'begin_transaction': ('database', 'options', ),\n        'commit': ('database', 'writes', 'transaction', ),\n        'create_document': ('parent', 'collection_id', 'document', 'document_id', 'mask', ),\n        'delete_document': ('name', 'current_document', ),\n        'get_document': ('name', 'mask', 'transaction', 'read_time', ),",
+        "detail": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "description": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "peekOfCode": "def partition(\n    predicate: Callable[[Any], bool],\n    iterator: Sequence[Any]\n) -> Tuple[List[Any], List[Any]]:\n    \"\"\"A stable, out-of-place partition.\"\"\"\n    results = ([], [])\n    for i in iterator:\n        results[int(predicate(i))].append(i)\n    # Returns trueList, falseList\n    return results[1], results[0]",
+        "detail": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "documentation": {}
+    },
+    {
+        "label": "fix_files",
+        "kind": 2,
+        "importPath": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "description": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "peekOfCode": "def fix_files(\n    in_dir: pathlib.Path,\n    out_dir: pathlib.Path,\n    *,\n    transformer=firestoreCallTransformer(),\n):\n    \"\"\"Duplicate the input dir to the output dir, fixing file method calls.\n    Preconditions:\n    * in_dir is a real directory\n    * out_dir is a real, empty directory",
+        "detail": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "documentation": {}
+    },
+    {
         "label": "Migration",
         "kind": 6,
         "importPath": "polls.migrations.0001_initial",
@@ -1461,6 +2266,15 @@
         "description": "polls.apps",
         "peekOfCode": "class PollsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'polls'",
         "detail": "polls.apps",
+        "documentation": {}
+    },
+    {
+        "label": "CustomErrorMiddleware",
+        "kind": 6,
+        "importPath": "polls.middleware",
+        "description": "polls.middleware",
+        "peekOfCode": "class CustomErrorMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    def __call__(self, request):\n        response = self.get_response(request)\n        if response.status_code == 404:\n            return render(request, 'polls/404.html', {'path': request.path})\n        if response.status_code == 500:\n            return render(request, 'polls/500.html')\n        return response",
+        "detail": "polls.middleware",
         "documentation": {}
     },
     {
@@ -1576,7 +2390,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'google_translate',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1585,7 +2399,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework.authtoken',\n    'blog',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'google_translate',\n    \"fcm_django\",\n    'rest_framework',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1594,7 +2408,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'project01.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'polls.middleware.CustomErrorMiddleware'\n]",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1666,7 +2480,52 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'blog.authentication_backends.EmailOrUsernameModelBackend',\n    # 'django.contrib.auth.backends.ModelBackend',  \n]\n# Internationalization\n# https://docs.djangoproject.com/en/3.2/topics/i18n/\nLANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'blog.authentication_backends.EmailOrUsernameModelBackend',\n]\nfirebase_config = {\n    \"apiKey\": \"AIzaSyDbKj0Tom9CzZ66N3O9UfkPyXr0r505-VE\",\n    \"authDomain\": \"django-fcm-8e2f0.firebaseapp.com\",\n    \"projectId\": \"django-fcm-8e2f0\",\n    \"storageBucket\": \"django-fcm-8e2f0.appspot.com\",\n    \"messagingSenderId\": \"196069865532\",\n    \"appId\": \"1:196069865532:web:88f22c137bd5977519eb39\",",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "firebase_config",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "firebase_config = {\n    \"apiKey\": \"AIzaSyDbKj0Tom9CzZ66N3O9UfkPyXr0r505-VE\",\n    \"authDomain\": \"django-fcm-8e2f0.firebaseapp.com\",\n    \"projectId\": \"django-fcm-8e2f0\",\n    \"storageBucket\": \"django-fcm-8e2f0.appspot.com\",\n    \"messagingSenderId\": \"196069865532\",\n    \"appId\": \"1:196069865532:web:88f22c137bd5977519eb39\",\n    \"measurementId\": \"G-Z1EJE6FK4Z\",\n}\nfirebase_credentials_path = r'C:\\Users\\chira\\Desktop\\django-merged\\firebase-service-account-key.json'",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "firebase_credentials_path",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "firebase_credentials_path = r'C:\\Users\\chira\\Desktop\\django-merged\\firebase-service-account-key.json'\nos.environ['GOOGLE_APPLICATION_CREDENTIALS'] = firebase_credentials_path\nFIREBASE_APP = initialize_app(options={\n    'projectId': firebase_config['projectId'],\n    'credential_path': firebase_credentials_path,\n    # Add other configuration options if necessary\n})\nFCM_DJANGO_SETTINGS = {\n    \"DEFAULT_FIREBASE_APP\": FIREBASE_APP,\n    \"ONE_DEVICE_PER_USER\": False,  # Set to True if you want only one active device per user at a time",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ['GOOGLE_APPLICATION_CREDENTIALS']",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = firebase_credentials_path\nFIREBASE_APP = initialize_app(options={\n    'projectId': firebase_config['projectId'],\n    'credential_path': firebase_credentials_path,\n    # Add other configuration options if necessary\n})\nFCM_DJANGO_SETTINGS = {\n    \"DEFAULT_FIREBASE_APP\": FIREBASE_APP,\n    \"ONE_DEVICE_PER_USER\": False,  # Set to True if you want only one active device per user at a time\n    \"DELETE_INACTIVE_DEVICES\": False,  # Set to True if you want to delete inactive devices",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FIREBASE_APP",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "FIREBASE_APP = initialize_app(options={\n    'projectId': firebase_config['projectId'],\n    'credential_path': firebase_credentials_path,\n    # Add other configuration options if necessary\n})\nFCM_DJANGO_SETTINGS = {\n    \"DEFAULT_FIREBASE_APP\": FIREBASE_APP,\n    \"ONE_DEVICE_PER_USER\": False,  # Set to True if you want only one active device per user at a time\n    \"DELETE_INACTIVE_DEVICES\": False,  # Set to True if you want to delete inactive devices\n}",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FCM_DJANGO_SETTINGS",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "FCM_DJANGO_SETTINGS = {\n    \"DEFAULT_FIREBASE_APP\": FIREBASE_APP,\n    \"ONE_DEVICE_PER_USER\": False,  # Set to True if you want only one active device per user at a time\n    \"DELETE_INACTIVE_DEVICES\": False,  # Set to True if you want to delete inactive devices\n}\n# Internationalization\n# https://docs.djangoproject.com/en/3.2/topics/i18n/\nLANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1720,7 +2579,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \n# LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
+        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \n# LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1729,7 +2588,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \n# LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nLOGIN_REDIRECT_URL = 'post_list' \n# LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1738,7 +2597,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = 'post_list' \n# LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
+        "peekOfCode": "LOGIN_REDIRECT_URL = 'post_list' \n# LOGIN_URL = '/login/'\nAUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1747,16 +2606,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
-        "detail": "project01.settings",
-        "documentation": {}
-    },
-    {
-        "label": "MEDIA_ROOT",
-        "kind": 5,
-        "importPath": "project01.settings",
-        "description": "project01.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nMEDIA_URL = '/media/'",
+        "peekOfCode": "AUTH_USER_MODEL = 'blog.CustomUser'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -1765,7 +2615,16 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "project01.settings",
         "documentation": {}
     },

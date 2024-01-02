@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.shortcuts import render
@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.contrib.auth.forms import AuthenticationForm
+import rest_framework
 from .forms import *
 from .models import *
 
@@ -20,6 +21,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            send_push_notification(title="login", body="User login",)
             return redirect('blog:post_list')
     else:
         form = AuthenticationForm()
@@ -41,7 +43,7 @@ def register_view(request):
 
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    posts = Post.objects.order_by('-published_date')
     categories = Category.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts,'categorie':categories})
 

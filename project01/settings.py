@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from firebase_admin import initialize_app
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,14 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'google_translate',
+    "fcm_django",
     'rest_framework',
     'rest_framework.authtoken',
     'blog',
     'polls',
     'django_filters',
-    
+    'ckeditor',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -53,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'polls.middleware.CustomErrorMiddleware'
 ]
 
 ROOT_URLCONF = 'project01.urls'
@@ -122,10 +125,28 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTHENTICATION_BACKENDS = [
     'blog.authentication_backends.EmailOrUsernameModelBackend',
-    # 'django.contrib.auth.backends.ModelBackend',  
 ]
-
-
+firebase_config = {
+    "apiKey": "AIzaSyDbKj0Tom9CzZ66N3O9UfkPyXr0r505-VE",
+    "authDomain": "django-fcm-8e2f0.firebaseapp.com",
+    "projectId": "django-fcm-8e2f0",
+    "storageBucket": "django-fcm-8e2f0.appspot.com",
+    "messagingSenderId": "196069865532",
+    "appId": "1:196069865532:web:88f22c137bd5977519eb39",
+    "measurementId": "G-Z1EJE6FK4Z",
+}
+firebase_credentials_path = r'C:\Users\chira\Desktop\django-merged\firebase-service-account-key.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = firebase_credentials_path
+FIREBASE_APP = initialize_app(options={
+    'projectId': firebase_config['projectId'],
+    'credential_path': firebase_credentials_path,
+    # Add other configuration options if necessary
+})
+FCM_DJANGO_SETTINGS = {
+    "DEFAULT_FIREBASE_APP": FIREBASE_APP,
+    "ONE_DEVICE_PER_USER": False,  # Set to True if you want only one active device per user at a time
+    "DELETE_INACTIVE_DEVICES": False,  # Set to True if you want to delete inactive devices
+}
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -152,5 +173,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'post_list' 
 # LOGIN_URL = '/login/'
 AUTH_USER_MODEL = 'blog.CustomUser'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

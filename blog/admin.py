@@ -3,7 +3,9 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.contrib.auth.admin import UserAdmin
 import csv
+from django.utils.html import format_html
 
+from blog.forms import PostForm
 from .models import *
 from .models import CustomUser
 
@@ -30,7 +32,7 @@ class CustomUserAdmin(UserAdmin):
              'Pincode', 
              'City', 
              'State', 
-             'Country'
+             'Country',
              ]
             )
 
@@ -78,23 +80,25 @@ class CustomUserAdmin(UserAdmin):
             None,
             {
                 'classes': ('wide',),
-                'fields': ('username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'is_staff', 'gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img'),
+                'fields': ('username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'is_staff', 'gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img','preferred_language'),
             }
         ),
     )
 
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password', 'first_name', 'last_name', 'last_login','is_staff')}),
-        ("Other", {'fields': ('gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img'), "classes": ("collapse",)}),
+        ("Other", {'fields': ('gender', 'phone', 'dob', 'designation', 'address', 'pincode', 'city', 'state', 'country', 'img','preferred_language'), "classes": ("collapse",)}),
     )
 
 
 class CustomPostAdmin(admin.ModelAdmin):
+    form = PostForm
     model = Post
-    list_display = ('title','post_cat','img_preview')
-    list_filter = ["tags", "published_date","post_cat"]
+    list_display = ('title', 'post_cat', 'img_preview',)
+    list_filter = ["tags", "published_date", "post_cat"]
     filter_horizontal = ('tags',)
-    search_fields = ('title','author__username')
+    search_fields = ('title', 'author__username')
+
     def view_on_site(self, obj):
         url = reverse("blog:post_detail", kwargs={"post_slug": obj.post_slug})
         return url
@@ -121,9 +125,18 @@ class CustomtagAdmin(admin.ModelAdmin):
     list_filter = ['name','description']
     def has_delete_permission(self, request, obj=None):
         return False
+    
+    
+class CustomHashtagPostAdmin(admin.ModelAdmin):
+    model = HashTagPost
+    filter_horizontal = ('hashtagsm2m',)
 
+    
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Post,CustomPostAdmin)
 admin.site.register(Category,CustomCatAdmin)
 admin.site.register(Comment,CustomCommentAdmin)
 admin.site.register(Tag,CustomtagAdmin)
+admin.site.register(HashTagPost,CustomHashtagPostAdmin)
+admin.site.register(HashTag)
+admin.site.register(Language)

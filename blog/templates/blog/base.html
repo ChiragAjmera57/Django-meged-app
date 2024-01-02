@@ -1,4 +1,5 @@
 {% load static %}
+{% load google_translate %}
 <!DOCTYPE html>
 <html>
 
@@ -8,9 +9,17 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-messaging.js"></script>
 </head>
+<style>
+    .skiptranslate{
+        display: none;
+    }
+</style>
 
-<body>
+<body class="top-0">
     <header class="page-header bg-dark text-light  ">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="btn-group d-flex flex-column">
@@ -26,7 +35,6 @@
             <a href="{% url 'blog:post_new' %}" class="btn btn-success mx-4">
                 +
             </a>
-
             {% endif %}
 
             <div class="d-flex  flex-row  align-items-center">
@@ -45,8 +53,7 @@
                 {% endif %}
             </div>
 
-
-
+            
 
         </div>
     </header>
@@ -58,8 +65,20 @@
             </div>
         </div>
     </main>
+    <footer>
+        {% google_translate type='horizontal' language='asm' %}
+        <div id="google_translate_element"></div>
+
+    </footer>
 </body>
+<!-- <div id="google_translate_element"></div> -->
+
+
 <script>
+  function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
     var currentUrl = window.location.pathname;
     if (currentUrl == "/polls/") {
         document.querySelector("#link1").style.display = 'none'
@@ -72,6 +91,109 @@
         document.querySelector("#link2").style.display = 'none'
         document.querySelector("#blogHome").style.display = 'block'
     }
+    const LANGUAGE_CODE_MAPPING_REVERSED = {
+    'English': 'en',
+    'Spanish': 'es',
+    'French': 'fr',
+    'German': 'de',
+    'Italian': 'it',
+    'Portuguese': 'pt',
+    'Russian': 'ru',
+    'Japanese': 'ja',
+    'Chinese (Simplified)': 'zh-CN',
+    'Arabic': 'ar',
+    'Hindi': 'hi',
+    'Korean': 'ko',
+    'Turkish': 'tr',
+    'Dutch': 'nl',
+    'Swedish': 'sv',
+    'Finnish': 'fi',
+    'Norwegian': 'no',
+    'Danish': 'da',
+    'Polish': 'pl',
+    'Vietnamese': 'vi',
+    'Thai': 'th',
+    'Indonesian': 'id',
+    'Malay': 'ms',
+    'Hebrew': 'he',
+    'Greek': 'el',
+    'Czech': 'cs',
+    'Hungarian': 'hu',
+    'Romanian': 'ro',
+    'Bulgarian': 'bg',
+    'Ukrainian': 'uk',
+    'Slovak': 'sk',
+    'Slovenian': 'sl',
+    'Croatian': 'hr',
+    'Serbian': 'sr',
+    'Macedonian': 'mk',
+    'Albanian': 'sq',
+    'Estonian': 'et',
+    'Latvian': 'lv',
+    'Lithuanian': 'lt',
+    'Armenian': 'hy',
+    'Georgian': 'ka',
+    'Uzbek': 'uz',
+    'Kazakh': 'kk',
+    'Kyrgyz': 'ky',
+    'Tajik': 'tg',
+    'Turkmen': 'tk',
+    'Mongolian': 'mn',
+    'Pashto': 'ps',
+    'Persian': 'fa',
+    'Urdu': 'ur',
+    'Bengali': 'bn',
+    'Punjabi': 'pa',
+    'Gujarati': 'gu',
+    'Odia': 'or',
+    'Marathi': 'mr',
+    'Nepali': 'ne',
+    'Sinhala': 'si',
+    'Malayalam': 'ml',
+    'Kannada': 'kn',
+    'Tamil': 'ta',
+    'Telugu': 'te',
+    'Amharic': 'am',
+    'Swahili': 'sw',
+    'Yoruba': 'yo',
+    'Hausa': 'ha',
+    'Igbo': 'ig',
+    'Zulu': 'zu',
+    'Xhosa': 'xh',
+    'Afrikaans': 'af',
+    'Icelandic': 'is',
+    'Irish': 'ga',
+    'Maltese': 'mt',
+    'Khmer': 'km',
+    'Lao': 'lo',
+    'Burmese': 'my',
+    'Dzongkha': 'dz',
+    'Yiddish': 'yi',
+    'Javanese': 'jw',
+    'Sundanese': 'su',
+    'Filipino': 'fil',
+    'Cebuano': 'ceb',
+    'Hmong': 'hmn',
+    'Hawaiian': 'haw',
+    'Samoan': 'sm',
+    'Tongan': 'to',
+    'Maori': 'mi',
+    'Fijian': 'fj',
+}
+
+    document.addEventListener("DOMContentLoaded", function() {
+            // Check if user is logged in and has a language preference
+            var userLanguage = "{{user.preferred_language}}";
+            // If user has a language preference, update the URL and refresh the page
+            if (userLanguage) {
+               
+                var currentUrl = window.location.href;
+                var newUrl = currentUrl + `#googtrans(${LANGUAGE_CODE_MAPPING_REVERSED[userLanguage]})`;
+                window.location.href = newUrl;
+            }
+        });
+    
 </script>
+
 
 </html>

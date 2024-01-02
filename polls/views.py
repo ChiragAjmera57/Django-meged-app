@@ -9,7 +9,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Question
 from .models import Choice, Question
 
-
 class IndexView(generic.ListView,LoginRequiredMixin):
     template_name = "polls/index.html"
     context_object_name = "latest_question_list"

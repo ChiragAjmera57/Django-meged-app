@@ -2,9 +2,18 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from autoslug import AutoSlugField
+from django.core.files import File
 from django.utils import timezone
 from django.utils.html import mark_safe
 from django.urls import reverse
+from ckeditor.fields import RichTextField
+from blog.utils import generate_audio, send_push_notification
+from django.db.models.signals import pre_save,post_save,m2m_changed
+from django.dispatch import receiver
+import os
+from polls.models import Choice
+from firebase_admin.messaging import Message, Notification
+from fcm_django.models import FCMDevice
 
 
 COUNTRY_CHOICES = [
@@ -93,13 +102,209 @@ COUNTRY_CHOICES = [
     ('SV', 'El Salvador'),
     ('HN', 'Honduras'),
     ]
+LANGUAGE_CODE_MAPPING = {
+    'en': 'English',
+    'es': 'Spanish',
+    'fr': 'French',
+    'de': 'German',
+    'it': 'Italian',
+    'pt': 'Portuguese',
+    'ru': 'Russian',
+    'ja': 'Japanese',
+    'zh-CN': 'Chinese (Simplified)',
+    'ar': 'Arabic',
+    'hi': 'Hindi',
+    'ko': 'Korean',
+    'tr': 'Turkish',
+    'nl': 'Dutch',
+    'sv': 'Swedish',
+    'fi': 'Finnish',
+    'no': 'Norwegian',
+    'da': 'Danish',
+    'pl': 'Polish',
+    'vi': 'Vietnamese',
+    'th': 'Thai',
+    'id': 'Indonesian',
+    'ms': 'Malay',
+    'he': 'Hebrew',
+    'el': 'Greek',
+    'cs': 'Czech',
+    'hu': 'Hungarian',
+    'ro': 'Romanian',
+    'bg': 'Bulgarian',
+    'uk': 'Ukrainian',
+    'sk': 'Slovak',
+    'sl': 'Slovenian',
+    'hr': 'Croatian',
+    'sr': 'Serbian',
+    'mk': 'Macedonian',
+    'sq': 'Albanian',
+    'et': 'Estonian',
+    'lv': 'Latvian',
+    'lt': 'Lithuanian',
+    'hy': 'Armenian',
+    'ka': 'Georgian',
+    'uz': 'Uzbek',
+    'kk': 'Kazakh',
+    'ky': 'Kyrgyz',
+    'tg': 'Tajik',
+    'tk': 'Turkmen',
+    'mn': 'Mongolian',
+    'ps': 'Pashto',
+    'fa': 'Persian',
+    'ur': 'Urdu',
+    'bn': 'Bengali',
+    'pa': 'Punjabi',
+    'gu': 'Gujarati',
+    'or': 'Odia',
+    'mr': 'Marathi',
+    'ne': 'Nepali',
+    'si': 'Sinhala',
+    'ml': 'Malayalam',
+    'kn': 'Kannada',
+    'ta': 'Tamil',
+    'te': 'Telugu',
+    'am': 'Amharic',
+    'sw': 'Swahili',
+    'yo': 'Yoruba',
+    'ha': 'Hausa',
+    'ig': 'Igbo',
+    'zu': 'Zulu',
+    'xh': 'Xhosa',
+    'af': 'Afrikaans',
+    'is': 'Icelandic',
+    'ga': 'Irish',
+    'mt': 'Maltese',
+    'th': 'Thai',
+    'km': 'Khmer',
+    'lo': 'Lao',
+    'my': 'Burmese',
+    'dz': 'Dzongkha',
+    'yi': 'Yiddish',
+    'jw': 'Javanese',
+    'su': 'Sundanese',
+    'ms': 'Malay',
+    'fil': 'Filipino',
+    'ceb': 'Cebuano',
+    'hmn': 'Hmong',
+    'haw': 'Hawaiian',
+    'sm': 'Samoan',
+    'to': 'Tongan',
+    'mi': 'Maori',
+    'fj': 'Fijian',
+}
 
 GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
     )
-   
+LANG_CHOICES = (
+    ('en', 'English'),
+    ('es', 'Spanish'),
+    ('fr', 'French'),
+    ('de', 'German'),
+    ('it', 'Italian'),
+    ('pt', 'Portuguese'),
+    ('ru', 'Russian'),
+    ('ja', 'Japanese'),
+    ('zh-CN', 'Chinese (Simplified)'),
+    ('ar', 'Arabic'),
+    ('hi', 'Hindi'),
+    ('ko', 'Korean'),
+    ('tr', 'Turkish'),
+    ('nl', 'Dutch'),
+    ('sv', 'Swedish'),
+    ('fi', 'Finnish'),
+    ('no', 'Norwegian'),
+    ('da', 'Danish'),
+    ('pl', 'Polish'),
+    ('vi', 'Vietnamese'),
+    ('th', 'Thai'),
+    ('id', 'Indonesian'),
+    ('ms', 'Malay'),
+    ('he', 'Hebrew'),
+    ('el', 'Greek'),
+    ('cs', 'Czech'),
+    ('hu', 'Hungarian'),
+    ('ro', 'Romanian'),
+    ('bg', 'Bulgarian'),
+    ('uk', 'Ukrainian'),
+    ('sk', 'Slovak'),
+    ('sl', 'Slovenian'),
+    ('hr', 'Croatian'),
+    ('sr', 'Serbian'),
+    ('mk', 'Macedonian'),
+    ('sq', 'Albanian'),
+    ('et', 'Estonian'),
+    ('lv', 'Latvian'),
+    ('lt', 'Lithuanian'),
+    ('hy', 'Armenian'),
+    ('ka', 'Georgian'),
+    ('uz', 'Uzbek'),
+    ('kk', 'Kazakh'),
+    ('ky', 'Kyrgyz'),
+    ('tg', 'Tajik'),
+    ('tk', 'Turkmen'),
+    ('mn', 'Mongolian'),
+    ('ps', 'Pashto'),
+    ('fa', 'Persian'),
+    ('ur', 'Urdu'),
+    ('bn', 'Bengali'),
+    ('pa', 'Punjabi'),
+    ('gu', 'Gujarati'),
+    ('or', 'Odia'),
+    ('mr', 'Marathi'),
+    ('ne', 'Nepali'),
+    ('si', 'Sinhala'),
+    ('ml', 'Malayalam'),
+    ('kn', 'Kannada'),
+    ('ta', 'Tamil'),
+    ('te', 'Telugu'),
+    ('ur', 'Urdu'),
+    ('am', 'Amharic'),
+    ('sw', 'Swahili'),
+    ('yo', 'Yoruba'),
+    ('ha', 'Hausa'),
+    ('ig', 'Igbo'),
+    ('zu', 'Zulu'),
+    ('xh', 'Xhosa'),
+    ('af', 'Afrikaans'),
+    ('is', 'Icelandic'),
+    ('ga', 'Irish'),
+    ('mt', 'Maltese'),
+    ('th', 'Thai'),
+    ('km', 'Khmer'),
+    ('lo', 'Lao'),
+    ('my', 'Burmese'),
+    ('si', 'Sinhala'),
+    ('ka', 'Georgian'),
+    ('mn', 'Mongolian'),
+    ('dz', 'Dzongkha'),
+    ('yi', 'Yiddish'),
+    ('jw', 'Javanese'),
+    ('su', 'Sundanese'),
+    ('ms', 'Malay'),
+    ('fil', 'Filipino'),
+    ('ceb', 'Cebuano'),
+    ('hmn', 'Hmong'),
+    ('haw', 'Hawaiian'),
+    ('sm', 'Samoan'),
+    ('to', 'Tongan'),
+    ('mi', 'Maori'),
+    ('fj', 'Fijian'),
+)
+
 COUNTRY_CHOICES = sorted(COUNTRY_CHOICES, key=lambda x: x[1])
+class Language(models.Model):
+    name = models.CharField(max_length=100, choices=LANG_CHOICES)
+    code = models.CharField(max_length=10, null=True, blank=True)
+
+    def __str__(self):
+        return LANGUAGE_CODE_MAPPING.get(self.code,'')
+
+    def save(self, *args, **kwargs):
+        self.code = self.name  # Assign the name to the code field
+        super().save(*args, **kwargs)
 
 # Custom user modal using AbstractUser and added some new fields
 class CustomUser(AbstractUser):
@@ -112,6 +317,7 @@ class CustomUser(AbstractUser):
     phone = models.PositiveBigIntegerField(blank=True,default=0000000)
     pincode = models.PositiveIntegerField(blank=True,null=True)
     address = models.TextField(max_length=50,blank=True,null=True)
+    preferred_language = models.ForeignKey(Language, on_delete=models.SET_NULL, null=True, blank=True)
     dob = models.DateField(blank=True,null=True)
     
     def __str__(self):
@@ -143,16 +349,28 @@ class Tag(models.Model):
    
     
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
     post_cat = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
     tags = models.ManyToManyField(Tag)
     post_slug = AutoSlugField(populate_from='title', unique=True, null=True, default=None,always_update=True )  
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = RichTextField()
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(null=True,blank=True)
     feature_img = models.ImageField(null=True,blank=True)
+    audio_file = models.FileField( null=True, blank=True)
+    
+    def save(self, *args, **kwargs):
+        audio_file_path = f'{self.post_slug}.mp3'
+        generate_audio(self.text, audio_file_path)
+
+        with open(audio_file_path, 'rb') as file:
+            self.audio_file.save(os.path.basename(audio_file_path), File(file), save=False)
+        super().save(*args, **kwargs)
+        
+        send_push_notification(title="Created", body="Post Created", data={"key": "value"})
+
     def img_preview(self): 
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
              url = self.image.url
@@ -170,6 +388,42 @@ class Post(models.Model):
     
     def get_comments(self):
         return self.comments.filter(parent=None).filter(active=True)
+    
+
+class HashTag(models.Model):
+    title = models.CharField(max_length=50,unique=True,null=True)
+    def __str__(self):
+        return self.title
+    
+    
+class HashTagPost(models.Model):
+    title = models.CharField(max_length=50, unique=True,null=True)
+    content = models.TextField(null=True)
+    hashtagsm2m = models.ManyToManyField(HashTag,blank=True)
+    created_date = models.DateTimeField(default=timezone.now, editable=False)
+    def __str__(self):
+        return self.title
+    
+@receiver(m2m_changed, sender=HashTagPost.hashtagsm2m.through)
+def handle_hashtags_m2m_change(sender, instance, action, reverse, model, pk_set, **kwargs):
+    if action == 'post_add' or action == 'post_remove' or action == 'post_clear':
+        m2m_changed.disconnect(handle_hashtags_m2m_change, sender=HashTagPost.hashtagsm2m.through)
+        for hashtag_id in pk_set:
+            hashtag = HashTag.objects.get(pk=hashtag_id)
+            instance.hashtagsm2m.add(hashtag)
+
+        m2m_changed.connect(handle_hashtags_m2m_change, sender=HashTagPost.hashtagsm2m.through)
+
+@receiver(post_save, sender=HashTagPost)
+def extract_and_save(sender, instance, **kwargs):
+    post_save.disconnect(extract_and_save, sender=HashTagPost)
+    hashtags = [word[1:] for word in instance.content.split() if word.startswith('#')]
+    # instance.hashtagsm2m.clear()
+    for hashtag_title in hashtags:
+        hashtag, created = HashTag.objects.get_or_create(title=hashtag_title)
+        instance.hashtagsm2m.add(hashtag)
+    instance.save()
+    post_save.connect(extract_and_save, sender=HashTagPost)
     
 
 class Comment(models.Model):
@@ -191,3 +445,5 @@ class Comment(models.Model):
     def get_comments(self):
         return Comment.objects.filter(parent=self).filter(active=True)
 
+
+    

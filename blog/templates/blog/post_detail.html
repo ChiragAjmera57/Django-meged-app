@@ -29,7 +29,15 @@
         <a href="{% url 'blog:Tag_post' tag_slug=tag.name %}" class=" tag">{{ tag.name }}</a>
         {% endfor %}
     </div>
-    <p class="w-100 text lh-3 fs-5" >{{ post.text }}</p>
+    {% if post.audio_file %}
+    <audio controls>
+        <source src="{{ post.audio_file.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+    <div class="w-75 text lh-3 fs-5" >{{ post.text|safe }}</div>
+    
+    
 </article>
 
 {% if post.author.img %}

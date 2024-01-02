@@ -72,9 +72,8 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
 
         token, _ = Token.objects.get_or_create(user=user)
+        user.token = token
         return user
-
-   
 
         
 class PostSerializer(serializers.ModelSerializer):

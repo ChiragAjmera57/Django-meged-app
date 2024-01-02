@@ -8,6 +8,16 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext">
 </head>
+<style>
+    .limited-content {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 300px; /* Set a maximum width for your container */
+      max-height: 30px;
+      display: inline-block; /* Ensures the element only takes up the necessary width */
+    }
+  </style>
 {% if posts.count < 1 %} <h1>No Post.</h1>
     {% else %}
     {%if query%}
@@ -48,8 +58,12 @@
                         href="{% url 'blog:Cat_post' category_slug=post.post_cat.title %}">
                         <p class="card-text text-decoration-none">Category: {{ post.post_cat.title }}</p>
                     </a>
-                    <p class="card-text text-muted mt-4">{{ post.text|linebreaksbr|truncatewords:15|truncatechars:50 }}
-                    </p>
+                    
+                    <div class="limited-content">
+                        {{ post.text|safe }}
+                      </div>
+
+
                 </div>
                 <div>
                     <img src="{{ post.image.url }}" class="img-thumbnail me-1" alt="{{ post.title }}" width="150px"

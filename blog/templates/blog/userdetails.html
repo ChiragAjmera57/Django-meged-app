@@ -49,6 +49,9 @@
         {% if user.country %}
         <p>Country: {{ user.get_country_display }}</p>
         {% endif %}
+        {% if user.preferred_language %}
+        <p>Language: {{ user.preferred_language }}</p>
+        {% endif %}
         <a href="{% url 'blog:edit_profile' %}" class="btn btn-primary">Edit</a>
     </div>
 </div>
