@@ -37,7 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.linkedin_oauth2',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.facebook',
     'google_translate',
     "fcm_django",
     'rest_framework',
@@ -47,6 +55,8 @@ INSTALLED_APPS = [
     'django_filters',
     'ckeditor',
 ]
+SITE_ID = 1
+SOCIALACCOUNT_LOGIN_ON_GET=True
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,7 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'polls.middleware.CustomErrorMiddleware'
+    'allauth.account.middleware.AccountMiddleware',
+    # 'polls.middleware.CustomErrorMiddleware'
 ]
 
 ROOT_URLCONF = 'project01.urls'
@@ -125,7 +136,79 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTHENTICATION_BACKENDS = [
     'blog.authentication_backends.EmailOrUsernameModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '196069865532-u13ekuhp0e3k6cr596cl1kd96kg0g433.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        },
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+     'github': {
+        'APP': {
+            'client_id': 'Iv1.10a540fa2776df8c',
+            'secret': '266f61abdd44813cd9d075ae4f175cfd1cb28dfb',
+            'key': '',
+        },
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
+    },
+     'linkedin_oauth2': {
+         'APP': {
+            'client_id': '77wvscmxfqbk1m',
+            'secret': 'a3dRUGRhWJe3JfI5',
+            'key': '',
+        },
+          'SCOPE': [
+            'r_liteprofile',
+            'r_emailaddress',
+            'w_member_social',
+        ],
+         'PROFILE_FIELDS': [
+            'id',
+            'firstName',
+            'lastName',
+            'emailAddress',
+            'email-address',
+            'profilePicture',
+            'public-profile-url',
+        ],
+        'LOCATION_FIELDS': [
+            'location',
+        ],
+        'POSITION_FIELDS': [
+            'company',
+        ]
+    },
+      'facebook': {
+       'callbackURL'   : 'http://127.0.0.1:8000/accounts/facebook/login/callback/',
+        'SCOPE': ['email', 'public_profile'],
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+    }
+}
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '77wvscmxfqbk1m'  # App ID
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET ='a3dRUGRhWJe3JfI5'
 firebase_config = {
     "apiKey": "AIzaSyDbKj0Tom9CzZ66N3O9UfkPyXr0r505-VE",
     "authDomain": "django-fcm-8e2f0.firebaseapp.com",

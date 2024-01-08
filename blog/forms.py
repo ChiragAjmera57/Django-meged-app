@@ -4,6 +4,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from ckeditor.widgets import CKEditorWidget
 
+class BulkPostUploadForm(forms.Form):
+    excel_file = forms.FileField()
 
 class ReadOnlyAudioPlayerWidget(forms.Widget):
     def render(self, name, value, attrs=None, renderer=None):

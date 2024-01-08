@@ -10,6 +10,7 @@ from django.contrib.auth.forms import AuthenticationForm
 import rest_framework
 from .forms import *
 from .models import *
+import pandas as pd
 
 def logout_view(request):
     logout(request)
@@ -113,6 +114,29 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form,'heading':heading})
+
+def bulk_post_upload(request):
+    if request.method == 'POST':
+        form = BulkPostUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            excel_file = request.FILES['excel_file']
+            df = pd.read_excel(excel_file)
+
+            for _, row in df.iterrows():
+                Post.objects.create(
+                    title=row['title'],
+                    text=row['text'],
+                    author=request.user,
+                    published_date=row['published_date'],
+                    
+                )
+
+            return redirect('blog:post_list')  
+    else:
+        form = BulkPostUploadForm()
+
+    return render(request, 'blog/bulk_post_upload.html', {'form': form})
+
 
 @login_required(login_url='blog:login')
 def post_edit(request, post_slug):

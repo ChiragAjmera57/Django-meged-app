@@ -46,7 +46,7 @@
                         </h2>
                     </div>
                     <time class="date text-muted" class="mt-5">
-                        {{ post.published_date|timesince }}
+                    {{ post.published_date|timesince }}
                     </time>
                     <div class="mb-3 mt-3">
                         Tags:
@@ -54,20 +54,24 @@
                         <a class="tag mx-1 p-2" href="{%url 'blog:Tag_post' tag_slug=tag.name%}"><span>{{ tag.name}}</span></a>
                         {% endfor %}
                     </div>
+                    {% if post.post_cat.title %}
                     <a class="text-decoration-none text-black mb-3"
-                        href="{% url 'blog:Cat_post' category_slug=post.post_cat.title %}">
+                       href="{% url 'blog:Cat_post' category_slug=post.post_cat.title %}">
                         <p class="card-text text-decoration-none">Category: {{ post.post_cat.title }}</p>
                     </a>
-                    
-                    <div class="limited-content">
-                        {{ post.text|safe }}
-                      </div>
-
-
+                {% endif %}
+                <div class="limited-content">
+                    {{ post.text|safe }}
+                </div>
+                
                 </div>
                 <div>
-                    <img src="{{ post.image.url }}" class="img-thumbnail me-1" alt="{{ post.title }}" width="150px"
-                        height="150px">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" class="img-thumbnail me-1" alt="{{ post.title }}" width="150px"
+                             height="150px">
+                    {% endif %}
+                </div>
+                
                 </div>
             </div>
         </div>

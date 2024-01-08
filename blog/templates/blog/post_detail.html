@@ -13,11 +13,17 @@
         </a>
     </aside>
     <div class="d-flex align-items-center justify-content-around m-auto">
+        {% if post.feature_img%}
         <img src="{{post.feature_img.url}}" alt="" srcset="" class="w-50 aspect-ratio-1x1">
+        {% endif%}
     </div>
+    {% if post.post_cat %}
     <a class="text-decoration-none text-black" href="{% url 'blog:Cat_post' category_slug=post.post_cat.title %}">
         <p class="card-text text-decoration-none">Category: {{ post.post_cat.title }}</p>
     </a>
+{% endif %}
+
+
     {% if post.published_date %}
     <time class="date">
         {{ post.published_date|timesince }}

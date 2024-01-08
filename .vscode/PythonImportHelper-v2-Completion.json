@@ -486,6 +486,14 @@
         "documentation": {}
     },
     {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1226,6 +1234,15 @@
         "documentation": {}
     },
     {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
         "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
@@ -1354,6 +1371,14 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
         "documentation": {}
     },
     {
@@ -1765,6 +1790,15 @@
         "documentation": {}
     },
     {
+        "label": "BulkPostUploadForm",
+        "kind": 6,
+        "importPath": "blog.forms",
+        "description": "blog.forms",
+        "peekOfCode": "class BulkPostUploadForm(forms.Form):\n    excel_file = forms.FileField()\nclass ReadOnlyAudioPlayerWidget(forms.Widget):\n    def render(self, name, value, attrs=None, renderer=None):\n        if value:\n            return mark_safe('<audio controls src=\"{}\"></audio>'.format(value.url))\n        return \"No audio file\"\nclass PostForm(forms.ModelForm):\n    text = forms.CharField(widget=CKEditorWidget())\n    audio_file = forms.FileField(widget=ReadOnlyAudioPlayerWidget(), required=False)",
+        "detail": "blog.forms",
+        "documentation": {}
+    },
+    {
         "label": "ReadOnlyAudioPlayerWidget",
         "kind": 6,
         "importPath": "blog.forms",
@@ -2134,6 +2168,15 @@
         "documentation": {}
     },
     {
+        "label": "bulk_post_upload",
+        "kind": 2,
+        "importPath": "blog.views",
+        "description": "blog.views",
+        "peekOfCode": "def bulk_post_upload(request):\n    if request.method == 'POST':\n        form = BulkPostUploadForm(request.POST, request.FILES)\n        if form.is_valid():\n            excel_file = request.FILES['excel_file']\n            df = pd.read_excel(excel_file)\n            for _, row in df.iterrows():\n                Post.objects.create(\n                    title=row['title'],\n                    text=row['text'],",
+        "detail": "blog.views",
+        "documentation": {}
+    },
+    {
         "label": "post_edit",
         "kind": 2,
         "importPath": "blog.views",
@@ -2212,6 +2255,24 @@
         "description": "myvenv.Scripts.fixup_firestore_v1_keywords",
         "peekOfCode": "def fix_files(\n    in_dir: pathlib.Path,\n    out_dir: pathlib.Path,\n    *,\n    transformer=firestoreCallTransformer(),\n):\n    \"\"\"Duplicate the input dir to the output dir, fixing file method calls.\n    Preconditions:\n    * in_dir is a real directory\n    * out_dir is a real, empty directory",
         "detail": "myvenv.Scripts.fixup_firestore_v1_keywords",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_doc",
+        "kind": 5,
+        "importPath": "myvenv.Scripts.runxlrd",
+        "description": "myvenv.Scripts.runxlrd",
+        "peekOfCode": "cmd_doc = \"\"\"\nCommands:\n2rows           Print the contents of first and last row in each sheet\n3rows           Print the contents of first, second and last row in each sheet\nbench           Same as \"show\", but doesn't print -- for profiling\nbiff_count[1]   Print a count of each type of BIFF record in the file\nbiff_dump[1]    Print a dump (char and hex) of the BIFF records in the file\nfonts           hdr + print a dump of all font objects\nhdr             Mini-overview of file (no per-sheet information)\nhotshot         Do a hotshot profile run e.g. ... -f1 hotshot bench bigfile*.xls",
+        "detail": "myvenv.Scripts.runxlrd",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "myvenv.Scripts.runxlrd",
+        "description": "myvenv.Scripts.runxlrd",
+        "peekOfCode": "options = None\nif __name__ == \"__main__\":\n    import xlrd\n    import sys\n    import time\n    import glob\n    import traceback\n    import gc\n    from xlrd.timemachine import xrange, REPR\n    class LogHandler(object):",
+        "detail": "myvenv.Scripts.runxlrd",
         "documentation": {}
     },
     {
@@ -2381,7 +2442,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.sites',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -2390,7 +2451,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'google_translate',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.sites',\n    'django.contrib.staticfiles',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -2399,7 +2460,16 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'google_translate',\n    \"fcm_django\",\n    'rest_framework',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.sites',\n    'django.contrib.staticfiles',\n    'allauth',\n    'allauth.account',",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SITE_ID",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "SITE_ID = 1\nSOCIALACCOUNT_LOGIN_ON_GET=True\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -2408,7 +2478,7 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'polls.middleware.CustomErrorMiddleware'\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'allauth.account.middleware.AccountMiddleware',\n    # 'polls.middleware.CustomErrorMiddleware'",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -2480,7 +2550,25 @@
         "kind": 5,
         "importPath": "project01.settings",
         "description": "project01.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'blog.authentication_backends.EmailOrUsernameModelBackend',\n]\nfirebase_config = {\n    \"apiKey\": \"AIzaSyDbKj0Tom9CzZ66N3O9UfkPyXr0r505-VE\",\n    \"authDomain\": \"django-fcm-8e2f0.firebaseapp.com\",\n    \"projectId\": \"django-fcm-8e2f0\",\n    \"storageBucket\": \"django-fcm-8e2f0.appspot.com\",\n    \"messagingSenderId\": \"196069865532\",\n    \"appId\": \"1:196069865532:web:88f22c137bd5977519eb39\",",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'blog.authentication_backends.EmailOrUsernameModelBackend',\n    'allauth.account.auth_backends.AuthenticationBackend',\n]\nSOCIALACCOUNT_PROVIDERS = {\n    'google': {\n        'APP': {\n            'client_id': '196069865532-u13ekuhp0e3k6cr596cl1kd96kg0g433.apps.googleusercontent.com',\n            'secret': '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',\n            'key': ''",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SOCIALACCOUNT_PROVIDERS",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "SOCIALACCOUNT_PROVIDERS = {\n    'google': {\n        'APP': {\n            'client_id': '196069865532-u13ekuhp0e3k6cr596cl1kd96kg0g433.apps.googleusercontent.com',\n            'secret': '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',\n            'key': ''\n        },\n        'SCOPE': [\n            'profile',\n            'email',",
+        "detail": "project01.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY",
+        "kind": 5,
+        "importPath": "project01.settings",
+        "description": "project01.settings",
+        "peekOfCode": "SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '77wvscmxfqbk1m'  # App ID\nSOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET ='a3dRUGRhWJe3JfI5'\nfirebase_config = {\n    \"apiKey\": \"AIzaSyDbKj0Tom9CzZ66N3O9UfkPyXr0r505-VE\",\n    \"authDomain\": \"django-fcm-8e2f0.firebaseapp.com\",\n    \"projectId\": \"django-fcm-8e2f0\",\n    \"storageBucket\": \"django-fcm-8e2f0.appspot.com\",\n    \"messagingSenderId\": \"196069865532\",\n    \"appId\": \"1:196069865532:web:88f22c137bd5977519eb39\",\n    \"measurementId\": \"G-Z1EJE6FK4Z\",",
         "detail": "project01.settings",
         "documentation": {}
     },
@@ -2633,7 +2721,7 @@
         "kind": 5,
         "importPath": "project01.urls",
         "description": "project01.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"polls/\", include(\"polls.urls\")),\n    path('', include('blog.urls')),\n    path('api',include('blog.apiUrls')),\n]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"polls/\", include(\"polls.urls\")),\n    path('api',include('blog.apiUrls')),\n    path('accounts/', include('allauth.urls')),\n    path('accounts/', include('allauth.socialaccount.urls')),\n    path('', include('blog.urls')),\n]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "project01.urls",
         "documentation": {}
     },

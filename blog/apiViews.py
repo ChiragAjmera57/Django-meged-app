@@ -13,8 +13,7 @@ class LoginViewSet(viewsets.ModelViewSet):
     http_method_names = ['post']
     serializer_class = LoginSerializer
  
-
-    
+  
 class UserViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
     http_method_names = ['get']
