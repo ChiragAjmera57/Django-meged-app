@@ -1,16 +1,15 @@
-from django.http import HttpResponse
+from django.utils import timezone
 from django.shortcuts import redirect
 from django.contrib.auth import logout
-from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.utils import timezone
 from django.contrib.auth.forms import AuthenticationForm
-import rest_framework
+
+import pandas as pd
+
 from .forms import *
 from .models import *
-import pandas as pd
 
 def logout_view(request):
     logout(request)
@@ -40,8 +39,6 @@ def register_view(request):
         form = CustomUserCreationForm()
 
     return render(request, 'blog/register.html', {'form': form}) 
-
-
 
 def post_list(request):
     posts = Post.objects.order_by('-published_date')
@@ -123,12 +120,13 @@ def bulk_post_upload(request):
             df = pd.read_excel(excel_file)
 
             for _, row in df.iterrows():
+                print(row)
                 Post.objects.create(
                     title=row['title'],
                     text=row['text'],
                     author=request.user,
                     published_date=row['published_date'],
-                    
+                    image=row['image'],
                 )
 
             return redirect('blog:post_list')  
@@ -136,7 +134,6 @@ def bulk_post_upload(request):
         form = BulkPostUploadForm()
 
     return render(request, 'blog/bulk_post_upload.html', {'form': form})
-
 
 @login_required(login_url='blog:login')
 def post_edit(request, post_slug):
@@ -166,7 +163,6 @@ def edit_profile(request):
     else:
         form = CustomUserChangeForm(instance=request.user)
     return render(request, 'blog/edit_profile.html', {'form': form})
-
 
 def user_detail(request, username):
     user = get_object_or_404(CustomUser, username=username)

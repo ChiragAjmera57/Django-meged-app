@@ -1,7 +1,7 @@
-from gtts import gTTS
-import html2text
-from fcm_django.models import FCMDevice
 from firebase_admin.messaging import Message, Notification
+from gtts import gTTS
+from fcm_django.models import FCMDevice
+import html2text
 
 def generate_audio(blog_content, audio_file_path):
     plain_text = html2text.html2text(blog_content)

@@ -1,18 +1,10 @@
-from rest_framework import serializers
-from blog.models import *
 from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth import authenticate
-from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import serializers
-from django.contrib.auth import authenticate
-from rest_framework.authtoken.models import Token
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import status
-from rest_framework.response import Response
-from .models import CustomUser  
 from django.db.models import Q
+from rest_framework import serializers
+from rest_framework.authtoken.models import Token
+from blog.models import *
+from .models import CustomUser
+
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()

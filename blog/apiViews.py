@@ -1,12 +1,11 @@
-from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import status
 from rest_framework import viewsets, filters
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import AllowAny
 
 from blog.serializers import *
 from blog.models import *
+
 
 class LoginViewSet(viewsets.ModelViewSet):
     queryset = []  
@@ -27,6 +26,7 @@ class UserSignViewSet(viewsets.ModelViewSet):
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
+    permission_classes = [AllowAny]
     serializer_class = PostSerializer
     filter_backends = [filters.SearchFilter,DjangoFilterBackend,filters.OrderingFilter]
     search_fields = ['title', 'text','author__username']   

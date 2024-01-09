@@ -1,6 +1,7 @@
 from django.urls import include, path
-from rest_framework import routers
 from rest_framework.authtoken import views
+from rest_framework import routers
+
 from blog.apiViews import *
 
 router = routers.DefaultRouter()

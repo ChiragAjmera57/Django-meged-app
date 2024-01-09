@@ -1,8 +1,11 @@
 from django import forms
-from .models import *
-from django import forms
-from django.contrib.auth.forms import UserCreationForm,UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
 from ckeditor.widgets import CKEditorWidget
+
+from .models import *
+
+
 
 class BulkPostUploadForm(forms.Form):
     excel_file = forms.FileField()
@@ -26,14 +29,12 @@ class CommentForm(forms.ModelForm):
         fields = ('name', 'body')      
         
 class CustomUserCreationForm(UserCreationForm):
-
     class Meta:
         model = CustomUser
         fields = ('username', 'email', 'password1', 'password2', )
         
         
 class CustomUserChangeForm(UserChangeForm):
-
     class Meta(UserCreationForm.Meta):
         model = CustomUser
         fields =("email", "phone", "first_name", "last_name", "gender", "dob", "designation", "address", "pincode", "city", "state", "country", "img","preferred_language")

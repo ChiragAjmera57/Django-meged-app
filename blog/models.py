@@ -1,19 +1,20 @@
+import os
+from django.core.files import File
+from django.utils import timezone
+from django.urls import reverse
+
+from django.utils.html import mark_safe
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from autoslug import AutoSlugField
-from django.core.files import File
-from django.utils import timezone
-from django.utils.html import mark_safe
-from django.urls import reverse
-from ckeditor.fields import RichTextField
-from blog.utils import generate_audio, send_push_notification
-from django.db.models.signals import pre_save,post_save,m2m_changed
 from django.dispatch import receiver
-import os
-from polls.models import Choice
-from firebase_admin.messaging import Message, Notification
-from fcm_django.models import FCMDevice
+from django.db.models.signals import post_save, m2m_changed
+
+from autoslug import AutoSlugField
+from ckeditor.fields import RichTextField
+
+from blog.utils import generate_audio, send_push_notification
+
 
 
 COUNTRY_CHOICES = [
@@ -306,7 +307,6 @@ class Language(models.Model):
         self.code = self.name  # Assign the name to the code field
         super().save(*args, **kwargs)
 
-# Custom user modal using AbstractUser and added some new fields
 class CustomUser(AbstractUser):
     gender = models.CharField(max_length=60,choices=GENDER_CHOICES,blank=True)
     city = models.CharField(max_length=80,blank=True)
@@ -357,16 +357,17 @@ class Post(models.Model):
     text = RichTextField()
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     published_date = models.DateTimeField(blank=True, null=True)
-    image = models.ImageField(null=True,blank=True)
+    image = models.ImageField(null=True,blank=True,upload_to='blog_images/')
     feature_img = models.ImageField(null=True,blank=True)
     audio_file = models.FileField( null=True, blank=True)
     
     def save(self, *args, **kwargs):
-        audio_file_path = f'{self.post_slug}.mp3'
+        audio_file_path = os.path.join('media', 'audio', f'{self.post_slug}.mp3')
         generate_audio(self.text, audio_file_path)
 
         with open(audio_file_path, 'rb') as file:
             self.audio_file.save(os.path.basename(audio_file_path), File(file), save=False)
+        
         super().save(*args, **kwargs)
         
         send_push_notification(title="Created", body="Post Created", data={"key": "value"})
@@ -403,6 +404,7 @@ class HashTagPost(models.Model):
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     def __str__(self):
         return self.title
+    
     
 @receiver(m2m_changed, sender=HashTagPost.hashtagsm2m.through)
 def handle_hashtags_m2m_change(sender, instance, action, reverse, model, pk_set, **kwargs):

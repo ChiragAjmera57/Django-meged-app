@@ -1,13 +1,13 @@
-from django.urls import reverse
-from django.contrib import admin
-from django.http import HttpResponse
-from django.contrib.auth.admin import UserAdmin
 import csv
-from django.utils.html import format_html
+from django.http import HttpResponse
+from django.urls import reverse
 
-from blog.forms import PostForm
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+
 from .models import *
-from .models import CustomUser
+from blog.forms import PostForm
+
 
 
 class CustomUserAdmin(UserAdmin):
