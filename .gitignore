@@ -2,5 +2,4 @@ myvenv
 db.sqlite
 db.sqlite3
 blog/migrations 
-
 polls/migrations 
