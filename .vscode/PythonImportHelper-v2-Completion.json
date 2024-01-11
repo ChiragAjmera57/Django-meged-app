@@ -1,392 +1,5 @@
 [
     {
-        "label": "autoslug.fields",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "autoslug.fields",
-        "description": "autoslug.fields",
-        "detail": "autoslug.fields",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "django.contrib.auth.validators",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.validators",
-        "description": "django.contrib.auth.validators",
-        "detail": "django.contrib.auth.validators",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -475,44 +88,11 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
         "documentation": {}
     },
     {
@@ -522,23 +102,6 @@
         "importPath": "django.utils.timezone",
         "description": "django.utils.timezone",
         "detail": "django.utils.timezone",
-        "documentation": {}
-    },
-    {
-        "label": "ckeditor.fields",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "ckeditor.fields",
-        "description": "ckeditor.fields",
-        "detail": "ckeditor.fields",
-        "documentation": {}
-    },
-    {
-        "label": "RichTextField",
-        "importPath": "ckeditor.fields",
-        "description": "ckeditor.fields",
-        "isExtraImport": true,
-        "detail": "ckeditor.fields",
         "documentation": {}
     },
     {
@@ -968,6 +531,30 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
         "label": "receiver",
         "importPath": "django.dispatch",
         "description": "django.dispatch",
@@ -1005,6 +592,14 @@
         "description": "autoslug",
         "isExtraImport": true,
         "detail": "autoslug",
+        "documentation": {}
+    },
+    {
+        "label": "RichTextField",
+        "importPath": "ckeditor.fields",
+        "description": "ckeditor.fields",
+        "isExtraImport": true,
+        "detail": "ckeditor.fields",
         "documentation": {}
     },
     {
@@ -1395,204 +990,6 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0001_initial",
-        "description": "blog.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomUser',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
-        "detail": "blog.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0002_alter_comment_options_alter_customuser_city_and_more",
-        "description": "blog.migrations.0002_alter_comment_options_alter_customuser_city_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='comment',\n            options={'ordering': ('-created',)},\n        ),\n        migrations.AlterField(",
-        "detail": "blog.migrations.0002_alter_comment_options_alter_customuser_city_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0003_alter_customuser_img",
-        "description": "blog.migrations.0003_alter_customuser_img",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0002_alter_comment_options_alter_customuser_city_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='img',\n            field=models.ImageField(blank=True, default='./media/profile_images/default_img.jpg', null=True, upload_to='profile_images/'),\n        ),",
-        "detail": "blog.migrations.0003_alter_customuser_img",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0004_alter_customuser_img",
-        "description": "blog.migrations.0004_alter_customuser_img",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0003_alter_customuser_img'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='img',\n            field=models.ImageField(blank=True, default='default_img.jpg', null=True, upload_to='profile_images/'),\n        ),",
-        "detail": "blog.migrations.0004_alter_customuser_img",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0005_alter_customuser_gender",
-        "description": "blog.migrations.0005_alter_customuser_gender",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0004_alter_customuser_img'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='gender',\n            field=models.CharField(blank=True, choices=[('M', 'Male'), ('F', 'Female')], max_length=60),\n        ),",
-        "detail": "blog.migrations.0005_alter_customuser_gender",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0006_alter_post_post_slug",
-        "description": "blog.migrations.0006_alter_post_post_slug",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0005_alter_customuser_gender'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='post_slug',\n            field=autoslug.fields.AutoSlugField(always_update=True, default=None, editable=False, null=True, populate_from='title', unique=True),\n        ),",
-        "detail": "blog.migrations.0006_alter_post_post_slug",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0007_alter_comment_body",
-        "description": "blog.migrations.0007_alter_comment_body",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0006_alter_post_post_slug'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='comment',\n            name='body',\n            field=models.TextField(blank=True),\n        ),",
-        "detail": "blog.migrations.0007_alter_comment_body",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0008_alter_post_text",
-        "description": "blog.migrations.0008_alter_post_text",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0007_alter_comment_body'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='text',\n            field=ckeditor.fields.RichTextField(),\n        ),",
-        "detail": "blog.migrations.0008_alter_post_text",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0009_post_audio_file",
-        "description": "blog.migrations.0009_post_audio_file",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0008_alter_post_text'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to='audio/'),\n        ),",
-        "detail": "blog.migrations.0009_post_audio_file",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0010_remove_post_audio_file",
-        "description": "blog.migrations.0010_remove_post_audio_file",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0009_post_audio_file'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='post',\n            name='audio_file',\n        ),\n    ]",
-        "detail": "blog.migrations.0010_remove_post_audio_file",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0011_alter_post_author",
-        "description": "blog.migrations.0011_alter_post_author",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0010_remove_post_audio_file'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='author',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),\n        ),",
-        "detail": "blog.migrations.0011_alter_post_author",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0012_post_audio_file",
-        "description": "blog.migrations.0012_post_audio_file",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0011_alter_post_author'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to='audio/'),\n        ),",
-        "detail": "blog.migrations.0012_post_audio_file",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0013_remove_post_audio_file",
-        "description": "blog.migrations.0013_remove_post_audio_file",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0012_post_audio_file'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='post',\n            name='audio_file',\n        ),\n    ]",
-        "detail": "blog.migrations.0013_remove_post_audio_file",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0014_post_audio_file",
-        "description": "blog.migrations.0014_post_audio_file",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0013_remove_post_audio_file'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to='audio/'),\n        ),",
-        "detail": "blog.migrations.0014_post_audio_file",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0015_alter_post_audio_file",
-        "description": "blog.migrations.0015_alter_post_audio_file",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0014_post_audio_file'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='audio_file',\n            field=models.FileField(blank=True, null=True, upload_to=''),\n        ),",
-        "detail": "blog.migrations.0015_alter_post_audio_file",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0016_hashtag_hashtagpost",
-        "description": "blog.migrations.0016_hashtag_hashtagpost",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0015_alter_post_audio_file'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='HashTag',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=50, null=True, unique=True)),",
-        "detail": "blog.migrations.0016_hashtag_hashtagpost",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0017_language",
-        "description": "blog.migrations.0017_language",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0016_hashtag_hashtagpost'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Language',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=100)),",
-        "detail": "blog.migrations.0017_language",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0018_alter_language_name",
-        "description": "blog.migrations.0018_alter_language_name",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0017_language'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='language',\n            name='name',\n            field=models.CharField(choices=[('en', 'English'), ('es', 'Spanish'), ('fr', 'French'), ('de', 'German'), ('it', 'Italian'), ('pt', 'Portuguese'), ('ru', 'Russian'), ('ja', 'Japanese'), ('zh-CN', 'Chinese (Simplified)'), ('ar', 'Arabic'), ('hi', 'Hindi'), ('ko', 'Korean'), ('tr', 'Turkish'), ('nl', 'Dutch'), ('sv', 'Swedish'), ('fi', 'Finnish'), ('no', 'Norwegian'), ('da', 'Danish'), ('pl', 'Polish'), ('vi', 'Vietnamese'), ('th', 'Thai'), ('id', 'Indonesian'), ('ms', 'Malay'), ('he', 'Hebrew'), ('el', 'Greek'), ('cs', 'Czech'), ('hu', 'Hungarian'), ('ro', 'Romanian'), ('bg', 'Bulgarian'), ('uk', 'Ukrainian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('hr', 'Croatian'), ('sr', 'Serbian'), ('mk', 'Macedonian'), ('sq', 'Albanian'), ('et', 'Estonian'), ('lv', 'Latvian'), ('lt', 'Lithuanian'), ('hy', 'Armenian'), ('ka', 'Georgian'), ('uz', 'Uzbek'), ('kk', 'Kazakh'), ('ky', 'Kyrgyz'), ('tg', 'Tajik'), ('tk', 'Turkmen'), ('mn', 'Mongolian'), ('ps', 'Pashto'), ('fa', 'Persian'), ('ur', 'Urdu'), ('bn', 'Bengali'), ('pa', 'Punjabi'), ('gu', 'Gujarati'), ('or', 'Odia'), ('mr', 'Marathi'), ('ne', 'Nepali'), ('si', 'Sinhala'), ('ml', 'Malayalam'), ('kn', 'Kannada'), ('ta', 'Tamil'), ('te', 'Telugu'), ('ur', 'Urdu'), ('am', 'Amharic'), ('sw', 'Swahili'), ('yo', 'Yoruba'), ('ha', 'Hausa'), ('ig', 'Igbo'), ('zu', 'Zulu'), ('xh', 'Xhosa'), ('af', 'Afrikaans'), ('is', 'Icelandic'), ('ga', 'Irish'), ('mt', 'Maltese'), ('th', 'Thai'), ('km', 'Khmer'), ('lo', 'Lao'), ('my', 'Burmese'), ('si', 'Sinhala'), ('ka', 'Georgian'), ('mn', 'Mongolian'), ('dz', 'Dzongkha'), ('yi', 'Yiddish'), ('jw', 'Javanese'), ('su', 'Sundanese'), ('ms', 'Malay'), ('fil', 'Filipino'), ('ceb', 'Cebuano'), ('hmn', 'Hmong'), ('haw', 'Hawaiian'), ('sm', 'Samoan'), ('to', 'Tongan'), ('mi', 'Maori'), ('fj', 'Fijian')], max_length=100),\n        ),",
-        "detail": "blog.migrations.0018_alter_language_name",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0019_alter_language_code",
-        "description": "blog.migrations.0019_alter_language_code",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0018_alter_language_name'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='language',\n            name='code',\n            field=models.CharField(blank=True, max_length=10, null=True, unique=True),\n        ),",
-        "detail": "blog.migrations.0019_alter_language_code",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0020_alter_language_code",
-        "description": "blog.migrations.0020_alter_language_code",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0019_alter_language_code'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='language',\n            name='code',\n            field=models.CharField(blank=True, max_length=10, null=True),\n        ),",
-        "detail": "blog.migrations.0020_alter_language_code",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0021_customuser_preferred_language",
-        "description": "blog.migrations.0021_customuser_preferred_language",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0020_alter_language_code'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='customuser',\n            name='preferred_language',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='blog.language'),\n        ),",
-        "detail": "blog.migrations.0021_customuser_preferred_language",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "blog.migrations.0022_alter_post_image",
-        "description": "blog.migrations.0022_alter_post_image",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('blog', '0021_customuser_preferred_language'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='image',\n            field=models.ImageField(blank=True, null=True, upload_to='blog_images/'),\n        ),",
-        "detail": "blog.migrations.0022_alter_post_image",
         "documentation": {}
     },
     {
@@ -2295,24 +1692,6 @@
         "description": "myvenv.Scripts.runxlrd",
         "peekOfCode": "options = None\nif __name__ == \"__main__\":\n    import xlrd\n    import sys\n    import time\n    import glob\n    import traceback\n    import gc\n    from xlrd.timemachine import xrange, REPR\n    class LogHandler(object):",
         "detail": "myvenv.Scripts.runxlrd",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "polls.migrations.0001_initial",
-        "description": "polls.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Question',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('question_text', models.CharField(max_length=200)),",
-        "detail": "polls.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "polls.migrations.0002_question_que_slug",
-        "description": "polls.migrations.0002_question_que_slug",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('polls', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='question',\n            name='que_slug',\n            field=autoslug.fields.AutoSlugField(default=None, editable=True, null=True, populate_from='question_text', unique=True),\n        ),",
-        "detail": "polls.migrations.0002_question_que_slug",
         "documentation": {}
     },
     {
