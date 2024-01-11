@@ -15,8 +15,6 @@ from ckeditor.fields import RichTextField
 
 from blog.utils import generate_audio, send_push_notification
 
-
-
 COUNTRY_CHOICES = [
     ('CN', 'China'),
     ('IN', 'India'),
@@ -305,7 +303,10 @@ class Language(models.Model):
 
     def save(self, *args, **kwargs):
         self.code = self.name  # Assign the name to the code field
+        send_push_notification(title="Language", body="Language Created", data={"key": "value"})
         super().save(*args, **kwargs)
+        
+       
 
 class CustomUser(AbstractUser):
     gender = models.CharField(max_length=60,choices=GENDER_CHOICES,blank=True)
@@ -332,6 +333,9 @@ class CustomUser(AbstractUser):
         return mark_safe('<img src = "{url}" width = "100"/>'.format(
              url = self.img.url
          ))
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        # send_push_notification(title="user created", body="user Created", data={"key": "value"})
 
 
 class Category(models.Model):
@@ -339,6 +343,9 @@ class Category(models.Model):
     description = models.TextField(max_length=120,default="Hii this is the discription")
     def __str__(self):
         return self.title
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        send_push_notification(title="Category", body="Category Created", data={"key": "value"})
 
 
 class Tag(models.Model):
@@ -346,6 +353,9 @@ class Tag(models.Model):
     description = models.TextField(max_length=120,default="Hii this is the discription")
     def __str__(self):
         return self.name
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        send_push_notification(title="Tag", body="Tag Created", data={"key": "value"})
    
     
 class Post(models.Model):
@@ -356,22 +366,28 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = RichTextField()
     created_date = models.DateTimeField(default=timezone.now, editable=False)
-    published_date = models.DateTimeField(blank=True, null=True)
-    image = models.ImageField(null=True,blank=True,upload_to='blog_images/')
-    feature_img = models.ImageField(null=True,blank=True)
+    published_date = models.DateTimeField(blank=True, null=True,default=timezone.now)
+    image = models.ImageField(null=True,blank=True,upload_to='')
+    feature_img = models.ImageField(null=True,blank=True,upload_to='blog_images')
     audio_file = models.FileField( null=True, blank=True)
     
     def save(self, *args, **kwargs):
+        is_new_post = not bool(self.pk)
         audio_file_path = os.path.join('media', 'audio', f'{self.post_slug}.mp3')
         generate_audio(self.text, audio_file_path)
 
         with open(audio_file_path, 'rb') as file:
             self.audio_file.save(os.path.basename(audio_file_path), File(file), save=False)
-        
+        if is_new_post:
+            send_push_notification(title="Created", body="New post Created", data={"key": "value"})
+        else:
+            send_push_notification(title="Updated", body="Post Updated", data={"key": "value"})
         super().save(*args, **kwargs)
         
-        send_push_notification(title="Created", body="Post Created", data={"key": "value"})
-
+    def delete(self, *args, **kwargs):
+        send_push_notification(title="Deleted", body="Post Deleted", data={"key": "value"})
+        super().delete(*args, **kwargs)
+        
     def img_preview(self): 
         return mark_safe('<img src = "{url}" width = "25"/>'.format(
              url = self.image.url
@@ -395,6 +411,9 @@ class HashTag(models.Model):
     title = models.CharField(max_length=50,unique=True,null=True)
     def __str__(self):
         return self.title
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        send_push_notification(title="Hash tags created", body="hash tag created", data={"key": "value"})
     
     
 class HashTagPost(models.Model):
@@ -404,6 +423,16 @@ class HashTagPost(models.Model):
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     def __str__(self):
         return self.title
+    def save(self, *args, **kwargs):
+        is_new_post = not bool(self.pk)
+        super().save(*args, **kwargs)
+        if is_new_post:
+            send_push_notification(title="Created", body="New post Created", data={"key": "value"})
+        else:
+            send_push_notification(title="Updated", body="Post Updated", data={"key": "value"})
+    def delete(self, *args, **kwargs):
+        send_push_notification(title="Deleted", body="Post Deleted", data={"key": "value"})
+        super().delete(*args, **kwargs)
     
     
 @receiver(m2m_changed, sender=HashTagPost.hashtagsm2m.through)
@@ -443,6 +472,9 @@ class Comment(models.Model):
         
     def __str__(self) :
         return self.name
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        send_push_notification(title="commented", body="comment Created", data={"key": "value"})
     
     def get_comments(self):
         return Comment.objects.filter(parent=self).filter(active=True)

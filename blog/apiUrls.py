@@ -19,5 +19,7 @@ urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', include(router.urls)),
+    path('user-profile/', UserProfileView.as_view(), name='user-profile'),
+
     
 ]

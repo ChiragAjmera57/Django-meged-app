@@ -13,7 +13,8 @@ from .models import *
 
 def logout_view(request):
     logout(request)
-    return redirect('blog:post_list')  
+    send_push_notification(title="Logout", body="User Logout", data={"key": "value"})
+    return redirect(reverse('blog:post_list')+'?logout=true')  
     
 def login_view(request):
     if request.method == 'POST':
@@ -21,7 +22,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            send_push_notification(title="login", body="User login",)
+            send_push_notification(title="login", body="User login",data={"key": "value"})
             return redirect('blog:post_list')
     else:
         form = AuthenticationForm()
@@ -34,6 +35,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            send_push_notification(title="Resigster", body="Proceed to Login",data={"key": "value"})
             return redirect('blog:login')
     else:
         form = CustomUserCreationForm()
@@ -81,6 +83,7 @@ def reply_page(request):
             reply.post = Post(id=post_id)
             reply.parent = Comment(id=parent_id)
             reply.save()
+            send_push_notification(title="Replied", body="User Replied", data={"key": "value"})
             return redirect(post_url+'#'+str(reply.id))
     return redirect("/")
 
@@ -118,16 +121,22 @@ def bulk_post_upload(request):
         if form.is_valid():
             excel_file = request.FILES['excel_file']
             df = pd.read_excel(excel_file)
-
+            
             for _, row in df.iterrows():
-                print(row)
-                Post.objects.create(
+                tag_names = [tag.strip() for tag in row['tags'].split(',')]
+                tags = [Tag.objects.get_or_create(name=tag)[0] for tag in tag_names]
+                category_name = row['category']
+                category, created = Category.objects.get_or_create(title=category_name)
+                post = Post.objects.create(
                     title=row['title'],
                     text=row['text'],
                     author=request.user,
                     published_date=row['published_date'],
                     image=row['image'],
+                    feature_img= row['feature_img'],
+                    post_cat=category
                 )
+                post.tags.add(*tags)
 
             return redirect('blog:post_list')  
     else:

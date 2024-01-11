@@ -14,9 +14,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-messaging.js"></script>
 </head>
 <style>
-    .skiptranslate{
-        display: none;
+    .skiptranslate iframe{
+        visibility: hidden !important;
     }
+
 </style>
 
 <body class="top-0">
@@ -66,19 +67,19 @@
             </div>
         </div>
     </main>
-    <footer>
-        {% google_translate type='horizontal' language='asm' %}
-        <div id="google_translate_element"></div>
+    <footer class="mb-5 p-5">
+        {% google_translate type='horizontal' %}
+       
 
     </footer>
 </body>
-<!-- <div id="google_translate_element"></div> -->
 
 
 <script>
-  function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
+function googleTranslateElementInit() {
+        new google.translate.TranslateElement({  layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+    }
+  
 
     var currentUrl = window.location.pathname;
     if (currentUrl == "/polls/") {
@@ -183,17 +184,33 @@
 }
 
     document.addEventListener("DOMContentLoaded", function() {
-            // Check if user is logged in and has a language preference
             var userLanguage = "{{user.preferred_language}}";
-            // If user has a language preference, update the URL and refresh the page
-            if (userLanguage) {
+            if (LANGUAGE_CODE_MAPPING_REVERSED[userLanguage]) {
                
+                let ele = document.getElementById("google_translate_element")
+                if(ele){
+                    setTimeout(() => {
+                        let ch=ele.classList.toggle('d-none')
+                        console.log(ch)
+
+                    }, 500);
+                }
+
                 var currentUrl = window.location.href;
-                var newUrl = currentUrl + `#googtrans(${LANGUAGE_CODE_MAPPING_REVERSED[userLanguage]})`;
+                var cleanUrl = currentUrl.replace(/#googtrans\([^)]*\)/, '');
+                var newUrl = cleanUrl + `#googtrans(${LANGUAGE_CODE_MAPPING_REVERSED[userLanguage]})`;
                 window.location.href = newUrl;
             }
+            // else{
+            //     var currentUrl = window.location.href;
+            //     var cleanUrl = currentUrl.replace(/#googtrans\([^)]*\)/, '');
+            //     var newUrl = cleanUrl + `#googtrans(en)`;
+            //     window.location.href = newUrl;
+            // }
+            
+
         });
-    
+        
 </script>
 
 

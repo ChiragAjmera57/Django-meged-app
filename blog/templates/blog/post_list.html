@@ -67,8 +67,12 @@
                 </div>
                 <div>
                     {% if post.image %}
-                        <img src="{{ post.image.url }}" class="img-thumbnail me-1" alt="{{ post.title }}" width="150px"
-                             height="150px">
+                    {% if "%" in post.image.url %}
+                        <img src="{{ post.image }}" class="img-thumbnail me-1" alt="{{ post.title }}" width="150px" height="150px">
+                    {% else %}
+                        <img src="{{ post.image.url }}" class="img-thumbnail me-1" alt="{{ post.title }}" width="150px" height="150px">
+                    {% endif %}
+                       
                     {% endif %}
                 </div>
                 
@@ -83,5 +87,13 @@
 
 
 
-
+    <script>
+        console.log({{request.GET.logout}},"aaaaaaaaaaaa")
+        if ({{request.GET.logout}}) {
+            var currentUrl = window.location.href;
+            var cleanUrl = currentUrl.replace(/#googtrans\([^)]*\)/, '');
+            var newUrl = cleanUrl + `#googtrans(en)`;
+            window.location.href = newUrl;
+        }
+    </script>
     {% endblock %}

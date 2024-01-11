@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
-    'polls.middleware.CustomErrorMiddleware',
+    # 'polls.middleware.CustomErrorMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
@@ -138,7 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTHENTICATION_BACKENDS = [
     'blog.authentication_backends.EmailOrUsernameModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
 ]
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
